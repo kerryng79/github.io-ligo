@@ -255,6 +255,72 @@ ul {
   margin-bottom: 50px;
 }
 
+/* ==========================================
+   AMERICAN SUCCESS STORY SECTION
+   ========================================== */
+.story {
+  padding: 4rem 0;
+  background-color: #f7f4ed; /* Warm parchment background matching the classic site */
+}
+
+.story-card {
+  background: #ffffff;
+  border: 1px solid #e2d9c8;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.story-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #14233c;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #daa520;
+  padding-bottom: 0.5rem;
+}
+
+.story-body {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.founder-portrait {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.founder-portrait img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 4px;
+  background-color: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-text p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #2c3e50;
+  margin-bottom: 1.25rem;
+}
+
+.story-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: #14233c;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.story-link:hover {
+  color: #daa520;
+}
+
 /* --- PRODUCT DIVISIONS --- */
 .capabilities {
   padding: 80px 0;
@@ -579,5 +645,14 @@ footer {
   .btn-sample {
     text-align: center;
     width: 100%;
+  }
+
+  .story-body {
+    flex-direction: column;
+  }
+
+  .founder-portrait {
+    width: 140px;
+    margin: 0 auto 1rem auto;
   }
 }
