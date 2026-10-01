@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liberty Gold Fruit Co. | Premium Food Products Since 1932</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- FIXED NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo-text">
+      <a href="#" class="logo-text">
+        <img
+                src="images/navbar_liberty-gold.png"
+                alt="Liberty Gold Fruit Company Logo"
+
+                decoding="async">
+      </a>
+    </div>
+
+    <div class="nav-text">
+      <p class="nav-title">LIBERTY GOLD</p>
+      <p class="nav-subtitle">Growing, harvesting, processing and marketing...</p>
+      <p class="nav-slogan">The Best Foods the World Has to Offer</p>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#divisions">Product Divisions</a>
+      <a href="#about">About Us</a>
+      <a href="#contact" class="btn-sample">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero" id="about">
+  <div class="container">
+    <div class="hero-location">Established 1932 • San Francisco, CA</div>
+    <h1>A Unique Food Company with A Tradition of Quality</h1>
+    <div class="content-row">
+      <div class="label-text">
+        <img src="images/content_crate_corn_field.jpg" alt="Ligo crate label over cornfield">
+      </div>
+      <p>Since 1932, Liberty Gold Fruit Company LP has earned a worldwide reputation for excellence in service as well as in our premium quality food products.
+        Still family-owned and operated, Liberty Gold is one of the few privately-owned companies left in the industry.
+        The company has LIGO Brand products on grocery shelves in 40 countries worldwide, often as one of the leading brands,
+        with extensive distribution in Asia, Central America, and Europe.</p>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Contact Sales</a>
+      <a href="#divisions" class="btn-secondary">View Product Divisions</a>
+    </div>
+  </div>
+</header>
+
+<!-- OFFICIAL DIVISIONS SECTION -->
+<section id="divisions" class="capabilities">
+  <div class="container">
+    <h2 class="section-title">Our Product Divisions</h2>
+    <p class="section-subtitle">Serving grocery retail, commercial foodservice, and industrial food manufacturing globally.</p>
+
+    <div class="caps-grid">
+      <div class="cap-item">
+        <div class="cap-icon">🏷️</div>
+        <h4>LIGO Brand</h4>
+        <p>LIGO brand products are found on grocery shelves in over 40 countries worldwide, standing as a premier recognized brand across Asia, Central America, and Europe.</p>
+      </div>
+      <div class="cap-item">
+        <div class="cap-icon">🍑</div>
+        <h4>Liberty Gold Brand</h4>
+        <p>Our hallmark line delivering trusted quality canned fruits, packaged food products, and agricultural commodities internationally.</p>
+      </div>
+      <div class="cap-item">
+        <div class="cap-icon">🏭</div>
+        <h4>Foodservice / Industrial</h4>
+        <p>Bulk ingredients, aseptic fruit packs, and commercial food formulations customized for processors, manufacturers, and institutions.</p>
+      </div>
+      <div class="cap-item">
+        <div class="cap-icon">📦</div>
+        <h4>Private Label</h4>
+        <p>Custom private label solutions providing worldwide sourcing, co-packing, and strict quality control for regional and major global supermarket chains.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER & OFFICIAL CONTACT -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <h3>LIBERTY GOLD FRUIT COMPANY LP</h3>
+        <p>Quality, reliability, and longevity – the hallmarks of Liberty Gold Fruit Company since 1932.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#divisions">Product Divisions</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Corporate Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Corporate Headquarters</h4>
+        <ul>
+          <li>500 Eccles Avenue</li>
+          <li>South San Francisco, CA 94080 USA</li>
+          <li>Phone: (650) 583-4700</li>
+          <li>Fax: (650) 583-4770</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Liberty Gold Fruit Co., Inc. All Rights Reserved.</p>
+      <p>So. San Francisco, CA 94080</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE MENU JAVASCRIPT -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
+</body>
+</html>
