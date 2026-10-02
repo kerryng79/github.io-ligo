@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liberty Gold Fruit Co. | Premium Food Products Since 1932</title>
-  <!-- Transparent Favicon -->
   <!-- Favicon from images directory -->
   <link rel="icon" type="image/png" href="images/ligo_favicon.png">
   <!-- Fonts -->
@@ -12,8 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-  <!-- External Stylesheet -->
+  <!-- External Stylesheet & JavaScript -->
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
@@ -25,7 +25,6 @@
         <img
                 src="images/navbar_liberty-gold.png"
                 alt="Liberty Gold Fruit Company Logo"
-
                 decoding="async">
       </a>
     </div>
@@ -47,6 +46,7 @@
       <a href="#about">About Us</a>
       <a href="#story">Our Story</a>
       <a href="#divisions">Product Divisions</a>
+      <a href="#products">Products</a>
       <a href="#contact" class="btn-sample">Contact Us</a>
     </div>
   </div>
@@ -61,10 +61,7 @@
       <div class="label-text">
         <img src="images/content_crate_corn_field.jpg" alt="Ligo crate label over cornfield">
       </div>
-      <p>Since 1932, Liberty Gold Fruit Company LP has earned a worldwide reputation for excellence in service as well as in our premium quality food products.
-        Still family-owned and operated, Liberty Gold is one of the few privately-owned companies left in the industry.
-        The company has LIGO Brand products on grocery shelves in 40 countries worldwide, often as one of the leading brands,
-        with extensive distribution in Asia, Central America, and Europe.</p>
+      <p>Since 1932, Liberty Gold Fruit Company LP has earned a worldwide reputation for excellence in service as well as in our premium quality food products. Still family-owned and operated, Liberty Gold is one of the few privately-owned companies left in the industry. The company has LIGO Brand products on grocery shelves in 40 countries worldwide, often as one of the leading brands, with extensive distribution in Asia, Central America, and Europe.</p>
     </div>
     <div class="hero-ctas">
       <a href="mailto:tim@libertygold.com?subject=Inquiry%20from%20Website&body=Hello%20Tim,%20I%20would%20like%20to%20learn%20more%20about..."
@@ -86,27 +83,19 @@
         </div>
 
         <div class="story-text">
-          <p><strong>In the early 1930's</strong>, Ezra Battat came to the United States from Europe. Like so many of his generation,
-            he saw in America the promise of personal liberty and golden opportunity. With this classic dream in mind,
-            he started Liberty Gold Fruit Company as a supplier of the highest quality California fruits and vegetables, at fair prices, to consumers overseas.</p>
+          <p><strong>In the early 1930's</strong>, Ezra Battat came to the United States from Europe. Like so many of his generation, he saw in America the promise of personal liberty and golden opportunity. With this classic dream in mind, he started Liberty Gold Fruit Company as a supplier of the highest quality California fruits and vegetables, at fair prices, to consumers overseas.</p>
 
-          <p>Believing that the real value of goods was in their quality, he would not compromise the high standards of the foods shipped under his <strong>LIGO</strong>
-            brand (from <strong>LI</strong>berty and <strong>GO</strong>ld). And as word spread about these excellent LIGO products, so did their markets' geographic boundaries.
-            Today, Liberty Gold is respected worldwide for its line of sensibly priced products that never sacrifice qualit.</p>
+          <p>Believing that the real value of goods was in their quality, he would not compromise the high standards of the foods shipped under his <strong>LIGO</strong> brand (from <strong>LI</strong>berty and <strong>GO</strong>ld). And as word spread about these excellent LIGO products, so did their markets' geographic boundaries. Today, Liberty Gold is respected worldwide for its line of sensibly priced products that never sacrifice quality.</p>
 
-          <p>Over the years, the Liberty Gold name and the LIGO brand have earned a worldwide reputation for excellence. Few international companies have as complete a product line
-            — the LIGO family of products now includes hundreds of items from beverages to vegetables.</p>
+          <p>Over the years, the Liberty Gold name and the LIGO brand have earned a worldwide reputation for excellence. Few international companies have as complete a product line — the LIGO family of products now includes hundreds of items from beverages to vegetables.</p>
 
-          <p>We have maintained a steady growth by staying on top of changing consumer trends, and constantly being on the lookout for upscale and innovative new items to add to
-            the distinguished LIGO and Liberty Gold brand lines.</p>
+          <p>We have maintained a steady growth by staying on top of changing consumer trends, and constantly being on the lookout for upscale and innovative new items to add to the distinguished LIGO and Liberty Gold brand lines.</p>
 
-          <p>Still family-owned and operated and into its fourth generation of the Battat family, Liberty Gold Fruit Company is one of the few privately owned companies
-            left in the industry.</p>
+          <p>Still family-owned and operated and into its fourth generation of the Battat family, Liberty Gold Fruit Company is one of the few privately owned companies left in the industry.</p>
 
-          <p>Liberty Gold is continuing the family ideals through day-to-day involvement of management in all phases of company operations and promoting a company-wide
-            priority to customer service.</p>
+          <p>Liberty Gold is continuing the family ideals through day-to-day involvement of management in all phases of company operations and promoting a company-wide priority to customer service.</p>
 
-          <a href="#company" class="story-link">More about Liberty Gold's food industry expertise...</a>
+          <a href="#divisions" class="story-link">More about Liberty Gold's food industry expertise...</a>
         </div>
       </div>
     </div>
@@ -144,6 +133,252 @@
   </div>
 </section>
 
+<!-- CATALOG / PRODUCT SHOWCASE SECTION -->
+<section class="products-section" id="products">
+  <div class="container">
+    <h2 class="section-title">Product Showcase</h2>
+    <p class="section-subtitle">Explore our core international consumer and industrial offerings.</p>
+
+    <!-- Search & Filter Controls -->
+    <div class="catalog-controls">
+      <div class="search-box">
+        <input type="text" id="productSearch" placeholder="Search products by name or SKU..." aria-label="Search products">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <div class="filter-chips" role="tablist" aria-label="Product categories">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All Products</button>
+        <button class="chip" data-filter="fruits" role="tab" aria-selected="false">Canned Fruits</button>
+        <button class="chip" data-filter="vegetables" role="tab" aria-selected="false">Vegetables</button>
+        <button class="chip" data-filter="juices" role="tab" aria-selected="false">Juices &amp; Drinks</button>
+        <button class="chip" data-filter="foodservice" role="tab" aria-selected="false">Foodservice &amp; Bulk</button>
+      </div>
+    </div>
+
+    <!-- Live Search Feedback -->
+    <div id="catalogStatus" class="catalog-status" aria-live="polite">Showing 6 product(s)</div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- Real Item 1: LIGO Peach Halves -->
+      <article class="product-card" data-category="fruits" data-title="ligo yellow cling peach halves in heavy syrup heavy syrup california">
+        <div class="card-badge">LIGO Brand</div>
+        <div class="card-img-wrapper">
+          <img
+                  src="images/PeachHalves-34076.png"
+                  alt="LIGO Yellow Cling Peach Halves in Heavy Syrup"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x180?text=Yellow+Cling+Peaches';"
+          >
+        </div>
+        <div class="card-content">
+          <span class="card-category">Canned Fruits</span>
+          <h3 class="card-title">LIGO Yellow Cling Peach Halves</h3>
+          <p class="card-description">Selected sun-ripened California yellow cling peach halves packed in rich heavy syrup. Superior firm texture and golden color.</p>
+          <div class="card-meta">
+            <span><strong>Pack:</strong> 24 / 825g</span>
+            <span><strong>Origin:</strong> USA</span>
+          </div>
+          <button class="btn-card-action" data-modal-trigger="peach-halves">View Spec Sheet &amp; Nutrition</button>
+        </div>
+      </article>
+
+      <!-- Real Item 2: LIGO Sliced Peaches -->
+      <article class="product-card" data-category="fruits" data-title="ligo sliced yellow cling peaches in light syrup">
+        <div class="card-badge">LIGO Brand</div>
+        <div class="card-img-wrapper">
+          <img src="images/crate_corn_field.jpg" alt="LIGO Sliced Yellow Cling Peaches" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Sliced+Peaches';">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Canned Fruits</span>
+          <h3 class="card-title">LIGO Sliced Yellow Cling Peaches</h3>
+          <p class="card-description">Uniformly sliced premium California yellow cling peaches, conveniently packed for baking, desserts, or retail breakfast service.</p>
+          <div class="card-meta">
+            <span><strong>Pack:</strong> 24 / 425g</span>
+            <span><strong>Origin:</strong> USA</span>
+          </div>
+          <button class="btn-card-action" data-modal-trigger="peach-slices">View Spec Sheet &amp; Nutrition</button>
+        </div>
+      </article>
+
+      <!-- Real Item 3: LIGO Fruit Cocktail -->
+      <article class="product-card" data-category="fruits" data-title="ligo fruit cocktail in heavy syrup peaches pears grapes pineapple cherries">
+        <div class="card-badge">LIGO Brand</div>
+        <div class="card-img-wrapper">
+          <img src="images/crate_corn_field.jpg" alt="LIGO Fruit Cocktail" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Fruit+Cocktail';">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Canned Fruits</span>
+          <h3 class="card-title">LIGO Fruit Cocktail in Heavy Syrup</h3>
+          <p class="card-description">Classic California blend of diced peaches, pears, seedless grapes, pineapple sector cuts, and halved maraschino cherries.</p>
+          <div class="card-meta">
+            <span><strong>Pack:</strong> 24 / 825g</span>
+            <span><strong>Grade:</strong> Choice</span>
+          </div>
+          <button class="btn-card-action" data-modal-trigger="fruit-cocktail">View Spec Sheet &amp; Nutrition</button>
+        </div>
+      </article>
+
+      <!-- Real Item 4: LIGO Super Sweet Corn -->
+      <article class="product-card" data-category="vegetables" data-title="ligo super sweet whole kernel corn sweetcorn canned">
+        <div class="card-badge">LIGO Brand</div>
+        <div class="card-img-wrapper">
+          <img src="images/crate_corn_field.jpg" alt="LIGO Super Sweet Whole Kernel Corn" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Super+Sweet+Corn';">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Vegetables</span>
+          <h3 class="card-title">LIGO Super Sweet Whole Kernel Corn</h3>
+          <p class="card-description">Freshly harvested golden whole kernel sweet corn, vacuum packed at peak ripeness to preserve natural sweetness and tender crunch.</p>
+          <div class="card-meta">
+            <span><strong>Pack:</strong> 24 / 425g</span>
+            <span><strong>Origin:</strong> USA</span>
+          </div>
+          <button class="btn-card-action" data-modal-trigger="sweet-corn">View Spec Sheet &amp; Nutrition</button>
+        </div>
+      </article>
+
+      <!-- Real Item 5: LIGO Pineapple Juice -->
+      <article class="product-card" data-category="juices" data-title="ligo 100% pineapple juice unsweetened pure vitamin c">
+        <div class="card-badge">LIGO Brand</div>
+        <div class="card-img-wrapper">
+          <img src="images/crate_corn_field.jpg" alt="LIGO 100% Pineapple Juice" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Pineapple+Juice';">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Juices &amp; Drinks</span>
+          <h3 class="card-title">LIGO 100% Pure Pineapple Juice</h3>
+          <p class="card-description">100% pure unsweetened pineapple juice, rich in natural flavor and fortified with Vitamin C. Contains no added sugar or additives.</p>
+          <div class="card-meta">
+            <span><strong>Pack:</strong> 24 / 536ml</span>
+            <span><strong>Grade:</strong> Premium</span>
+          </div>
+          <button class="btn-card-action" data-modal-trigger="pineapple-juice">View Spec Sheet &amp; Nutrition</button>
+        </div>
+      </article>
+
+      <!-- Real Item 6: Liberty Gold Bartlett Pear Halves -->
+      <article class="product-card" data-category="fruits" data-title="liberty gold bartlett pear halves in fruit juice concentrate">
+        <div class="card-badge">Liberty Gold</div>
+        <div class="card-img-wrapper">
+          <img src="images/crate_corn_field.jpg" alt="Liberty Gold Bartlett Pear Halves" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Bartlett+Pear+Halves';">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Canned Fruits</span>
+          <h3 class="card-title">Liberty Gold Bartlett Pear Halves</h3>
+          <p class="card-description">Hand-picked Pacific Northwest Bartlett pears packed in 100% real fruit juice concentrate for a clean, sweet taste.</p>
+          <div class="card-meta">
+            <span><strong>Pack:</strong> 12 / 825g</span>
+            <span><strong>Origin:</strong> USA</span>
+          </div>
+          <button class="btn-card-action" data-modal-trigger="pear-halves">View Spec Sheet &amp; Nutrition</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL SPECIFICATION & NUTRITION DIALOG -->
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+    <div class="modal-header">
+      <span class="modal-badge" id="modalBadge">Spec Sheet &amp; Nutrition</span>
+      <h2 id="modalTitle">Product Details</h2>
+    </div>
+
+    <div class="modal-body">
+      <p id="modalDescription" class="modal-desc-text">Detailed product specs go here...</p>
+
+      <!-- Logistics Specifications Table -->
+      <h4 class="modal-section-heading">Logistics &amp; Packaging Specs</h4>
+      <table class="modal-spec-table">
+        <tr><th>Packaging Format</th><td id="specPack">-</td></tr>
+        <tr><th>Net / Drain Weight</th><td id="specWeight">-</td></tr>
+        <tr><th>Shelf Life</th><td id="specShelf">36 Months</td></tr>
+        <tr><th>Shipping Port</th><td id="specPort">San Francisco / Oakland, CA</td></tr>
+      </table>
+
+      <!-- FDA Style Nutrition Facts Box -->
+      <div class="nutrition-facts-box" id="nutritionFactsBox">
+        <div class="nf-title">Nutrition Facts</div>
+        <div class="nf-servings" id="nfServings">4 servings per container</div>
+        <div class="nf-serving-size">Serving size <span id="nfServingSize">1/2 cup (140g)</span></div>
+        <div class="nf-bar-thick"></div>
+        <div class="nf-amount-per-serving">Amount per serving</div>
+        <div class="nf-calories-row">
+          <span class="nf-calories-label">Calories</span>
+          <span class="nf-calories-value" id="nfCalories">100</span>
+        </div>
+        <div class="nf-bar-med"></div>
+        <div class="nf-dv-header">% Daily Value*</div>
+        <div class="nf-row">
+          <span><strong>Total Fat</strong> <span id="nfTotalFat">0g</span></span>
+          <strong id="nfTotalFatDV">0%</strong>
+        </div>
+        <div class="nf-subrow">
+          <span>Saturated Fat 0g</span>
+          <span>0%</span>
+        </div>
+        <div class="nf-subrow">
+          <span><em>Trans</em> Fat 0g</span>
+          <span></span>
+        </div>
+        <div class="nf-row">
+          <span><strong>Cholesterol</strong> 0mg</span>
+          <span><strong>0%</strong></span>
+        </div>
+        <div class="nf-row">
+          <span><strong>Sodium</strong> <span id="nfSodium">10mg</span></span>
+          <strong id="nfSodiumDV">0%</strong>
+        </div>
+        <div class="nf-row">
+          <span><strong>Total Carbohydrate</strong> <span id="nfCarbs">24g</span></span>
+          <strong id="nfCarbsDV">9%</strong>
+        </div>
+        <div class="nf-subrow">
+          <span>Dietary Fiber <span id="nfFiber">1g</span></span>
+          <strong id="nfFiberDV">4%</strong>
+        </div>
+        <div class="nf-subrow">
+          <span>Total Sugars <span id="nfSugars">21g</span></span>
+          <span></span>
+        </div>
+        <div class="nf-subrow-indent">
+          <span>Includes <span id="nfAddedSugars">14g</span> Added Sugars</span>
+          <strong id="nfAddedSugarsDV">28%</strong>
+        </div>
+        <div class="nf-row">
+          <span><strong>Protein</strong> <span id="nfProtein">1g</span></span>
+          <span></span>
+        </div>
+        <div class="nf-bar-thick"></div>
+        <div class="nf-micro-row">
+          <span>Vitamin D 0mcg</span>
+          <span>0%</span>
+        </div>
+        <div class="nf-micro-row">
+          <span>Calcium 10mg</span>
+          <span>0%</span>
+        </div>
+        <div class="nf-micro-row">
+          <span>Iron 0.4mg</span>
+          <span>2%</span>
+        </div>
+        <div class="nf-micro-row">
+          <span>Potassium <span id="nfPotassium">110mg</span></span>
+          <span id="nfPotassiumDV">2%</span>
+        </div>
+        <div class="nf-footnote">* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.</div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <a href="mailto:tim@libertygold.com?subject=Product%20Spec%20Inquiry" class="btn-primary" style="display:block; text-align:center;">Inquire About Wholesale Order</a>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER & OFFICIAL CONTACT -->
 <footer id="contact">
   <div class="container">
@@ -178,20 +413,5 @@
   </div>
 </footer>
 
-<!-- MOBILE MENU JAVASCRIPT -->
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-</script>
 </body>
 </html>
