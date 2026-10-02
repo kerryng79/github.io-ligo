@@ -613,6 +613,14 @@ footer {
     font-size: 0.8rem;
   }
 
+  .story h2 {
+    font-size: 0.8rem;
+  }
+
+  .story-text p {
+    font-size: 0.8rem;
+  }
+
   .hero-ctas {
     flex-direction: column;
     align-items: center;
