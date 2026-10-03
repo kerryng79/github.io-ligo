@@ -460,67 +460,49 @@ ul {
 }
 
 /* ==========================================================================
-   PRODUCT CATALOG SECTION
+   PRODUCT CATALOG SECTION & STICKY LAYOUT
    ========================================================================== */
-/* Container styling */
+
 .heritage {
-  /*background-color: var(--story-bg, #F7F4ED);*/
   padding: 30px;
-  /*border-radius: var(--radius-lg, 8px);*/
-  /*border: 1px solid var(--border-color, #E2D9C8);*/
   margin-bottom: 30px;
 }
 
-/* Clearfix to prevent floated image from overflowing container */
 .heritage-text::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Top-Left Floated Image */
 .heritage-img {
   float: left;
-  width: 220px; /* Adjust size as needed */
+  width: 220px;
   max-width: 40%;
   height: auto;
   margin-top: 4px;
   margin-right: 20px;
   margin-bottom: 12px;
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: block;
 }
 
-/* Body Text Styling */
 .heritage-text {
-  font-family: var(--font-primary, sans-serif);
+  font-family: var(--font-primary);
   font-size: 1rem;
   line-height: 1.65;
-  color: var(--text-dark, #333333);
+  color: var(--text-dark);
   margin: 0;
 }
 
 .product-link {
-  /*color: var(--primary-color, #003366);*/
   font-weight: 600;
   text-decoration: underline;
-  transition: color var(--transition-fast, 0.2s ease);
+  transition: color var(--transition-fast);
 }
 
 .product-link:hover {
-  color: var(--golden-sun, #F4D160);
-}
-
-/* Mobile Responsive adjustment */
-@media (max-width: 600px) {
-  .heritage-img {
-    float: none;
-    max-width: 100%;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
+  color: var(--golden-sun);
 }
 
 .brand-section {
@@ -528,35 +510,23 @@ ul {
   background-color: var(--light-bg);
 }
 
+/* Two-Column Grid Container */
 .catalog-layout {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start; /* Prevents columns from stretching full height, enabling sticky behavior */
 }
 
-/*.catalog-controls {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  flex: 0 0 200px;*/
-/*  position: sticky;*/
-/*  top: 1.5rem;*/
-/*}*/
-
-/* 2. Make the Left Sidebar (Filter Buttons) Sticky */
+/* Left Sidebar Filter Group (Sticky) */
 .catalog-controls {
   position: sticky;
-  top: 60px; /* Adjust to match your fixed navbar height */
-  max-height: calc(100vh - 80px); /* Keeps buttons inside viewport if list is long */
-  overflow-y: auto; /* Allows internal scrolling if buttons exceed screen height */
+  top: calc(var(--nav-height) + 20px);
+  max-height: calc(100vh - var(--nav-height) - 40px);
+  overflow-y: auto;
+  z-index: 90;
+  padding-right: 5px;
 }
-
-/*.filter-chips {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  gap: 6px;*/
-/*  width: 100%;*/
-/*}*/
 
 .filter-chips {
   display: flex;
@@ -607,17 +577,12 @@ ul {
   gap: 1.25rem;
 }
 
-/*.search-box {*/
-/*  position: relative;*/
-/*  width: 100%;*/
-/*}*/
-
-/* 3. Make the Right Search Box Sticky */
+/* Search Box (Sticky relative to content column) */
 .search-box {
   position: sticky;
-  top: 60px; /* Same offset as the sidebar to align under the navbar */
-  z-index: 10; /* Keeps search bar above the product grid cards as they scroll under */
-  background-color: #ffffff; /* Must have a background color so content behind it doesn't show through */
+  top: calc(var(--nav-height) + 20px);
+  z-index: 100;
+  background-color: var(--light-bg);
   padding: 12px 0;
   margin-bottom: 16px;
 }
@@ -1056,7 +1021,7 @@ footer {
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
-/* --- Desktop (1200px and up) --- */
+/* --- Desktop Screens (1200px and up) --- */
 @media (min-width: 1200px) {
   :root {
     --nav-height: 120px;
@@ -1110,7 +1075,7 @@ footer {
   }
 }
 
-/* --- Tablets & Small Desktops (769px to 1199px) --- */
+/* --- Large Tablets & Medium Screens (769px to 1199px) --- */
 @media (min-width: 769px) and (max-width: 1199px) {
   :root {
     --nav-height: 100px;
@@ -1185,17 +1150,25 @@ footer {
   }
 }
 
-/* --- Tablets & Mobile Layout Adjustments (Up to 868px) --- */
+/* --- Tablet & Mobile Layout Controls (Up to 868px) --- */
 @media (max-width: 868px) {
+  /* Stack filter controls above search bar & product grid */
   .catalog-layout {
+    display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
 
+  /* Sticky filter group below mobile navbar */
   .catalog-controls {
-    flex: 1 1 100%;
-    width: 100%;
-    position: static;
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 110;
+    background-color: var(--light-bg);
+    padding: 10px 0;
+    max-height: 180px;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--border-slate);
   }
 
   .filter-chips {
@@ -1211,14 +1184,31 @@ footer {
     min-width: 0;
     justify-content: center;
     text-align: center;
-    padding: 10px 8px;
-    font-size: 0.85rem;
+    padding: 8px;
+    font-size: 0.8rem;
     word-break: normal;
+  }
+
+  /* Sticky search box below filter chips */
+  .search-box {
+    position: sticky;
+    top: calc(var(--nav-height) + 180px);
+    z-index: 100;
+    background-color: var(--light-bg);
+    padding: 8px 0;
+    margin-bottom: 10px;
   }
 }
 
-/* --- Mobile Devices (Up to 768px) --- */
+/* --- Small Tablets & Mobile Devices (Up to 768px) --- */
 @media (max-width: 768px) {
+  /* 2 Product Cards per Row on 768px tablets and small screens */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
   .nav-container {
     gap: 8px;
   }
@@ -1328,9 +1318,14 @@ footer {
   }
 }
 
-/* --- Extra Small Mobile Screens (Up to 480px) --- */
+/* --- Mobile Phones (Up to 480px) --- */
 @media (max-width: 480px) {
+  /* Return to 1 Product Card per Row on small phone displays */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
   .chip {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Single column filter chips on small phone screens */
   }
 }
