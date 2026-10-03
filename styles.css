@@ -44,7 +44,7 @@ ul {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -191,7 +191,7 @@ ul {
 /* --- IMAGE FRAMING --- */
 .label-text img {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   height: auto;
   display: block;
   border: 10px solid var(--golden-light);
@@ -398,7 +398,7 @@ ul {
 .catalog-controls {
   display: flex;
   flex-direction: column;
-  flex: 0 0 200px; /* Reduced from 280px to give grid more room */
+  flex: 0 0 200px;
   position: sticky;
   top: 1.5rem;
 }
