@@ -535,19 +535,33 @@ ul {
   width: 100%;
 }
 
+/*.catalog-controls {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  flex: 0 0 200px;*/
+/*  position: sticky;*/
+/*  top: 1.5rem;*/
+/*}*/
+
+/* 2. Make the Left Sidebar (Filter Buttons) Sticky */
 .catalog-controls {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 200px;
   position: sticky;
-  top: 1.5rem;
+  top: 60px; /* Adjust to match your fixed navbar height */
+  max-height: calc(100vh - 80px); /* Keeps buttons inside viewport if list is long */
+  overflow-y: auto; /* Allows internal scrolling if buttons exceed screen height */
 }
+
+/*.filter-chips {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  gap: 6px;*/
+/*  width: 100%;*/
+/*}*/
 
 .filter-chips {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  width: 100%;
+  gap: 8px;
 }
 
 .chip {
@@ -593,9 +607,19 @@ ul {
   gap: 1.25rem;
 }
 
+/*.search-box {*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*}*/
+
+/* 3. Make the Right Search Box Sticky */
 .search-box {
-  position: relative;
-  width: 100%;
+  position: sticky;
+  top: 60px; /* Same offset as the sidebar to align under the navbar */
+  z-index: 10; /* Keeps search bar above the product grid cards as they scroll under */
+  background-color: #ffffff; /* Must have a background color so content behind it doesn't show through */
+  padding: 12px 0;
+  margin-bottom: 16px;
 }
 
 .search-box input {
