@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Navigation Mobile Toggle
+  // 1. Initialize Navigation Mobile Toggle
+  initMobileMenu();
+
+  // 2. Fetch and initialize CSV product catalog
+  fetchAndInitCatalog();
+});
+
+// Mobile navigation menu toggle logic
+function initMobileMenu() {
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -11,45 +19,111 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
   }
+}
 
-  // Interactive Product Catalog Filtering
-  const searchInput = document.getElementById('productSearch');
-  const filterChips = document.querySelectorAll('.chip');
-  const productCards = document.querySelectorAll('.product-card');
+// Global catalog state
+let allProducts = [];
+let activeCategory = 'all';
+let searchQuery = '';
+
+// Helper to normalize strings for robust category matching (removes spaces, symbols, cases)
+function normalizeKey(str) {
+  return String(str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+// Asynchronously fetch and parse product_specs_and_nutrition.csv
+async function fetchAndInitCatalog() {
+  const productGrid = document.getElementById('productGrid');
   const catalogStatus = document.getElementById('catalogStatus');
 
-  let activeCategory = 'all';
-  let searchQuery = '';
+  if (!productGrid) return;
 
-  function filterProducts() {
-    let visibleCount = 0;
+  try {
+    const response = await fetch('product_specs_and_nutrition.csv');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
-    productCards.forEach(card => {
-      const cardCategory = card.getAttribute('data-category');
-      const cardTitle = card.getAttribute('data-title').toLowerCase();
+    const csvText = await response.text();
+    allProducts = parseCSV(csvText);
 
-      const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
-      const matchesSearch = cardTitle.includes(searchQuery);
+    if (!allProducts || allProducts.length === 0) {
+      productGrid.innerHTML = '<p class="status-message">No products available in the catalog at this time.</p>';
+      if (catalogStatus) catalogStatus.textContent = 'Showing 0 product(s)';
+      return;
+    }
 
-      if (matchesCategory && matchesSearch) {
-        card.style.display = 'flex';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
+    // Initialize search/filter controls and render cards
+    initControls();
+    renderProducts();
+
+  } catch (error) {
+    console.error('Error loading product catalog CSV:', error);
+    if (productGrid) {
+      productGrid.innerHTML = '<p class="status-message error-message">Unable to load product catalog. Please try again later.</p>';
+    }
+    if (catalogStatus) catalogStatus.textContent = 'Error loading product catalog.';
+  }
+}
+
+// Robust CSV Parser handling quotes, commas within cells, and normalized header keys
+function parseCSV(text) {
+  const lines = text.replace(/\r/g, '').trim().split('\n');
+  if (lines.length < 2) return [];
+
+  const headers = parseCSVRow(lines[0]);
+  const items = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    const values = parseCSVRow(line);
+    const item = {};
+
+    headers.forEach((header, index) => {
+      const key = header.trim().toLowerCase().replace(/[^a-z0-9_]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+      item[key] = values[index] !== undefined ? values[index].trim() : '';
     });
 
-    if (catalogStatus) {
-      catalogStatus.textContent = visibleCount === 0
-          ? 'No products found matching your search parameters.'
-          : `Showing ${visibleCount} product(s)`;
+    items.push(item);
+  }
+
+  return items;
+}
+
+// Helper function to extract individual fields from CSV rows
+function parseCSVRow(rowText) {
+  const values = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < rowText.length; i++) {
+    const char = rowText[i];
+
+    if (char === '"' && (i === 0 || rowText[i - 1] !== '\\')) {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      values.push(current.replace(/^"|"$/g, '').trim());
+      current = '';
+    } else {
+      current += char;
     }
   }
+  values.push(current.replace(/^"|"$/g, '').trim());
+  return values;
+}
+
+// Bind search input, category filter chips, and grid event delegation
+function initControls() {
+  const searchInput = document.getElementById('productSearch');
+  const filterChips = document.querySelectorAll('.chip');
+  const productGrid = document.getElementById('productGrid');
 
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
-      filterProducts();
+      renderProducts();
     });
   }
 
@@ -62,248 +136,205 @@ document.addEventListener('DOMContentLoaded', () => {
       chip.classList.add('active');
       chip.setAttribute('aria-selected', 'true');
 
-      activeCategory = chip.getAttribute('data-filter');
-      filterProducts();
+      activeCategory = chip.getAttribute('data-filter') || 'all';
+      renderProducts();
     });
   });
 
-  // Modal Spec Sheet & Nutrition Data Controller
-  const productModal = document.getElementById('productModal');
-  const modalClose = document.getElementById('modalClose');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDescription = document.getElementById('modalDescription');
-  const specPack = document.getElementById('specPack');
-  const specWeight = document.getElementById('specWeight');
+  // Event Delegation for modal buttons on product grid
+  if (productGrid) {
+    productGrid.addEventListener('click', (e) => {
+      const button = e.target.closest('.btn-card-action');
+      if (!button) return;
 
-  // Nutrition DOM Elements
-  const nfServings = document.getElementById('nfServings');
-  const nfServingSize = document.getElementById('nfServingSize');
-  const nfCalories = document.getElementById('nfCalories');
-  const nfTotalFat = document.getElementById('nfTotalFat');
-  const nfTotalFatDV = document.getElementById('nfTotalFatDV');
-  const nfSodium = document.getElementById('nfSodium');
-  const nfSodiumDV = document.getElementById('nfSodiumDV');
-  const nfCarbs = document.getElementById('nfCarbs');
-  const nfCarbsDV = document.getElementById('nfCarbsDV');
-  const nfFiber = document.getElementById('nfFiber');
-  const nfFiberDV = document.getElementById('nfFiberDV');
-  const nfSugars = document.getElementById('nfSugars');
-  const nfAddedSugars = document.getElementById('nfAddedSugars');
-  const nfAddedSugarsDV = document.getElementById('nfAddedSugarsDV');
-  const nfProtein = document.getElementById('nfProtein');
-  const nfPotassium = document.getElementById('nfPotassium');
-  const nfPotassiumDV = document.getElementById('nfPotassiumDV');
-
-  const productSpecData = {
-    'peach-halves': {
-      title: 'LIGO Yellow Cling Peach Halves in Heavy Syrup',
-      desc: 'Selected yellow cling peach halves packed in heavy syrup (SKU: 72810 34076).',
-      pack: '24 / 15 oz.',
-      weight: '15 ounces (425g)',
-      nutrition: {
-        servings: 'Approx. 3.5',
-        servingSize: '1/2 cup (128g)',
-        calories: '100',
-        caloriesFromFat: '0',
-        totalFat: '0g',
-        totalFatDV: '0%',
-        saturatedFat: '0g',
-        saturatedFatDV: '0%',
-        transFat: '0g',
-        cholesterol: '0mg',
-        cholesterolDV: '0%',
-        sodium: '10mg',
-        sodiumDV: '0%',
-        potassium: '110mg',
-        potassiumDV: '3%',
-        carbs: '24g',
-        carbsDV: '8%',
-        fiber: '1g',
-        fiberDV: '4%',
-        sugars: '23g',
-        protein: '1g',
-        vitaminA: '6%',
-        vitaminC: '2%',
-        calcium: '0%',
-        iron: '0%'
-      }
-    },
-    'peach-slices': {
-      title: 'LIGO Sliced Yellow Cling Peaches in Light Syrup',
-      desc: 'Uniformly sliced California yellow cling peaches in light syrup. Perfect for food service baking, retail dessert toppings, and yogurt breakfast pairings.',
-      pack: '24 Cans x 425g',
-      weight: '425g Net / 250g Drain',
-      nutrition: {
-        servings: 'about 3 servings per container',
-        servingSize: '1/2 cup (140g)',
-        calories: '80',
-        totalFat: '0g',
-        totalFatDV: '0%',
-        sodium: '5mg',
-        sodiumDV: '0%',
-        carbs: '19g',
-        carbsDV: '7%',
-        fiber: '1g',
-        fiberDV: '4%',
-        sugars: '17g',
-        addedSugars: '10g',
-        addedSugarsDV: '20%',
-        protein: '0g',
-        potassium: '105mg',
-        potassiumDV: '2%'
-      }
-    },
-    'fruit-cocktail': {
-      title: 'LIGO Fruit Cocktail in Heavy Syrup',
-      desc: 'A premium blend of diced yellow peaches, diced Bartlett pears, whole seedless grapes, pineapple sectors, and halved maraschino cherries.',
-      pack: '24 Cans x 825g',
-      weight: '825g Net / 500g Drain',
-      nutrition: {
-        servings: 'about 6 servings per container',
-        servingSize: '1/2 cup (140g)',
-        calories: '100',
-        totalFat: '0g',
-        totalFatDV: '0%',
-        sodium: '10mg',
-        sodiumDV: '0%',
-        carbs: '26g',
-        carbsDV: '9%',
-        fiber: '1g',
-        fiberDV: '4%',
-        sugars: '23g',
-        addedSugars: '16g',
-        addedSugarsDV: '32%',
-        protein: '0g',
-        potassium: '90mg',
-        potassiumDV: '2%'
-      }
-    },
-    'sweet-corn': {
-      title: 'LIGO Super Sweet Whole Kernel Corn',
-      desc: 'Sweet golden whole kernel corn grown and packed in the USA. Vacuum packed at peak harvest to lock in natural crispness.',
-      pack: '24 Cans x 425g',
-      weight: '425g Net / 280g Drain',
-      nutrition: {
-        servings: 'about 3.5 servings per container',
-        servingSize: '1/2 cup (125g)',
-        calories: '70',
-        totalFat: '1g',
-        totalFatDV: '1%',
-        sodium: '220mg',
-        sodiumDV: '10%',
-        carbs: '15g',
-        carbsDV: '5%',
-        fiber: '2g',
-        fiberDV: '7%',
-        sugars: '4g',
-        addedSugars: '0g',
-        addedSugarsDV: '0%',
-        protein: '2g',
-        potassium: '180mg',
-        potassiumDV: '4%'
-      }
-    },
-    'pineapple-juice': {
-      title: 'LIGO 100% Pure Pineapple Juice',
-      desc: '100% pure unsweetened pineapple juice made from concentrate with added Vitamin C. Naturally refreshing and additive free.',
-      pack: '24 Cans x 536ml',
-      weight: '536ml Net / 560g',
-      nutrition: {
-        servings: 'about 2 servings per container',
-        servingSize: '8 fl oz (240ml)',
-        calories: '130',
-        totalFat: '0g',
-        totalFatDV: '0%',
-        sodium: '10mg',
-        sodiumDV: '0%',
-        carbs: '32g',
-        carbsDV: '12%',
-        fiber: '1g',
-        fiberDV: '4%',
-        sugars: '28g',
-        addedSugars: '0g',
-        addedSugarsDV: '0%',
-        protein: '1g',
-        potassium: '300mg',
-        potassiumDV: '6%'
-      }
-    },
-    'pear-halves': {
-      title: 'Liberty Gold Bartlett Pear Halves in Juice',
-      desc: 'Hand-picked Pacific Northwest Bartlett pear halves packed in real fruit juice concentrate for a clean, natural sweet flavor profile.',
-      pack: '12 Cans x 825g',
-      weight: '825g Net / 465g Drain',
-      nutrition: {
-        servings: 'about 6 servings per container',
-        servingSize: '1/2 cup (140g)',
-        calories: '70',
-        totalFat: '0g',
-        totalFatDV: '0%',
-        sodium: '5mg',
-        sodiumDV: '0%',
-        carbs: '18g',
-        carbsDV: '7%',
-        fiber: '2g',
-        fiberDV: '7%',
-        sugars: '14g',
-        addedSugars: '0g',
-        addedSugarsDV: '0%',
-        protein: '0g',
-        potassium: '115mg',
-        potassiumDV: '2%'
-      }
-    }
-  };
-
-  document.querySelectorAll('[data-modal-trigger]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-modal-trigger');
-      const data = productSpecData[key];
-
-      if (data && productModal) {
-        modalTitle.textContent = data.title;
-        modalDescription.textContent = data.desc;
-        specPack.textContent = data.pack;
-        specWeight.textContent = data.weight;
-
-        // Populate FDA Nutrition Panel
-        if (data.nutrition) {
-          nfServings.textContent = data.nutrition.servings;
-          nfServingSize.textContent = data.nutrition.servingSize;
-          nfCalories.textContent = data.nutrition.calories;
-          nfTotalFat.textContent = data.nutrition.totalFat;
-          nfTotalFatDV.textContent = data.nutrition.totalFatDV;
-          nfSodium.textContent = data.nutrition.sodium;
-          nfSodiumDV.textContent = data.nutrition.sodiumDV;
-          nfCarbs.textContent = data.nutrition.carbs;
-          nfCarbsDV.textContent = data.nutrition.carbsDV;
-          nfFiber.textContent = data.nutrition.fiber;
-          nfFiberDV.textContent = data.nutrition.fiberDV;
-          nfSugars.textContent = data.nutrition.sugars;
-          nfAddedSugars.textContent = data.nutrition.addedSugars;
-          nfAddedSugarsDV.textContent = data.nutrition.addedSugarsDV;
-          nfProtein.textContent = data.nutrition.protein;
-          nfPotassium.textContent = data.nutrition.potassium;
-          nfPotassiumDV.textContent = data.nutrition.potassiumDV;
-        }
-
-        productModal.classList.add('active');
-        productModal.setAttribute('aria-hidden', 'false');
-      }
-    });
-  });
-
-  if (modalClose && productModal) {
-    modalClose.addEventListener('click', () => {
-      productModal.classList.remove('active');
-      productModal.setAttribute('aria-hidden', 'true');
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === productModal) {
-        productModal.classList.remove('active');
-        productModal.setAttribute('aria-hidden', 'true');
+      const sku = button.getAttribute('data-sku');
+      const product = allProducts.find(p => String(p.sku || p.id).trim() === sku);
+      if (product) {
+        openProductModal(product);
       }
     });
   }
-});
+
+  initModalListeners();
+}
+
+// Render dynamic product cards to #productGrid based on current filter & search query
+function renderProducts() {
+  const productGrid = document.getElementById('productGrid');
+  const catalogStatus = document.getElementById('catalogStatus');
+  if (!productGrid) return;
+
+  const normalizedFilter = normalizeKey(activeCategory);
+
+  const filtered = allProducts.filter(product => {
+    const title = (product.title || product.name || product.item || '').toLowerCase();
+    const category = (product.category || product.cat || '').toLowerCase();
+    const sku = (product.sku || product.id || '').toLowerCase();
+
+    const matchesCategory = activeCategory === 'all' || normalizeKey(category).includes(normalizedFilter);
+    const matchesSearch = !searchQuery || title.includes(searchQuery) || sku.includes(searchQuery) || category.includes(searchQuery);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  productGrid.innerHTML = '';
+
+  if (filtered.length === 0) {
+    productGrid.innerHTML = '<p class="status-message">No products found matching your search parameters.</p>';
+    if (catalogStatus) catalogStatus.textContent = 'Showing 0 product(s)';
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+
+  filtered.forEach(product => {
+    const card = document.createElement('article');
+    card.className = 'product-card';
+
+    const title = product.title || product.name || product.item || 'Untitled Product';
+    const brand = product.brand || product.badge || 'LIGO Brand';
+    const categoryName = product.category_label || product.category || 'Food Products';
+    const description = product.description || product.desc || 'Premium quality food product.';
+    const pack = product.pack || product.pack_size || '-';
+    const origin = product.origin || 'USA';
+
+    // SKU-based image filename logic
+    const sku = String(product.sku || product.id || '').trim();
+    const imageSrc = product.image || product.image_url || (sku ? `images/${sku}.jpg` : 'images/content_crate_corn_field.jpg');
+
+    card.innerHTML = `
+      <div class="card-badge">${escapeHtml(brand)}</div>
+      <div class="card-img-wrapper">
+        <img
+          src="${escapeHtml(imageSrc)}"
+          alt="${escapeHtml(title)}"
+          loading="lazy"
+          data-fallback="images/content_crate_corn_field.jpg"
+        >
+      </div>
+      <div class="card-content">
+        <span class="card-category">${escapeHtml(categoryName)}</span>
+        <h3 class="card-title">${escapeHtml(title)}</h3>
+        <p class="card-description">${escapeHtml(description)}</p>
+        <div class="card-meta">
+          <span><strong>Pack:</strong> ${escapeHtml(pack)}</span>
+          <span><strong>Origin:</strong> ${escapeHtml(origin)}</span>
+        </div>
+        <button 
+          class="btn-card-action" 
+          data-sku="${escapeHtml(sku)}"
+          aria-haspopup="dialog"
+          aria-label="View spec sheet and nutrition for ${escapeHtml(title)}"
+        >
+          View Spec Sheet &amp; Nutrition
+        </button>
+      </div>
+    `;
+
+    // Safe error handling for missing images (CSP compliant)
+    const img = card.querySelector('img');
+    img.addEventListener('error', function handleImgError() {
+      this.removeEventListener('error', handleImgError);
+      this.src = this.getAttribute('data-fallback');
+    });
+
+    fragment.appendChild(card);
+  });
+
+  productGrid.appendChild(fragment);
+
+  if (catalogStatus) {
+    catalogStatus.textContent = `Showing ${filtered.length} product(s)`;
+  }
+}
+
+// Modal dialog listeners
+function initModalListeners() {
+  const productModal = document.getElementById('productModal');
+  const modalClose = document.getElementById('modalClose');
+
+  if (modalClose && productModal) {
+    modalClose.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+      if (e.target === productModal) closeModal();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+}
+
+// Populate modal with product specifications & FDA nutrition table from CSV row
+function openProductModal(product) {
+  const productModal = document.getElementById('productModal');
+  if (!productModal || !product) return;
+
+  const modalTitle = document.getElementById('modalTitle');
+  const modalSku = document.getElementById('modalSku');
+  const modalDescription = document.getElementById('modalDescription');
+  const specPack = document.getElementById('specPack');
+  const specWeight = document.getElementById('specWeight');
+  const specPort = document.getElementById('specPort');
+  const specShelf = document.getElementById('specShelf');
+
+  if (modalTitle) modalTitle.textContent = product.title || product.name || 'Product Details';
+
+  if (modalSku) {
+    const skuVal = product.sku || product.id;
+    modalSku.textContent = skuVal ? `SKU: ${skuVal}` : 'SKU: -';
+  }
+
+  if (modalDescription) modalDescription.textContent = product.description || product.desc || '';
+  if (specPack) specPack.textContent = product.pack || product.pack_size || '-';
+  if (specWeight) specWeight.textContent = product.weight || product.net_weight || '-';
+  if (specPort) specPort.textContent = product.port || 'San Francisco / Oakland, CA';
+  if (specShelf) specShelf.textContent = product.shelf_life || '36 Months';
+
+  const setElemText = (id, val, fallback = '-') => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val !== undefined && val !== '' ? val : fallback;
+  };
+
+  setElemText('nfServings', product.servings || product.servings_per_container || 'Approx. 4');
+  setElemText('nfServingSize', product.serving_size || '1/2 cup (140g)');
+  setElemText('nfCalories', product.calories || '100');
+  setElemText('nfTotalFat', product.total_fat || '0g');
+  setElemText('nfTotalFatDV', product.total_fat_dv || '0%');
+  setElemText('nfSodium', product.sodium || '10mg');
+  setElemText('nfSodiumDV', product.sodium_dv || '0%');
+  setElemText('nfCarbs', product.carbs || product.total_carbohydrate || '24g');
+  setElemText('nfCarbsDV', product.carbs_dv || '9%');
+  setElemText('nfFiber', product.fiber || product.dietary_fiber || '1g');
+  setElemText('nfFiberDV', product.fiber_dv || '4%');
+  setElemText('nfSugars', product.sugars || product.total_sugars || '21g');
+  setElemText('nfAddedSugars', product.added_sugars || '0g');
+  setElemText('nfAddedSugarsDV', product.added_sugars_dv || '0%');
+  setElemText('nfProtein', product.protein || '1g');
+  setElemText('nfPotassium', product.potassium || '110mg');
+  setElemText('nfPotassiumDV', product.potassium_dv || '2%');
+
+  productModal.classList.add('active');
+  productModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeModal() {
+  const productModal = document.getElementById('productModal');
+  if (productModal) {
+    productModal.classList.remove('active');
+    productModal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+// XSS Prevention Utility
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (match) => {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return map[match];
+  });
+}

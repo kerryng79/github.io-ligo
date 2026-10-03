@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liberty Gold Fruit Co. | Premium Food Products Since 1932</title>
-  <!-- Favicon from images directory -->
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/ligo_favicon.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +22,12 @@
 <!-- FIXED NAVBAR -->
 <nav class="navbar">
   <div class="container nav-container">
-    <div class="logo-text">
-      <a href="#" class="logo-text">
-        <img
-                src="images/navbar_liberty-gold.png"
-                alt="Liberty Gold Fruit Company Logo"
-                decoding="async">
-      </a>
-    </div>
+    <a href="#" class="logo-wrapper">
+      <img
+              src="images/navbar_liberty-gold.png"
+              alt="Liberty Gold Fruit Company Logo"
+              decoding="async">
+    </a>
 
     <div class="nav-text">
       <p class="nav-title">LIBERTY GOLD</p>
@@ -139,141 +139,51 @@
     <h2 class="section-title">Product Showcase</h2>
     <p class="section-subtitle">Explore our core international consumer and industrial offerings.</p>
 
-    <!-- Search & Filter Controls -->
-    <div class="catalog-controls">
-      <div class="search-box">
-        <input type="text" id="productSearch" placeholder="Search products by name or SKU..." aria-label="Search products">
-        <span class="search-icon">🔍</span>
-      </div>
+    <!-- Main Two-Column Layout Wrapper -->
+    <div class="catalog-layout">
+      <!-- Left Sidebar: Filter Buttons Group -->
+      <aside class="catalog-controls">
+        <div class="filter-chips" role="tablist" aria-label="Product categories">
+          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All Products</button>
 
-      <div class="filter-chips" role="tablist" aria-label="Product categories">
-        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All Products</button>
-        <button class="chip" data-filter="fruits" role="tab" aria-selected="false">Canned Fruits</button>
-        <button class="chip" data-filter="vegetables" role="tab" aria-selected="false">Vegetables</button>
-        <button class="chip" data-filter="juices" role="tab" aria-selected="false">Juices &amp; Drinks</button>
-        <button class="chip" data-filter="foodservice" role="tab" aria-selected="false">Foodservice &amp; Bulk</button>
-      </div>
-    </div>
+          <!-- Canned & Shelf-Stable Goods -->
+          <button class="chip" data-filter="CannedFruits" role="tab" aria-selected="false">Canned Fruits</button>
+          <button class="chip" data-filter="4ozTravelinFruitCups" role="tab" aria-selected="false">4 oz. Travelin' Fruit Cups</button>
+          <button class="chip" data-filter="CannedVegetables" role="tab" aria-selected="false">Canned Vegetables</button>
+          <button class="chip" data-filter="CannedFish" role="tab" aria-selected="false">Sardines &amp; Canned Fish</button>
 
-    <!-- Live Search Feedback -->
-    <div id="catalogStatus" class="catalog-status" aria-live="polite">Showing 6 product(s)</div>
+          <!-- Snacks & Produce -->
+          <button class="chip" data-filter="DriedFruits" role="tab" aria-selected="false">Dried Fruits</button>
+          <button class="chip" data-filter="Canister" role="tab" aria-selected="false">Canister Snacks</button>
 
-    <!-- Product Grid -->
-    <div class="product-grid" id="productGrid">
+          <!-- Beverages -->
+          <button class="chip" data-filter="Juices" role="tab" aria-selected="false">Bottled &amp; Tetra Pack Juices</button>
+          <button class="chip" data-filter="Sodas" role="tab" aria-selected="false">Soda Beverages</button>
 
-      <!-- Real Item 1: LIGO Peach Halves -->
-      <article class="product-card" data-category="fruits" data-title="ligo yellow cling peach halves in heavy syrup heavy syrup california">
-        <div class="card-badge">LIGO Brand</div>
-        <div class="card-img-wrapper">
-          <img
-                  src="images/PeachHalves-34076.png"
-                  alt="LIGO Yellow Cling Peach Halves in Heavy Syrup"
-                  loading="lazy"
-                  onerror="this.onerror=null; this.src='https://placehold.co/300x180?text=Yellow+Cling+Peaches';"
-          >
+          <!-- Specialty & Frozen -->
+          <button class="chip" data-filter="Specialty" role="tab" aria-selected="false">Condiments &amp; Specialty Item</button>
+          <button class="chip" data-filter="Frozen" role="tab" aria-selected="false">Frozen Products</button>
         </div>
-        <div class="card-content">
-          <span class="card-category">Canned Fruits</span>
-          <h3 class="card-title">LIGO Yellow Cling Peach Halves</h3>
-          <p class="card-description">Selected sun-ripened California yellow cling peach halves packed in rich heavy syrup. Superior firm texture and golden color.</p>
-          <div class="card-meta">
-            <span><strong>Pack:</strong> 24 / 825g</span>
-            <span><strong>Origin:</strong> USA</span>
+      </aside>
+
+      <!-- Right Content Area: Search Box + Status + Product Grid -->
+      <main class="catalog-content">
+        <!-- Search Box directly on top of the Product Grid -->
+        <div class="search-box">
+          <input type="text" id="productSearch" placeholder="Search products by name or SKU..." aria-label="Search products">
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Live Search & Load Feedback -->
+        <div id="catalogStatus" class="catalog-status" aria-live="polite">Loading products catalog from specifications dataset...</div>
+
+        <!-- Dynamic Product Grid container populated by app.js -->
+        <div class="product-grid" id="productGrid">
+          <div class="loading-spinner-wrapper">
+            <p class="status-message">Loading product catalog...</p>
           </div>
-          <button class="btn-card-action" data-modal-trigger="peach-halves">View Spec Sheet &amp; Nutrition</button>
         </div>
-      </article>
-
-      <!-- Real Item 2: LIGO Sliced Peaches -->
-      <article class="product-card" data-category="fruits" data-title="ligo sliced yellow cling peaches in light syrup">
-        <div class="card-badge">LIGO Brand</div>
-        <div class="card-img-wrapper">
-          <img src="images/crate_corn_field.jpg" alt="LIGO Sliced Yellow Cling Peaches" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Sliced+Peaches';">
-        </div>
-        <div class="card-content">
-          <span class="card-category">Canned Fruits</span>
-          <h3 class="card-title">LIGO Sliced Yellow Cling Peaches</h3>
-          <p class="card-description">Uniformly sliced premium California yellow cling peaches, conveniently packed for baking, desserts, or retail breakfast service.</p>
-          <div class="card-meta">
-            <span><strong>Pack:</strong> 24 / 425g</span>
-            <span><strong>Origin:</strong> USA</span>
-          </div>
-          <button class="btn-card-action" data-modal-trigger="peach-slices">View Spec Sheet &amp; Nutrition</button>
-        </div>
-      </article>
-
-      <!-- Real Item 3: LIGO Fruit Cocktail -->
-      <article class="product-card" data-category="fruits" data-title="ligo fruit cocktail in heavy syrup peaches pears grapes pineapple cherries">
-        <div class="card-badge">LIGO Brand</div>
-        <div class="card-img-wrapper">
-          <img src="images/crate_corn_field.jpg" alt="LIGO Fruit Cocktail" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Fruit+Cocktail';">
-        </div>
-        <div class="card-content">
-          <span class="card-category">Canned Fruits</span>
-          <h3 class="card-title">LIGO Fruit Cocktail in Heavy Syrup</h3>
-          <p class="card-description">Classic California blend of diced peaches, pears, seedless grapes, pineapple sector cuts, and halved maraschino cherries.</p>
-          <div class="card-meta">
-            <span><strong>Pack:</strong> 24 / 825g</span>
-            <span><strong>Grade:</strong> Choice</span>
-          </div>
-          <button class="btn-card-action" data-modal-trigger="fruit-cocktail">View Spec Sheet &amp; Nutrition</button>
-        </div>
-      </article>
-
-      <!-- Real Item 4: LIGO Super Sweet Corn -->
-      <article class="product-card" data-category="vegetables" data-title="ligo super sweet whole kernel corn sweetcorn canned">
-        <div class="card-badge">LIGO Brand</div>
-        <div class="card-img-wrapper">
-          <img src="images/crate_corn_field.jpg" alt="LIGO Super Sweet Whole Kernel Corn" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Super+Sweet+Corn';">
-        </div>
-        <div class="card-content">
-          <span class="card-category">Vegetables</span>
-          <h3 class="card-title">LIGO Super Sweet Whole Kernel Corn</h3>
-          <p class="card-description">Freshly harvested golden whole kernel sweet corn, vacuum packed at peak ripeness to preserve natural sweetness and tender crunch.</p>
-          <div class="card-meta">
-            <span><strong>Pack:</strong> 24 / 425g</span>
-            <span><strong>Origin:</strong> USA</span>
-          </div>
-          <button class="btn-card-action" data-modal-trigger="sweet-corn">View Spec Sheet &amp; Nutrition</button>
-        </div>
-      </article>
-
-      <!-- Real Item 5: LIGO Pineapple Juice -->
-      <article class="product-card" data-category="juices" data-title="ligo 100% pineapple juice unsweetened pure vitamin c">
-        <div class="card-badge">LIGO Brand</div>
-        <div class="card-img-wrapper">
-          <img src="images/crate_corn_field.jpg" alt="LIGO 100% Pineapple Juice" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Pineapple+Juice';">
-        </div>
-        <div class="card-content">
-          <span class="card-category">Juices &amp; Drinks</span>
-          <h3 class="card-title">LIGO 100% Pure Pineapple Juice</h3>
-          <p class="card-description">100% pure unsweetened pineapple juice, rich in natural flavor and fortified with Vitamin C. Contains no added sugar or additives.</p>
-          <div class="card-meta">
-            <span><strong>Pack:</strong> 24 / 536ml</span>
-            <span><strong>Grade:</strong> Premium</span>
-          </div>
-          <button class="btn-card-action" data-modal-trigger="pineapple-juice">View Spec Sheet &amp; Nutrition</button>
-        </div>
-      </article>
-
-      <!-- Real Item 6: Liberty Gold Bartlett Pear Halves -->
-      <article class="product-card" data-category="fruits" data-title="liberty gold bartlett pear halves in fruit juice concentrate">
-        <div class="card-badge">Liberty Gold</div>
-        <div class="card-img-wrapper">
-          <img src="images/crate_corn_field.jpg" alt="Liberty Gold Bartlett Pear Halves" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Bartlett+Pear+Halves';">
-        </div>
-        <div class="card-content">
-          <span class="card-category">Canned Fruits</span>
-          <h3 class="card-title">Liberty Gold Bartlett Pear Halves</h3>
-          <p class="card-description">Hand-picked Pacific Northwest Bartlett pears packed in 100% real fruit juice concentrate for a clean, sweet taste.</p>
-          <div class="card-meta">
-            <span><strong>Pack:</strong> 12 / 825g</span>
-            <span><strong>Origin:</strong> USA</span>
-          </div>
-          <button class="btn-card-action" data-modal-trigger="pear-halves">View Spec Sheet &amp; Nutrition</button>
-        </div>
-      </article>
-
+      </main>
     </div>
   </div>
 </section>
@@ -285,6 +195,7 @@
     <div class="modal-header">
       <span class="modal-badge" id="modalBadge">Spec Sheet &amp; Nutrition</span>
       <h2 id="modalTitle">Product Details</h2>
+      <p id="modalSku" class="modal-sku">SKU: -</p>
     </div>
 
     <div class="modal-body">
@@ -302,7 +213,7 @@
       <!-- FDA Style Nutrition Facts Box -->
       <div class="nutrition-facts-box" id="nutritionFactsBox">
         <div class="nf-title">Nutrition Facts</div>
-        <div class="nf-servings" id="nfServings">4 servings per container</div>
+        <div class="nf-servings">Servings Per Container <span id="nfServings">4 servings per container</span></div>
         <div class="nf-serving-size">Serving size <span id="nfServingSize">1/2 cup (140g)</span></div>
         <div class="nf-bar-thick"></div>
         <div class="nf-amount-per-serving">Amount per serving</div>
@@ -393,6 +304,7 @@
           <li><a href="#divisions">Product Divisions</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#story">Our Story</a></li>
+          <li><a href="#products">Products</a></li>
           <li><a href="#contact">Corporate Contact</a></li>
         </ul>
       </div>
