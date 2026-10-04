@@ -338,8 +338,7 @@ function openProductModal(product) {
 
 /**
  * Generates and triggers download of a full PDF Spec Sheet for the active product,
- * including complete FDA Nutrition Facts details and product image.
- * Compatible with Chrome on GitHub Pages / HTTPS static hosting.
+ * keeping the original image proportions.
  */
 async function generateProductPDF(product) {
   // 1. Ensure jsPDF is loaded
@@ -360,12 +359,12 @@ async function generateProductPDF(product) {
   const darkText = [30, 30, 30];
   const mutedText = [100, 100, 100];
 
-  // Helper: Convert image URL or path to base64 Data URL safely for jsPDF canvas
+  // Helper: Convert image URL to base64 Data URL & retain dimensions
   const loadImageAsBase64 = (url) => {
     return new Promise((resolve) => {
       if (!url) return resolve(null);
       const img = new Image();
-      img.crossOrigin = 'Anonymous'; // Fix CORS restrictions on Chrome/GitHub Pages
+      img.crossOrigin = 'Anonymous';
       img.onload = () => {
         try {
           const canvas = document.createElement('canvas');
@@ -374,7 +373,11 @@ async function generateProductPDF(product) {
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0);
           const dataURL = canvas.toDataURL('image/jpeg');
-          resolve(dataURL);
+          resolve({
+            dataURL,
+            width: img.width,
+            height: img.height
+          });
         } catch (err) {
           console.warn('Image canvas conversion failed:', err);
           resolve(null);
@@ -396,10 +399,10 @@ async function generateProductPDF(product) {
     DEFAULT_IMAGE
   ].filter(Boolean);
 
-  let productImgBase64 = null;
+  let productImgData = null;
   for (const candidateSrc of imageCandidates) {
-    productImgBase64 = await loadImageAsBase64(candidateSrc);
-    if (productImgBase64) break;
+    productImgData = await loadImageAsBase64(candidateSrc);
+    if (productImgData) break;
   }
 
   // --- 1. Top Accent & Header ---
@@ -432,17 +435,36 @@ async function generateProductPDF(product) {
   doc.text(`Category: ${product.category_label || product.category || 'Food Products'}`, 14, 43);
   doc.text(`SKU: ${product.sku || product.id || 'N/A'}`, 140, 43);
 
-  // --- Insert Product Image if successfully loaded ---
+  // --- 3. Insert Product Image Preserving Original Aspect Ratio ---
   let startTableY = 47;
-  if (productImgBase64) {
+  if (productImgData) {
     try {
-      doc.addImage(productImgBase64, 'JPEG', 148, 47, 45, 35);
+      const maxW = 45; // mm
+      const maxH = 35; // mm
+      const imgAspect = productImgData.width / productImgData.height;
+      const boxAspect = maxW / maxH;
+
+      let renderW, renderH;
+
+      if (imgAspect > boxAspect) {
+        renderW = maxW;
+        renderH = maxW / imgAspect;
+      } else {
+        renderH = maxH;
+        renderW = maxH * imgAspect;
+      }
+
+      // Center vertically within the 35mm height region, right-aligned to 193mm
+      const posX = 193 - renderW;
+      const posY = 47 + (maxH - renderH) / 2;
+
+      doc.addImage(productImgData.dataURL, 'JPEG', posX, posY, renderW, renderH);
     } catch (e) {
       console.warn('Could not attach image to PDF:', e);
     }
   }
 
-  // --- 3. Logistics & Packaging Specifications Table ---
+  // --- 4. Logistics & Packaging Specifications Table ---
   const specsData = [
     ['Packaging Format', product.pack || product.pack_size || 'N/A'],
     ['Net / Drain Weight', product.weight || product.net_weight || 'N/A'],
@@ -451,13 +473,12 @@ async function generateProductPDF(product) {
     ['Origin / Harvest Region', product.origin || 'USA']
   ];
 
-  // Resolve autoTable plugin whether attached directly to doc or window.jspdf.autoTable
   const autoTableFn = doc.autoTable || (window.jspdf && window.jspdf.autoTable) || window.autoTable;
 
   if (typeof autoTableFn === 'function') {
     autoTableFn.call(doc, {
       startY: startTableY,
-      margin: { right: productImgBase64 ? 68 : 14, left: 14 }, // Leave space for image if present
+      margin: { right: productImgData ? 68 : 14, left: 14 },
       head: [['Logistics & Packaging Specification', 'Details']],
       body: specsData,
       theme: 'grid',
@@ -468,7 +489,7 @@ async function generateProductPDF(product) {
 
     let currentY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 8 : 95;
 
-    // --- 4. Comprehensive FDA Nutrition Facts Table ---
+    // --- 5. FDA Nutrition Facts Table ---
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(11);
     doc.setTextColor(...darkText);
@@ -529,7 +550,7 @@ async function generateProductPDF(product) {
     );
   }
 
-  // --- 5. Footer Contact Block ---
+  // --- 6. Footer Contact Block ---
   doc.setDrawColor(220, 220, 220);
   doc.line(14, 275, 196, 275);
 
@@ -539,12 +560,11 @@ async function generateProductPDF(product) {
   doc.text('Liberty Gold Fruit Company LP | 500 Eccles Avenue, South San Francisco, CA 94080 USA', 14, 281);
   doc.text('Phone: (650) 583-4700 | Export Inquiries: sales@libertygold.com', 14, 286);
 
-  // --- 6. Trigger Download ---
+  // --- 7. Trigger Download ---
   const safeName = (product.title || product.name || 'product')
       .toLowerCase()
       .replace(/[^a-z0-9]/g, '_');
 
-  // Safe trigger for Chrome on GitHub Pages / HTTPS static hosting
   doc.save(`LIGO_Spec_Sheet_${safeName}.pdf`);
 }
 
