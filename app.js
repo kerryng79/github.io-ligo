@@ -114,19 +114,64 @@ function parseCSVRow(rowText) {
   return values;
 }
 
-// Bind search input, category filter chips, and grid event delegation
+// Bind search input, category filter chips, and clear search button toggle
 function initControls() {
   const searchInput = document.getElementById('productSearch');
+  const clearBtn = document.getElementById('clearSearch');
+  const searchIcon = document.getElementById('searchIcon');
   const filterChips = document.querySelectorAll('.chip');
   const productGrid = document.getElementById('productGrid');
 
+  // Sync icon state between Magnifying Glass ('🔍') and Clear Cross ('✕')
+  function updateSearchIcon() {
+    const hasSearchText = searchInput && searchInput.value.trim().length > 0;
+    const isCategoryFiltered = activeCategory !== 'all';
+
+    if (hasSearchText || isCategoryFiltered) {
+      if (searchIcon) searchIcon.textContent = '✕';
+      if (clearBtn) {
+        clearBtn.classList.add('is-active');
+        clearBtn.setAttribute('title', 'Clear search and filters');
+      }
+    } else {
+      if (searchIcon) searchIcon.textContent = '🔍';
+      if (clearBtn) {
+        clearBtn.classList.remove('is-active');
+        clearBtn.removeAttribute('title');
+      }
+    }
+  }
+
+  // Handle input search changes
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
+      updateSearchIcon();
       renderProducts();
     });
   }
 
+  // Handle Clear Button clicks
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (!clearBtn.classList.contains('is-active')) return;
+
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+
+      activeCategory = 'all';
+      filterChips.forEach(c => {
+        const isAll = c.getAttribute('data-filter') === 'all';
+        c.classList.toggle('active', isAll);
+        c.setAttribute('aria-selected', isAll ? 'true' : 'false');
+      });
+
+      updateSearchIcon();
+      renderProducts();
+    });
+  }
+
+  // Handle Category Filter Chips clicks
   filterChips.forEach(chip => {
     chip.addEventListener('click', () => {
       filterChips.forEach(c => {
@@ -137,6 +182,7 @@ function initControls() {
       chip.setAttribute('aria-selected', 'true');
 
       activeCategory = chip.getAttribute('data-filter') || 'all';
+      updateSearchIcon();
       renderProducts();
     });
   });
@@ -341,7 +387,6 @@ function openProductModal(product) {
  * keeping the original image proportions.
  */
 async function generateProductPDF(product) {
-  // 1. Ensure jsPDF is loaded
   const jspdfLib = window.jspdf ? window.jspdf : window.jsPDF;
   if (!jspdfLib) {
     alert('PDF generation library is loading. Please try again in a moment.');
@@ -359,7 +404,6 @@ async function generateProductPDF(product) {
   const darkText = [30, 30, 30];
   const mutedText = [100, 100, 100];
 
-  // Helper: Convert image URL to base64 Data URL & retain dimensions
   const loadImageAsBase64 = (url) => {
     return new Promise((resolve) => {
       if (!url) return resolve(null);
@@ -388,7 +432,6 @@ async function generateProductPDF(product) {
     });
   };
 
-  // --- Image Resolution Order (URL -> SKU -> Default) ---
   const sku = String(product.sku || product.id || '').trim();
   const DEFAULT_IMAGE = 'images/content_crate_corn_field.jpg';
 
@@ -405,7 +448,7 @@ async function generateProductPDF(product) {
     if (productImgData) break;
   }
 
-  // --- 1. Top Accent & Header ---
+  // Header Accent
   doc.setFillColor(...redAccent);
   doc.rect(0, 0, 210, 8, 'F');
 
@@ -423,7 +466,7 @@ async function generateProductPDF(product) {
   doc.setDrawColor(220, 220, 220);
   doc.line(14, 29, 196, 29);
 
-  // --- 2. Product Name & Metadata ---
+  // Metadata
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(14);
   doc.setTextColor(...redAccent);
@@ -435,12 +478,11 @@ async function generateProductPDF(product) {
   doc.text(`Category: ${product.category_label || product.category || 'Food Products'}`, 14, 43);
   doc.text(`SKU: ${product.sku || product.id || 'N/A'}`, 140, 43);
 
-  // --- 3. Insert Product Image Preserving Original Aspect Ratio ---
   let startTableY = 47;
   if (productImgData) {
     try {
-      const maxW = 45; // mm
-      const maxH = 35; // mm
+      const maxW = 45;
+      const maxH = 35;
       const imgAspect = productImgData.width / productImgData.height;
       const boxAspect = maxW / maxH;
 
@@ -454,7 +496,6 @@ async function generateProductPDF(product) {
         renderW = maxH * imgAspect;
       }
 
-      // Center vertically within the 35mm height region, right-aligned to 193mm
       const posX = 193 - renderW;
       const posY = 47 + (maxH - renderH) / 2;
 
@@ -464,7 +505,6 @@ async function generateProductPDF(product) {
     }
   }
 
-  // --- 4. Logistics & Packaging Specifications Table ---
   const specsData = [
     ['Packaging Format', product.pack || product.pack_size || 'N/A'],
     ['Net / Drain Weight', product.weight || product.net_weight || 'N/A'],
@@ -489,7 +529,6 @@ async function generateProductPDF(product) {
 
     let currentY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 8 : 95;
 
-    // --- 5. FDA Nutrition Facts Table ---
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(11);
     doc.setTextColor(...darkText);
@@ -538,7 +577,6 @@ async function generateProductPDF(product) {
 
     currentY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 5 : 250;
 
-    // Daily Value Footnote
     doc.setFontSize(7);
     doc.setFont('helvetica', 'italic');
     doc.setTextColor(...mutedText);
@@ -550,7 +588,7 @@ async function generateProductPDF(product) {
     );
   }
 
-  // --- 6. Footer Contact Block ---
+  // Footer Contact Block
   doc.setDrawColor(220, 220, 220);
   doc.line(14, 275, 196, 275);
 
@@ -560,7 +598,6 @@ async function generateProductPDF(product) {
   doc.text('Liberty Gold Fruit Company LP | 500 Eccles Avenue, South San Francisco, CA 94080 USA', 14, 281);
   doc.text('Phone: (650) 583-4700 | Export Inquiries: sales@libertygold.com', 14, 286);
 
-  // --- 7. Trigger Download ---
   const safeName = (product.title || product.name || 'product')
       .toLowerCase()
       .replace(/[^a-z0-9]/g, '_');
