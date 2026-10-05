@@ -246,14 +246,20 @@ function renderProducts() {
 
     const sku = String(product.sku || product.id || '').trim();
 
-    // Primary target: image_url -> SKU image -> default image
-    const primaryImageSrc = product.image_url
-        || (sku ? `images/${sku}.jpg` : 'images/content_crate_corn_field.jpg');
+    // Primary target: image_url from CSV -> fallback to default image
+    const primaryImageSrc = product.image_url || 'images/content_crate_corn_field.jpg';
 
-    // Secondary fallback target if the primary image path fails to load
-    const fallbackImageSrc = sku && product.image_url
-        ? `images/${sku}.jpg`
-        : 'images/content_crate_corn_field.jpg';
+// Secondary fallback target if the primary image path fails to load
+    const fallbackImageSrc = 'images/content_crate_corn_field.jpg';
+
+    // // Primary target: image_url -> SKU image -> default image
+    // const primaryImageSrc = product.image_url
+    //     || (sku ? `images/${sku}.jpg` : 'images/content_crate_corn_field.jpg');
+    //
+    // // Secondary fallback target if the primary image path fails to load
+    // const fallbackImageSrc = sku && product.image_url
+    //     ? `images/${sku}.jpg`
+    //     : 'images/content_crate_corn_field.jpg';
 
     card.innerHTML = `
       <div class="card-badge">${escapeHtml(brand)}</div>
@@ -512,15 +518,27 @@ async function generateProductPDF(product) {
     styles: { fontSize: 7.5, cellPadding: 1.5 }
   });
 
-  // Product Image Box on the Right (image_url -> sku -> default image fallback)
+  // // Product Image Box on the Right (image_url -> sku -> default image fallback)
+  // const defaultImage = 'images/content_crate_corn_field.jpg';
+  // const candidateImageUrl = product.image_url || (sku ? `images/${sku}.png` : null) || (sku ? `images/${sku}.jpg` : null) || defaultImage;
+  // let productImgData = await loadImageAsBase64(candidateImageUrl);
+  //
+  // // Fallback to jpg if png failed or vice versa if SKU is present
+  // if (!productImgData && sku) {
+  //   productImgData = await loadImageAsBase64(`images/${sku}.jpg`);
+  // }
+  // if (!productImgData) {
+  //   productImgData = await loadImageAsBase64(defaultImage);
+  // }
+  //
+
+
+  // Product Image Box on the Right (image_url -> default image fallback)
   const defaultImage = 'images/content_crate_corn_field.jpg';
-  const candidateImageUrl = product.image_url || (sku ? `images/${sku}.png` : null) || (sku ? `images/${sku}.jpg` : null) || defaultImage;
+  const candidateImageUrl = product.image_url || defaultImage;
   let productImgData = await loadImageAsBase64(candidateImageUrl);
 
-  // Fallback to jpg if png failed or vice versa if SKU is present
-  if (!productImgData && sku) {
-    productImgData = await loadImageAsBase64(`images/${sku}.jpg`);
-  }
+// Final fallback to default image if loading fails
   if (!productImgData) {
     productImgData = await loadImageAsBase64(defaultImage);
   }
