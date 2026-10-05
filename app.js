@@ -446,35 +446,43 @@ async function generateProductPDF(product) {
     });
   };
 
-  // 1. LETTERHEAD: Logo and Navbar Text
+// 1. PDF LETTERHEAD: Logo and Navbar Header (Matched to .navbar stylesheet)
   const logoData = await loadImageAsBase64('images/navbar_liberty-gold.png');
   if (logoData) {
-    const logoW = 35;
+    const logoW = 32; // Optimized width matching navbar scaling
     const logoH = (logoData.height / logoData.width) * logoW;
     doc.addImage(logoData.dataURL, 'PNG', 14, 10, logoW, logoH);
   }
 
-  doc.setFont('helvetica', 'bold');
+// Exact RGB constants derived from stylesheet CSS variables
+//   const navyBlue = [10, 25, 47];       // --navy-blue (#0A192F)
+  const goldenSun = [244, 209, 96];    // --golden-sun (#F4D160)
+  const textMuted = [102, 102, 102];   // --text-muted (#666666)
+
+  const textStartX = 50; // Aligned cleanly to the right of the brand logo
+
+// Title (.nav-title: serif, bold, matching --golden-sun / --navy-blue hierarchy)
+  doc.setFont('times', 'bold');
+  doc.setFontSize(18); // Scaled proportionally from 1.75rem
   doc.setTextColor(...navyBlue);
+  doc.text('LIBERTY GOLD', textStartX, 16);
 
-  // Title (NAV-TITLE)
-  doc.setFontSize(22);
-  doc.text('LIBERTY GOLD', 52, 18);
+// Subtitle (.nav-subtitle: serif, regular, using --text-muted for contrast)
+  doc.setFont('times', 'normal');
+  doc.setFontSize(9.5); // Scaled from 1rem base
+  doc.setTextColor(...textMuted);
+  doc.text('Growing, harvesting, processing and marketing...', textStartX, 21.5);
 
-  // Subtitle (NAV-SUBTITLE)
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'normal');
-  doc.text('Growing, harvesting, processing and marketing...', 52, 23);
-
-  // Slogan (NAV-SLOGAN)
-  doc.setFontSize(14);
-  doc.setFont('helvetica', 'italic');
+// Slogan (.nav-slogan: serif italic matching --font-script / --font-serif styling)
+  doc.setFont('times', 'italic');
+  doc.setFontSize(11); // Scaled from 1.875rem mobile/desktop harmony
   doc.setTextColor(...navyBlue);
-  doc.text('The Best Foods the World Has to Offer', 52, 30);
+  doc.text('The Best Foods the World Has to Offer', textStartX, 27.5);
 
-  doc.setDrawColor(...goldSun);
-  doc.setLineWidth(1);
-  doc.line(14, 35, 196, 35);
+// Navbar bottom border accent line (matching border-bottom: 3px solid var(--golden-sun))
+  doc.setDrawColor(...goldenSun);
+  doc.setLineWidth(0.85); // Corresponds to the 3px visual weight in print
+  doc.line(14, 31, 196, 31);
 
   // 2. PRODUCT TITLE & CATEGORY
   const sku = String(product.sku || product.id || '').trim();
