@@ -340,16 +340,32 @@
           <td id="specPack">-</td>
         </tr>
         <tr>
-          <th>Net / Drain Weight</th>
+          <th>Net Weight</th>
           <td id="specWeight">-</td>
-        </tr>
-        <tr>
-          <th>Shelf Life</th>
-          <td id="specShelf">36 Months</td>
         </tr>
         <tr>
           <th>Shipping Port</th>
           <td id="specPort">San Francisco / Oakland, CA</td>
+        </tr>
+        <tr>
+          <th>Case Weight</th>
+          <td id="specCaseWeight">-</td>
+        </tr>
+        <tr>
+          <th>Case Cube</th>
+          <td id="specCaseCube">-</td>
+        </tr>
+        <tr>
+          <th>Case Dimensions</th>
+          <td id="specCaseDimensions">-</td>
+        </tr>
+        <tr>
+          <th>Cases Per Pallet</th>
+          <td id="specCasesPerPallet">-</td>
+        </tr>
+        <tr>
+          <th>Pallet Pattern</th>
+          <td id="specPalletPattern">-</td>
         </tr>
       </table>
 
@@ -410,16 +426,16 @@
         </div>
         <div class="nf-bar-thick"></div>
         <div class="nf-micro-row">
-          <span>Vitamin D 0mcg</span>
-          <span>0%</span>
+          <span>Vitamin D <span id="nfVitaminD">0mcg</span></span>
+          <span id="nfVitaminDDV">0%</span>
         </div>
         <div class="nf-micro-row">
-          <span>Calcium 10mg</span>
-          <span>0%</span>
+          <span>Calcium <span id="nfCalcium">10mg</span></span>
+          <span id="nfCalciumDV">0%</span>
         </div>
         <div class="nf-micro-row">
-          <span>Iron 0.4mg</span>
-          <span>2%</span>
+          <span>Iron <span id="nfIron">0.4mg</span></span>
+          <span id="nfIronDV">2%</span>
         </div>
         <div class="nf-micro-row">
           <span>Potassium <span id="nfPotassium">110mg</span></span>
@@ -433,12 +449,7 @@
 
     <div class="modal-footer">
       <div class="modal-actions">
-        <a
-                href="#"
-                id="btnDownloadSpec"
-                class="btn-secondary"
-                download
-        >
+        <a href="#" id="btnDownloadSpec" class="btn-secondary" download>
           <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -446,10 +457,7 @@
           </svg>
           Download PDF Spec Sheet
         </a>
-        <a
-                href="mailto:tim@libertygold.com?subject=Product%20Spec%20Inquiry"
-                class="btn-primary"
-        >Inquire About Wholesale Order</a>
+        <a href="mailto:tim@libertygold.com?subject=Product%20Spec%20Inquiry" class="btn-primary">Inquire About Wholesale Order</a>
       </div>
     </div>
   </div>

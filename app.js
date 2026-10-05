@@ -60,7 +60,7 @@ async function fetchAndInitCatalog() {
   } catch (error) {
     console.error('Error loading product catalog CSV:', error);
     if (productGrid) {
-      productGrid.innerHTML = '<p class="status-message error-message">Unable to load product catalog. Please try again later.</p>';
+      productGrid.innerHTML = '<p class="status-message error-message">Unable to load product catalog. Please ensure you are running via a local web server (e.g. VS Code Live Server or Python http.server) rather than opening directly via file://.</p>';
     }
     if (catalogStatus) catalogStatus.textContent = 'Error loading product catalog.';
   }
@@ -246,13 +246,14 @@ function renderProducts() {
 
     const sku = String(product.sku || product.id || '').trim();
 
-    // Primary target: SKU image -> image_url -> default image
-    const primaryImageSrc = sku
-        ? `images/${sku}.jpg`
-        : (product.image_url || 'images/content_crate_corn_field.jpg');
+    // Primary target: image_url -> SKU image -> default image
+    const primaryImageSrc = product.image_url
+        || (sku ? `images/${sku}.jpg` : 'images/content_crate_corn_field.jpg');
 
     // Secondary fallback target if the primary image path fails to load
-    const fallbackImageSrc = product.image_url || 'images/content_crate_corn_field.jpg';
+    const fallbackImageSrc = sku && product.image_url
+        ? `images/${sku}.jpg`
+        : 'images/content_crate_corn_field.jpg';
 
     card.innerHTML = `
       <div class="card-badge">${escapeHtml(brand)}</div>
@@ -267,6 +268,7 @@ function renderProducts() {
       <div class="card-content">
         <span class="card-category">${escapeHtml(categoryName)}</span>
         <h3 class="card-title">${escapeHtml(title)}</h3>
+        <p class="card-sku"><strong>SKU:</strong> ${escapeHtml(sku)}</p>
         <p class="card-description">${escapeHtml(description)}</p>
         <div class="card-meta">
           <span><strong>Pack:</strong> ${escapeHtml(pack)}</span>
@@ -303,16 +305,21 @@ function renderProducts() {
     catalogStatus.textContent = `Showing ${filtered.length} product(s)`;
   }
 }
-
-// Modal dialog listeners
+// Fixed Modal dialog listeners (Reliable outside-click backdrop detection)
 function initModalListeners() {
   const productModal = document.getElementById('productModal');
   const modalClose = document.getElementById('modalClose');
 
-  if (modalClose && productModal) {
-    modalClose.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => {
-      if (e.target === productModal) closeModal();
+  if (productModal) {
+    if (modalClose) {
+      modalClose.addEventListener('click', closeModal);
+    }
+    // Listen for clicks on the backdrop overlay
+    productModal.addEventListener('click', (e) => {
+      // If the click is directly on the overlay backdrop (and not inside modal-content)
+      if (e.target === productModal) {
+        closeModal();
+      }
     });
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
@@ -328,10 +335,15 @@ function openProductModal(product) {
   const modalTitle = document.getElementById('modalTitle');
   const modalSku = document.getElementById('modalSku');
   const modalDescription = document.getElementById('modalDescription');
+
+  // Specification Elements matching index.html
   const specPack = document.getElementById('specPack');
   const specWeight = document.getElementById('specWeight');
-  const specPort = document.getElementById('specPort');
-  const specShelf = document.getElementById('specShelf');
+  const specCaseWeight = document.getElementById('specCaseWeight');
+  const specCaseCube = document.getElementById('specCaseCube');
+  const specCaseDimensions = document.getElementById('specCaseDimensions');
+  const specCasesPerPallet = document.getElementById('specCasesPerPallet');
+  const specPalletPattern = document.getElementById('specPalletPattern');
 
   if (modalTitle) modalTitle.textContent = product.title || product.name || 'Product Details';
 
@@ -341,32 +353,44 @@ function openProductModal(product) {
   }
 
   if (modalDescription) modalDescription.textContent = product.description || product.desc || '';
+
+  // Populate Logistics & Packaging Specifications (Drained weight, shelf life, and port removed)
   if (specPack) specPack.textContent = product.pack || product.pack_size || '-';
   if (specWeight) specWeight.textContent = product.weight || product.net_weight || '-';
-  if (specPort) specPort.textContent = product.port || 'San Francisco / Oakland, CA';
-  if (specShelf) specShelf.textContent = product.shelf_life || '36 Months';
+  if (specCaseWeight) specCaseWeight.textContent = product.case_weight || product.caseWeight || '-';
+  if (specCaseCube) specCaseCube.textContent = product.case_cube || product.caseCube || '-';
+  if (specCaseDimensions) specCaseDimensions.textContent = product.case_dimensions || product.caseDimensions || '-';
+  if (specCasesPerPallet) specCasesPerPallet.textContent = product.cases_per_pallet || product.casesPerPallet || '-';
+  if (specPalletPattern) specPalletPattern.textContent = product.pallet_pattern || product.palletPattern || '-';
 
   const setElemText = (id, val, fallback = '-') => {
     const el = document.getElementById(id);
     if (el) el.textContent = val !== undefined && val !== '' ? val : fallback;
   };
 
+  // FDA Nutrition Facts & Minerals
   setElemText('nfServings', product.servings || product.servings_per_container || 'Approx. 4');
   setElemText('nfServingSize', product.serving_size || '1/2 cup (140g)');
   setElemText('nfCalories', product.calories || '100');
-  setElemText('nfTotalFat', product.total_fat || '0g');
+  setElemText('nfTotalFat', product.total_fat || product.total_fat_g || '0g');
   setElemText('nfTotalFatDV', product.total_fat_dv || '0%');
-  setElemText('nfSodium', product.sodium || '10mg');
+  setElemText('nfSodium', product.sodium || product.sodium_mg || '10mg');
   setElemText('nfSodiumDV', product.sodium_dv || '0%');
-  setElemText('nfCarbs', product.carbs || product.total_carbohydrate || '24g');
+  setElemText('nfCarbs', product.carbs || product.total_carbohydrates_g || '24g');
   setElemText('nfCarbsDV', product.carbs_dv || '9%');
-  setElemText('nfFiber', product.fiber || product.dietary_fiber || '1g');
+  setElemText('nfFiber', product.fiber || product.dietary_fiber_g || '1g');
   setElemText('nfFiberDV', product.fiber_dv || '4%');
-  setElemText('nfSugars', product.sugars || product.total_sugars || '21g');
-  setElemText('nfAddedSugars', product.added_sugars || '0g');
+  setElemText('nfSugars', product.sugars || product.total_sugars_g || '21g');
+  setElemText('nfAddedSugars', product.added_sugars || product.added_sugars_g || '0g');
   setElemText('nfAddedSugarsDV', product.added_sugars_dv || '0%');
-  setElemText('nfProtein', product.protein || '1g');
-  setElemText('nfPotassium', product.potassium || '110mg');
+  setElemText('nfProtein', product.protein || product.protein_g || '1g');
+  setElemText('nfVitaminD', product.vitamin_d || product.vitamin_d_mcg || '0mcg');
+  setElemText('nfVitaminDDV', product.vitamin_d_dv || '0%');
+  setElemText('nfCalcium', product.calcium || product.calcium_mg || '10mg');
+  setElemText('nfCalciumDV', product.calcium_dv || '0%');
+  setElemText('nfIron', product.iron || product.iron_mg || '0.4mg');
+  setElemText('nfIronDV', product.iron_dv || '2%');
+  setElemText('nfPotassium', product.potassium || product.potassium_mg || '110mg');
   setElemText('nfPotassiumDV', product.potassium_dv || '2%');
 
   // --- Attach PDF Download Handler to Button ---
@@ -381,11 +405,6 @@ function openProductModal(product) {
   productModal.classList.add('active');
   productModal.setAttribute('aria-hidden', 'false');
 }
-
-/**
- * Generates and triggers download of a full PDF Spec Sheet for the active product,
- * keeping the original image proportions.
- */
 async function generateProductPDF(product) {
   const jspdfLib = window.jspdf ? window.jspdf : window.jsPDF;
   if (!jspdfLib) {
@@ -394,217 +413,196 @@ async function generateProductPDF(product) {
   }
 
   const { jsPDF } = jspdfLib;
-  const doc = new jsPDF({
-    orientation: 'portrait',
-    unit: 'mm',
-    format: 'a4'
-  });
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
-  const redAccent = [217, 35, 46];
+  // Branding Constants
+  const navyBlue = [10, 25, 47];
+  const goldSun = [244, 209, 96];
   const darkText = [30, 30, 30];
   const mutedText = [100, 100, 100];
 
+  // Helper for Logo/Images
   const loadImageAsBase64 = (url) => {
     return new Promise((resolve) => {
       if (!url) return resolve(null);
       const img = new Image();
       img.crossOrigin = 'Anonymous';
       img.onload = () => {
-        try {
-          const canvas = document.createElement('canvas');
-          canvas.width = img.width;
-          canvas.height = img.height;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0);
-          const dataURL = canvas.toDataURL('image/jpeg');
-          resolve({
-            dataURL,
-            width: img.width,
-            height: img.height
-          });
-        } catch (err) {
-          console.warn('Image canvas conversion failed:', err);
-          resolve(null);
-        }
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        resolve({ dataURL: canvas.toDataURL('image/png'), width: img.width, height: img.height });
       };
       img.onerror = () => resolve(null);
       img.src = url;
     });
   };
 
-  const sku = String(product.sku || product.id || '').trim();
-  const DEFAULT_IMAGE = 'images/content_crate_corn_field.jpg';
-
-  const imageCandidates = [
-    product.image_url,
-    sku ? `images/${sku}.jpg` : null,
-    sku ? `images/${sku}.png` : null,
-    DEFAULT_IMAGE
-  ].filter(Boolean);
-
-  let productImgData = null;
-  for (const candidateSrc of imageCandidates) {
-    productImgData = await loadImageAsBase64(candidateSrc);
-    if (productImgData) break;
+  // 1. LETTERHEAD: Logo and Navbar Text
+  const logoData = await loadImageAsBase64('images/navbar_liberty-gold.png');
+  if (logoData) {
+    const logoW = 35;
+    const logoH = (logoData.height / logoData.width) * logoW;
+    doc.addImage(logoData.dataURL, 'PNG', 14, 10, logoW, logoH);
   }
 
-  // Header Accent
-  doc.setFillColor(...redAccent);
-  doc.rect(0, 0, 210, 8, 'F');
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(...navyBlue);
+
+  // Title (NAV-TITLE)
+  doc.setFontSize(22);
+  doc.text('LIBERTY GOLD', 52, 18);
+
+  // Subtitle (NAV-SUBTITLE)
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Growing, harvesting, processing and marketing...', 52, 23);
+
+  // Slogan (NAV-SLOGAN)
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'italic');
+  doc.setTextColor(...navyBlue);
+  doc.text('The Best Foods the World Has to Offer', 52, 30);
+
+  doc.setDrawColor(...goldSun);
+  doc.setLineWidth(1);
+  doc.line(14, 35, 196, 35);
+
+  // 2. PRODUCT TITLE & CATEGORY
+  const sku = String(product.sku || product.id || '').trim();
 
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(18);
+  doc.setFontSize(15);
   doc.setTextColor(...darkText);
-  doc.text('LIBERTY GOLD FRUIT COMPANY', 14, 20);
+  doc.text(product.title || product.name || 'Product Specification', 14, 43);
 
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(...mutedText);
-  doc.text('Product Technical Specification Sheet | LIGO Brand', 14, 26);
-  doc.text(`Date: ${new Date().toLocaleDateString()}`, 155, 26);
+  doc.text(`Category: ${product.category_label || product.category || 'N/A'} | SKU: ${sku}`, 14, 49);
 
-  doc.setDrawColor(220, 220, 220);
-  doc.line(14, 29, 196, 29);
-
-  // Metadata
+  // 3. LOGISTICS & PACKAGING SPECIFICATIONS TABLE & PRODUCT IMAGE SIDE-BY-SIDE
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(14);
-  doc.setTextColor(...redAccent);
-  doc.text(product.title || product.name || 'Product Specification', 14, 37);
-
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'normal');
-  doc.setTextColor(...darkText);
-  doc.text(`Category: ${product.category_label || product.category || 'Food Products'}`, 14, 43);
-  doc.text(`SKU: ${product.sku || product.id || 'N/A'}`, 140, 43);
-
-  let startTableY = 47;
-  if (productImgData) {
-    try {
-      const maxW = 45;
-      const maxH = 35;
-      const imgAspect = productImgData.width / productImgData.height;
-      const boxAspect = maxW / maxH;
-
-      let renderW, renderH;
-
-      if (imgAspect > boxAspect) {
-        renderW = maxW;
-        renderH = maxW / imgAspect;
-      } else {
-        renderH = maxH;
-        renderW = maxH * imgAspect;
-      }
-
-      const posX = 193 - renderW;
-      const posY = 47 + (maxH - renderH) / 2;
-
-      doc.addImage(productImgData.dataURL, 'JPEG', posX, posY, renderW, renderH);
-    } catch (e) {
-      console.warn('Could not attach image to PDF:', e);
-    }
-  }
+  doc.setFontSize(11);
+  doc.setTextColor(...navyBlue);
+  doc.text('Logistics & Packaging Specifications', 14, 58);
 
   const specsData = [
-    ['Packaging Format', product.pack || product.pack_size || 'N/A'],
-    ['Net / Drain Weight', product.weight || product.net_weight || 'N/A'],
-    ['Shelf Life', product.shelf_life || '36 Months'],
-    ['Shipping Port', product.port || 'San Francisco / Oakland, CA'],
-    ['Origin / Harvest Region', product.origin || 'USA']
+    ['Packaging Format / Pack Size', product.pack || product.pack_size || 'N/A'],
+    ['Net Weight', product.weight || product.net_weight || 'N/A'],
+    ['Country of Origin', product.origin || product.country_of_origin || 'USA'],
+    ['Case Weight', product.case_weight || product.caseWeight || 'N/A'],
+    ['Case Cube', product.case_cube || product.caseCube || 'N/A'],
+    ['Case Dimensions', product.case_dimensions || product.caseDimensions || 'N/A'],
+    ['Cases Per Pallet', product.cases_per_pallet || product.casesPerPallet || 'N/A'],
+    ['Pallet Pattern', product.pallet_pattern || product.palletPattern || 'N/A']
   ];
 
-  const autoTableFn = doc.autoTable || (window.jspdf && window.jspdf.autoTable) || window.autoTable;
+  const autoTableFn = doc.autoTable || (window.jspdf && window.jspdf.autoTable);
 
-  if (typeof autoTableFn === 'function') {
-    autoTableFn.call(doc, {
-      startY: startTableY,
-      margin: { right: productImgData ? 68 : 14, left: 14 },
-      head: [['Logistics & Packaging Specification', 'Details']],
-      body: specsData,
-      theme: 'grid',
-      headStyles: { fillColor: redAccent, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 9 },
-      styles: { fontSize: 8.5, cellPadding: 2 },
-      columnStyles: { 0: { cellWidth: 55, fontStyle: 'bold' } }
-    });
+  autoTableFn.call(doc, {
+    startY: 61,
+    margin: { left: 14, right: 65 },
+    head: [['Specification Feature', 'Details']],
+    body: specsData,
+    theme: 'grid',
+    headStyles: { fillColor: navyBlue, textColor: [255, 255, 255] },
+    styles: { fontSize: 7.5, cellPadding: 1.5 }
+  });
 
-    let currentY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 8 : 95;
+  // Product Image Box on the Right (image_url -> sku -> default image fallback)
+  const defaultImage = 'images/content_crate_corn_field.jpg';
+  const candidateImageUrl = product.image_url || (sku ? `images/${sku}.png` : null) || (sku ? `images/${sku}.jpg` : null) || defaultImage;
+  let productImgData = await loadImageAsBase64(candidateImageUrl);
 
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(11);
-    doc.setTextColor(...darkText);
-    doc.text('FDA Nutrition Facts', 14, currentY);
-
-    const nutritionData = [
-      ['Servings Per Container', product.servings || product.servings_per_container || 'Approx. 4'],
-      ['Serving Size', product.serving_size || '1/2 cup (140g)'],
-      ['Calories', product.calories || '100'],
-      ['Total Fat', product.total_fat || '0g', product.total_fat_dv || '0%'],
-      ['  Saturated Fat', product.saturated_fat || '0g', product.saturated_fat_dv || '0%'],
-      ['  Trans Fat', product.trans_fat || '0g', '-'],
-      ['Cholesterol', product.cholesterol || '0mg', product.cholesterol_dv || '0%'],
-      ['Sodium', product.sodium || '10mg', product.sodium_dv || '0%'],
-      ['Total Carbohydrate', product.carbs || product.total_carbohydrate || '24g', product.carbs_dv || '9%'],
-      ['  Dietary Fiber', product.fiber || product.dietary_fiber || '1g', product.fiber_dv || '4%'],
-      ['  Total Sugars', product.sugars || product.total_sugars || '21g', '-'],
-      ['    Includes Added Sugars', product.added_sugars || '14g', product.added_sugars_dv || '28%'],
-      ['Protein', product.protein || '1g', '-'],
-      ['Vitamin D', product.vitamin_d || '0mcg', product.vitamin_d_dv || '0%'],
-      ['Calcium', product.calcium || '10mg', product.calcium_dv || '0%'],
-      ['Iron', product.iron || '0.4mg', product.iron_dv || '2%'],
-      ['Potassium', product.potassium || '110mg', product.potassium_dv || '2%']
-    ];
-
-    autoTableFn.call(doc, {
-      startY: currentY + 3,
-      margin: { left: 14, right: 14 },
-      head: [['Nutrient Component', 'Amount Per Serving', '% Daily Value*']],
-      body: nutritionData,
-      theme: 'striped',
-      headStyles: { fillColor: [50, 50, 50], textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8.5 },
-      styles: { fontSize: 8, cellPadding: 1.8 },
-      columnStyles: {
-        0: { cellWidth: 75 },
-        1: { cellWidth: 60 },
-        2: { cellWidth: 45, halign: 'right' }
-      },
-      didParseCell: function (data) {
-        const boldRows = [2, 3, 6, 7, 8, 12];
-        if (data.section === 'body' && boldRows.includes(data.row.index) && data.column.index === 0) {
-          data.cell.styles.fontStyle = 'bold';
-        }
-      }
-    });
-
-    currentY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 5 : 250;
-
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'italic');
-    doc.setTextColor(...mutedText);
-    doc.text(
-        '* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.',
-        14,
-        currentY,
-        { maxWidth: 180 }
-    );
+  // Fallback to jpg if png failed or vice versa if SKU is present
+  if (!productImgData && sku) {
+    productImgData = await loadImageAsBase64(`images/${sku}.jpg`);
+  }
+  if (!productImgData) {
+    productImgData = await loadImageAsBase64(defaultImage);
   }
 
-  // Footer Contact Block
-  doc.setDrawColor(220, 220, 220);
-  doc.line(14, 275, 196, 275);
+  if (productImgData) {
+    const imgBoxX = 150;
+    const imgBoxY = 61;
+    const imgBoxW = 42;
+    const imgBoxH = 45;
 
-  doc.setFontSize(8);
-  doc.setFont('helvetica', 'normal');
+    doc.setDrawColor(200, 200, 200);
+    doc.setFillColor(252, 252, 252);
+    doc.roundedRect(imgBoxX, imgBoxY, imgBoxW, imgBoxH, 2, 2, 'FD');
+
+    const ratio = Math.min(imgBoxW / productImgData.width, imgBoxH / productImgData.height);
+    const renderW = productImgData.width * ratio * 0.9;
+    const renderH = productImgData.height * ratio * 0.9;
+    const renderX = imgBoxX + (imgBoxW - renderW) / 2;
+    const renderY = imgBoxY + (imgBoxH - renderH) / 2;
+
+    doc.addImage(productImgData.dataURL, 'PNG', renderX, renderY, renderW, renderH);
+  }
+
+  // 4. ADDED SPACE & FDA NUTRITION FACTS TABLE
+  let currentY = Math.max(doc.lastAutoTable.finalY, 110) + 10;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...navyBlue);
+  doc.text(`FDA Nutrition Facts (Serving Size: ${product.serving_size || '1/2 cup'}, Servings: ${product.servings || product.servings_per_container || 'Approx. 4'})`, 14, currentY);
+
+  const nutritionData = [
+    ['Calories', String(product.calories || '100'), '-'],
+    ['Total Fat', (product.total_fat || product.total_fat_g || '0') + 'g', '0%'],
+    ['Sodium', (product.sodium || product.sodium_mg || '10') + 'mg', '0%'],
+    ['Total Carbohydrates', (product.carbs || product.total_carbohydrates_g || '24') + 'g', '9%'],
+    ['Dietary Fiber', (product.fiber || product.dietary_fiber_g || '1') + 'g', '4%'],
+    ['Total Sugars', (product.sugars || product.total_sugars_g || '21') + 'g', '-'],
+    ['Added Sugars', (product.added_sugars || product.added_sugars_g || '0') + 'g', '0%'],
+    ['Protein', (product.protein || product.protein_g || '1') + 'g', '-'],
+    ['Vitamin D', (product.vitamin_d || product.vitamin_d_mcg || '0') + 'mcg', '0%'],
+    ['Calcium', (product.calcium || product.calcium_mg || '10') + 'mg', '0%'],
+    ['Iron', (product.iron || product.iron_mg || '0.4') + 'mg', '2%'],
+    ['Potassium', (product.potassium || product.potassium_mg || '110') + 'mg', '2%']
+  ];
+
+  autoTableFn.call(doc, {
+    startY: currentY + 3,
+    margin: { left: 14, right: 14 },
+    head: [['Nutrient / Mineral / Vitamin', 'Amount Per Serving', '% Daily Value (% DV)*']],
+    body: nutritionData,
+    theme: 'striped',
+    headStyles: { fillColor: [70, 70, 70] },
+    styles: { fontSize: 8, cellPadding: 1.5 }
+  });
+
+  // Footer note on DV
+  let footerY = doc.lastAutoTable.finalY + 5;
+  doc.setFont('helvetica', 'italic');
+  doc.setFontSize(7);
   doc.setTextColor(...mutedText);
-  doc.text('Liberty Gold Fruit Company LP | 500 Eccles Avenue, South San Francisco, CA 94080 USA', 14, 281);
-  doc.text('Phone: (650) 583-4700 | Export Inquiries: sales@libertygold.com', 14, 286);
+  doc.text('* The % Daily Value (DV) tells you how much a nutrient in a serving contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.', 14, footerY, { maxWidth: 182 });
 
-  const safeName = (product.title || product.name || 'product')
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, '_');
+  // 5. CORPORATE FOOTER
+  const pageHeight = doc.internal.pageSize.getHeight();
+  doc.setDrawColor(...goldSun);
+  doc.setLineWidth(0.5);
+  doc.line(14, pageHeight - 16, 196, pageHeight - 16);
 
-  doc.save(`LIGO_Spec_Sheet_${safeName}.pdf`);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...navyBlue);
+  doc.text('LIBERTY GOLD FRUIT COMPANY LP', 14, pageHeight - 12);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(7.5);
+  doc.setTextColor(...mutedText);
+  doc.text('500 Eccles Avenue, South San Francisco, CA 94080 USA  |  Phone: (650) 583-4700  |  Email: tim@libertygold.com', 14, pageHeight - 8);
+  doc.text('© 2026 Liberty Gold Fruit Co., Inc. All Rights Reserved.', 14, pageHeight - 4);
+
+  doc.save(`LIGO_Spec_${sku || 'product'}.pdf`);
 }
-
 function closeModal() {
   const productModal = document.getElementById('productModal');
   if (productModal) {
