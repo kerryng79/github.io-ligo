@@ -1,1 +1,525 @@
-<script>document.write(decodeURIComponent(escape(atob("PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPiA8bWV0YSBjaGFyc2V0PSJVVEYtOCIgLz4gPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiIC8+IDx0aXRsZT5MaWJlcnR5IEdvbGQgRnJ1aXQgQ28uIHwgUHJlbWl1bSBGb29kIFByb2R1Y3RzIFNpbmNlIDE5MzI8L3RpdGxlPiA8bGluayByZWw9Imljb24iIHR5cGU9ImltYWdlL3BuZyIgaHJlZj0iaW1hZ2VzL2xpZ29fZmF2aWNvbi5wbmciIC8+IDxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbSIgLz4gPGxpbmsgcmVsPSJwcmVjb25uZWN0IiBocmVmPSJodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tIiBjcm9zc29yaWdpbiAvPiA8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PU1vbnRzZXJyYXQ6d2dodEA0MDA7NTAwOzcwMDs4MDAmZGlzcGxheT1zd2FwIiByZWw9InN0eWxlc2hlZXQiIC8+IDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0ic3R5bGVzLmNzcyIgLz4gPHNjcmlwdCBzcmM9ImFwcC5qcyIgZGVmZXI+PC9zY3JpcHQ+IDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9qc3BkZi8yLjUuMS9qc3BkZi51bWQubWluLmpzIj48L3NjcmlwdD4gPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL2pzcGRmLWF1dG90YWJsZS8zLjUuMzEvanNwZGYucGx1Z2luLmF1dG90YWJsZS5taW4uanMiPjwvc2NyaXB0PjwvaGVhZD48Ym9keT48bmF2IGNsYXNzPSJuYXZiYXIiPiA8ZGl2IGNsYXNzPSJjb250YWluZXIgbmF2LWNvbnRhaW5lciI+IDxhIGhyZWY9IiMiIGNsYXNzPSJsb2dvLXdyYXBwZXIiPiA8aW1nIHNyYz0iaW1hZ2VzL25hdmJhcl9saWJlcnR5LWdvbGQucG5nIiBhbHQ9IkxpYmVydHkgR29sZCBGcnVpdCBDb21wYW55IExvZ28iIGRlY29kaW5nPSJhc3luYyIgLz4gPC9hPiA8ZGl2IGNsYXNzPSJuYXYtdGV4dCI+IDxwIGNsYXNzPSJuYXYtdGl0bGUiPkxJQkVSVFkgR09MRDwvcD4gPHAgY2xhc3M9Im5hdi1zdWJ0aXRsZSI+R3Jvd2luZywgaGFydmVzdGluZywgcHJvY2Vzc2luZyBhbmQgbWFya2V0aW5nLi4uPC9wPiA8cCBjbGFzcz0ibmF2LXNsb2dhbiI+VGhlIEJlc3QgRm9vZHMgdGhlIFdvcmxkIEhhcyB0byBPZmZlcjwvcD4gPC9kaXY+IDxidXR0b24gY2xhc3M9Im1lbnUtdG9nZ2xlIiBpZD0ibWVudVRvZ2dsZSIgYXJpYS1sYWJlbD0iVG9nZ2xlIE1lbnUiPiA8c3Bhbj48L3NwYW4+IDxzcGFuPjwvc3Bhbj4gPHNwYW4+PC9zcGFuPiA8L2J1dHRvbj4gPGRpdiBjbGFzcz0ibmF2LWxpbmtzIiBpZD0ibmF2TGlua3MiPiA8YSBocmVmPSIjYWJvdXQiPkFib3V0IFVzPC9hPiA8YSBocmVmPSIjc3RvcnkiPk91ciBTdG9yeTwvYT4gPGEgaHJlZj0iI2RpdmlzaW9ucyI+UHJvZHVjdCBEaXZpc2lvbnM8L2E+IDxhIGhyZWY9IiNicmFuZCI+T3VyIEJyYW5kPC9hPiA8YSBocmVmPSIjcHJvZHVjdHMiPkxpZ28gUHJvZHVjdHM8L2E+IDxhIGhyZWY9IiNjb250YWN0IiBjbGFzcz0iYnRuLXNhbXBsZSI+Q29udGFjdCBVczwvYT4gPC9kaXY+IDwvZGl2PjwvbmF2PjxoZWFkZXIgY2xhc3M9Imhlcm8iIGlkPSJhYm91dCI+IDxkaXYgY2xhc3M9ImNvbnRhaW5lciI+IDxkaXYgY2xhc3M9Imhlcm8tbG9jYXRpb24iPkVzdGFibGlzaGVkIDE5MzIg4oCiIFNhbiBGcmFuY2lzY28sIENBPC9kaXY+IDxoMT5BIFVuaXF1ZSBGb29kIENvbXBhbnkgd2l0aCBBIFRyYWRpdGlvbiBvZiBRdWFsaXR5PC9oMT4gPGRpdiBjbGFzcz0iY29udGVudC1yb3ciPiA8ZGl2IGNsYXNzPSJsYWJlbC10ZXh0Ij4gPGltZyBzcmM9ImltYWdlcy9jb250ZW50X2NyYXRlX2Nvcm5fZmllbGQuanBnIiBhbHQ9IkxpZ28gY3JhdGUgbGFiZWwgb3ZlciBjb3JuZmllbGQiIC8+IDwvZGl2PiA8ZGl2IGNsYXNzPSJhYm91dC10ZXh0Ij4gPHA+IFNpbmNlIDE5MzIsIExpYmVydHkgR29sZCBGcnVpdCBDb21wYW55IExQIGhhcyBlYXJuZWQgYSB3b3JsZHdpZGUgcmVwdXRhdGlvbiBmb3IgZXhjZWxsZW5jZSBpbiBzZXJ2aWNlIGFzIHdlbGwgYXMgaW4gb3VyIHByZW1pdW0gcXVhbGl0eSBmb29kIHByb2R1Y3RzLiBTdGlsbCBmYW1pbHktb3duZWQgYW5kIG9wZXJhdGVkLCBMaWJlcnR5IEdvbGQgaXMgb25lIG9mIHRoZSBmZXcgcHJpdmF0ZWx5LW93bmVkIGNvbXBhbmllcyBsZWZ0IGluIHRoZSBpbmR1c3RyeS4gVGhlIGNvbXBhbnkgaGFzIDxhIGhyZWY9IiNwcm9kdWN0cyIgY2xhc3M9InByb2R1Y3QtbGluayI+TElHTyBCcmFuZCBwcm9kdWN0czwvYT4gb24gZ3JvY2VyeSBzaGVsdmVzIGluIDQwIGNvdW50cmllcyB3b3JsZHdpZGUsIG9mdGVuIGFzIG9uZSBvZiB0aGUgbGVhZGluZyBicmFuZHMsIHdpdGggZXh0ZW5zaXZlIGRpc3RyaWJ1dGlvbiBpbiBBc2lhLCBDZW50cmFsIEFtZXJpY2EsIGFuZCBFdXJvcGUuIDwvcD4gPGgzIGNsYXNzPSJjYXBhYmlsaXRpZXMtdGl0bGUiPk91ciBLZXkgU3RyZW5ndGhzICYgRXhwb3J0IENhcGFiaWxpdGllczwvaDM+IDx1bCBjbGFzcz0iY2FwYWJpbGl0aWVzLWxpc3QiPiA8bGk+IDxzdHJvbmc+TGVhZGluZyBVLlMuIEJyYW5kZWQgVmVnZXRhYmxlIEV4cG9ydGVyOjwvc3Ryb25nPiBUaGUgbGVhZGluZyBicmFuZGVkIGV4cG9ydGVyIG9mIGNhbm5lZCB2ZWdldGFibGVzIGluIHRoZSBVLlMuIDwvbGk+IDxsaT4gPHN0cm9uZz5DYWxpZm9ybmlhIEZydWl0IEV4cG9ydCBMZWFkZXI6PC9zdHJvbmc+IE9uZSBvZiB0aGUgdG9wIGV4cG9ydGVycyBvZiBDYWxpZm9ybmlhIGNhbm5lZCBhbmQgZHJpZWQgZnJ1aXRzIGluIHRoZSBVLlMuIDwvbGk+IDxsaT4gPHN0cm9uZz5Gcm96ZW4gQ29tbW9kaXRpZXM6PC9zdHJvbmc+IEEgbWFqb3IgZXhwb3J0ZXIgb2YgYSBjb21wbGV0ZSBsaW5lIG9mIGZyb3plbiBjb21tb2RpdHkgcHJvZHVjdHMsIGluY2x1ZGluZyBwb3VsdHJ5LCB2ZWdldGFibGVzLCBhbmQgcG90YXRvZXMuIDwvbGk+IDwvdWw+IDwvZGl2PiA8L2Rpdj4gPGRpdiBjbGFzcz0iaGVyby1jdGFzIj4gPGEgaHJlZj0ibWFpbHRvOnRpbUBsaWJlcnR5Z29sZC5jb20/c3ViamVjdD1JbnF1aXJ5JTIwZnJvbSUyMFdlYnNpdGUmYm9keT1IZWxsbyUyMFRpbSwlMjBJJTIwd291bGQlMjBsaWtlJTIwdG8lMjBsZWFybiUyMG1vcmUlMjBhYm91dC4uLiIgY2xhc3M9ImJ0bi1wcmltYXJ5IiA+Q29udGFjdCBTYWxlcyBhbmQgU2VydmljZTwvYSA+IDxhIGhyZWY9IiNkaXZpc2lvbnMiIGNsYXNzPSJidG4tc2Vjb25kYXJ5Ij5WaWV3IFByb2R1Y3QgRGl2aXNpb25zPC9hPiA8L2Rpdj4gPC9kaXY+PC9oZWFkZXI+PHNlY3Rpb24gY2xhc3M9InN0b3J5IiBpZD0ic3RvcnkiPiA8ZGl2IGNsYXNzPSJjb250YWluZXIiPiA8ZGl2IGNsYXNzPSJzdG9yeS1jYXJkIj4gPGgyIGNsYXNzPSJzdG9yeS1oZWFkaW5nIj5MaWJlcnR5IEdvbGQg4oCTIEFuIEFtZXJpY2FuIFN1Y2Nlc3MgU3Rvcnk8L2gyPiA8ZGl2IGNsYXNzPSJzdG9yeS1ib2R5Ij4gPGRpdiBjbGFzcz0iZm91bmRlci1wb3J0cmFpdCI+IDxpbWcgc3JjPSJpbWFnZXMvZXpyYUJhdHRhdC5qcGciIGFsdD0iRXpyYSBCYXR0YXQgLSBGb3VuZGVyIG9mIExpYmVydHkgR29sZCBGcnVpdCBDb21wYW55IiAvPiA8L2Rpdj4gPGRpdiBjbGFzcz0ic3RvcnktdGV4dCI+IDxwPiA8c3Ryb25nPkluIHRoZSBlYXJseSAxOTMwJ3M8L3N0cm9uZz4sIEV6cmEgQmF0dGF0IGNhbWUgdG8gdGhlIFVuaXRlZCBTdGF0ZXMgZnJvbSBFdXJvcGUuIExpa2Ugc28gbWFueSBvZiBoaXMgZ2VuZXJhdGlvbiwgaGUgc2F3IGluIEFtZXJpY2EgdGhlIHByb21pc2Ugb2YgcGVyc29uYWwgbGliZXJ0eSBhbmQgZ29sZGVuIG9wcG9ydHVuaXR5LiBXaXRoIHRoaXMgY2xhc3NpYyBkcmVhbSBpbiBtaW5kLCBoZSBzdGFydGVkIExpYmVydHkgR29sZCBGcnVpdCBDb21wYW55IGFzIGEgc3VwcGxpZXIgb2YgdGhlIGhpZ2hlc3QgcXVhbGl0eSBDYWxpZm9ybmlhIGZydWl0cyBhbmQgdmVnZXRhYmxlcywgYXQgZmFpciBwcmljZXMsIHRvIGNvbnN1bWVycyBvdmVyc2Vhcy4gPC9wPiA8cD4gQmVsaWV2aW5nIHRoYXQgdGhlIHJlYWwgdmFsdWUgb2YgZ29vZHMgd2FzIGluIHRoZWlyIHF1YWxpdHksIGhlIHdvdWxkIG5vdCBjb21wcm9taXNlIHRoZSBoaWdoIHN0YW5kYXJkcyBvZiB0aGUgZm9vZHMgc2hpcHBlZCB1bmRlciBoaXMgPGEgaHJlZj0iI2JyYW5kIiBjbGFzcz0iYnJhbmQtbGluayI+PHN0cm9uZz5MSUdPPC9zdHJvbmc+IGJyYW5kPC9hPiAoZnJvbSA8c3Ryb25nPkxJPC9zdHJvbmc+YmVydHkgYW5kIDxzdHJvbmc+R088L3N0cm9uZz5sZCkuIEFuZCBhcyB3b3JkIHNwcmVhZCBhYm91dCB0aGVzZSBleGNlbGxlbnQgPGEgaHJlZj0iI3Byb2R1Y3RzIiBjbGFzcz0icHJvZHVjdC1saW5rIj5MSUdPIHByb2R1Y3RzPC9hPiwgc28gZGlkIHRoZWlyIG1hcmtldHMnIGdlb2dyYXBoaWMgYm91bmRhcmllcy4gVG9kYXksIExpYmVydHkgR29sZCBpcyByZXNwZWN0ZWQgd29ybGR3aWRlIGZvciBpdHMgbGluZSBvZiBzZW5zaWJseSBwcmljZWQgcHJvZHVjdHMgdGhhdCBuZXZlciBzYWNyaWZpY2UgcXVhbGl0eS4gPC9wPiA8cD4gT3ZlciB0aGUgeWVhcnMsIHRoZSBMaWJlcnR5IEdvbGQgbmFtZSBhbmQgdGhlIExJR08gYnJhbmQgaGF2ZSBlYXJuZWQgYSB3b3JsZHdpZGUgcmVwdXRhdGlvbiBmb3IgZXhjZWxsZW5jZS4gRmV3IGludGVybmF0aW9uYWwgY29tcGFuaWVzIGhhdmUgYXMgY29tcGxldGUgYSBwcm9kdWN0IGxpbmUg4oCUIHRoZSBMSUdPIGZhbWlseSBvZiBwcm9kdWN0cyBub3cgaW5jbHVkZXMgaHVuZHJlZHMgb2YgaXRlbXMgZnJvbSBiZXZlcmFnZXMgdG8gdmVnZXRhYmxlcy4gPC9wPiA8cD4gV2UgaGF2ZSBtYWludGFpbmVkIGEgc3RlYWR5IGdyb3d0aCBieSBzdGF5aW5nIG9uIHRvcCBvZiBjaGFuZ2luZyBjb25zdW1lciB0cmVuZHMsIGFuZCBjb25zdGFudGx5IGJlaW5nIG9uIHRoZSBsb29rb3V0IGZvciB1cHNjYWxlIGFuZCBpbm5vdmF0aXZlIG5ldyBpdGVtcyB0byBhZGQgdG8gdGhlIGRpc3Rpbmd1aXNoZWQgTElHTyBhbmQgTGliZXJ0eSBHb2xkIGJyYW5kIGxpbmVzLiA8L3A+IDxwPiBTdGlsbCBmYW1pbHktb3duZWQgYW5kIG9wZXJhdGVkIGFuZCBpbnRvIGl0cyBmb3VydGggZ2VuZXJhdGlvbiBvZiB0aGUgQmF0dGF0IGZhbWlseSwgTGliZXJ0eSBHb2xkIEZydWl0IENvbXBhbnkgaXMgb25lIG9mIHRoZSBmZXcgcHJpdmF0ZWx5IG93bmVkIGNvbXBhbmllcyBsZWZ0IGluIHRoZSBpbmR1c3RyeS4gPC9wPiA8cD4gTGliZXJ0eSBHb2xkIGlzIGNvbnRpbnVpbmcgdGhlIGZhbWlseSBpZGVhbHMgdGhyb3VnaCBkYXktdG8tZGF5IGludm9sdmVtZW50IG9mIG1hbmFnZW1lbnQgaW4gYWxsIHBoYXNlcyBvZiBjb21wYW55IG9wZXJhdGlvbnMgYW5kIHByb21vdGluZyBhIGNvbXBhbnktd2lkZSBwcmlvcml0eSB0byBjdXN0b21lciBzZXJ2aWNlLiA8L3A+IDwvZGl2PiA8L2Rpdj4gPC9kaXY+IDwvZGl2Pjwvc2VjdGlvbj48c2VjdGlvbiBpZD0iZGl2aXNpb25zIiBjbGFzcz0iY2FwYWJpbGl0aWVzIj4gPGRpdiBjbGFzcz0iY29udGFpbmVyIj4gPGgyIGNsYXNzPSJzZWN0aW9uLXRpdGxlIj5PdXIgUHJvZHVjdCBEaXZpc2lvbnM8L2gyPiA8cCBjbGFzcz0ic2VjdGlvbi1zdWJ0aXRsZSI+IFNlcnZpbmcgZ3JvY2VyeSByZXRhaWwsIGNvbW1lcmNpYWwgZm9vZHNlcnZpY2UsIGFuZCBpbmR1c3RyaWFsIGZvb2QgbWFudWZhY3R1cmluZyBnbG9iYWxseS4gPC9wPiA8ZGl2IGNsYXNzPSJjYXBzLWdyaWQiPiA8ZGl2IGNsYXNzPSJjYXAtaXRlbSI+IDxkaXYgY2xhc3M9ImNhcC1pY29uIj7wn4+377iPPC9kaXY+IDxoND5MSUdPIEJyYW5kPC9oND4gPHA+IExJR08gYnJhbmQgcHJvZHVjdHMgYXJlIGZvdW5kIG9uIGdyb2Nlcnkgc2hlbHZlcyBpbiBvdmVyIDQwIGNvdW50cmllcyB3b3JsZHdpZGUsIHN0YW5kaW5nIGFzIGEgcHJlbWllciByZWNvZ25pemVkIGJyYW5kIGFjcm9zcyBBc2lhLCBDZW50cmFsIEFtZXJpY2EsIGFuZCBFdXJvcGUuIDwvcD4gPC9kaXY+IDxkaXYgY2xhc3M9ImNhcC1pdGVtIj4gPGRpdiBjbGFzcz0iY2FwLWljb24iPvCfjZE8L2Rpdj4gPGg0PkxpYmVydHkgR29sZCBCcmFuZDwvaDQ+IDxwPiBPdXIgaGFsbG1hcmsgbGluZSBkZWxpdmVyaW5nIHRydXN0ZWQgcXVhbGl0eSBjYW5uZWQgZnJ1aXRzLCBwYWNrYWdlZCBmb29kIHByb2R1Y3RzLCBhbmQgYWdyaWN1bHR1cmFsIGNvbW1vZGl0aWVzIGludGVybmF0aW9uYWxseS4gPC9wPiA8L2Rpdj4gPGRpdiBjbGFzcz0iY2FwLWl0ZW0iPiA8ZGl2IGNsYXNzPSJjYXAtaWNvbiI+8J+PrTwvZGl2PiA8aDQ+Rm9vZHNlcnZpY2UgLyBJbmR1c3RyaWFsPC9oND4gPHA+IEJ1bGsgaW5ncmVkaWVudHMsIGFzZXB0aWMgZnJ1aXQgcGFja3MsIGFuZCBjb21tZXJjaWFsIGZvb2QgZm9ybXVsYXRpb25zIGN1c3RvbWl6ZWQgZm9yIHByb2Nlc3NvcnMsIG1hbnVmYWN0dXJlcnMsIGFuZCBpbnN0aXR1dGlvbnMuIDwvcD4gPC9kaXY+IDxkaXYgY2xhc3M9ImNhcC1pdGVtIj4gPGRpdiBjbGFzcz0iY2FwLWljb24iPvCfk6Y8L2Rpdj4gPGg0PlByaXZhdGUgTGFiZWw8L2g0PiA8cD4gQ3VzdG9tIHByaXZhdGUgbGFiZWwgc29sdXRpb25zIHByb3ZpZGluZyB3b3JsZHdpZGUgc291cmNpbmcsIGNvLXBhY2tpbmcsIGFuZCBzdHJpY3QgcXVhbGl0eSBjb250cm9sIGZvciByZWdpb25hbCBhbmQgbWFqb3IgZ2xvYmFsIHN1cGVybWFya2V0IGNoYWlucy4gPC9wPiA8L2Rpdj4gPC9kaXY+IDwvZGl2Pjwvc2VjdGlvbj48c2VjdGlvbiBjbGFzcz0iYnJhbmQtc2VjdGlvbiIgaWQ9ImJyYW5kIj4gPGRpdiBjbGFzcz0iY29udGFpbmVyIj4gPGRpdiBjbGFzcz0iYnJhbmQtaGVhZGVyIj4gPGltZyBzcmM9ImltYWdlcy9saWdvX2JyYW5kX25vcm1hbC5qcGciIGFsdD0iTElHTyBMb2dvIiBjbGFzcz0iYnJhbmQtbG9nbyIgLz4gPGgyIGNsYXNzPSJzZWN0aW9uLXRpdGxlIj5PdXIgQnJhbmQ8L2gyPiA8L2Rpdj4gPGRpdiBjbGFzcz0iaGVyaXRhZ2UiPiA8cCBjbGFzcz0iaGVyaXRhZ2UtdGV4dCI+IDxpbWcgc3JjPSJpbWFnZXMvbGlnb19Db250ZW50LWZ1bGxHcm9jZXJ5LmpwZyIgYWx0PSJBIHBhc3Npb24gZm9yIHBlcmZlY3Rpb24gc2luY2UgMTkzMi4iIGNsYXNzPSJoZXJpdGFnZS1pbWciIC8+IDxzdHJvbmc+VGhlIExJR08gU3RhbmRhcmQ8L3N0cm9uZz48YnIgLz48YnIgLz4gRXpyYSBCYXR0YXQgZm91bmRlZCBMaWJlcnR5IEdvbGQgRnJ1aXQgQ29tcGFueSBpbiAxOTMyIHdpdGggYSBjb21taXRtZW50IHRvIDxzdHJvbmc+UXVhbGl0eSBGaXJzdDwvc3Ryb25nPiAtIGEgc3RhbmRhcmQgdGhhdCByZW1haW5zIG91ciBmYW1pbHkgdHJhZGl0aW9uIHRvZGF5LiBUaHJlZSBnZW5lcmF0aW9ucyBvZiBjb25zdW1lcnMgcmVseSBvbiB0aGUgTElHTyBuYW1lIGZvciBxdWFsaXR5LCBpbnRlZ3JpdHksIGFuZCBleGNlcHRpb25hbCBzZXJ2aWNlIGFjcm9zcyBpbnRlcm5hdGlvbmFsIG1hcmtldHMuIDxiciAvPjxiciAvPiBGcm9tIENhbGlmb3JuaWEtZ3Jvd24gZnJ1aXRzIGFuZCB2ZWdldGFibGVzIHRvIGNhbm5lZCBzZWFmb29kLCBkcnkgZ3JvY2VyaWVzLCBhbmQgc3BlY2lhbHR5IGl0ZW1zLCBvdXIgcHJvZHVjdCBsaW5lIG9mZmVycyBjb21wbGV0ZSB2ZXJzYXRpbGl0eSBmb3IgcmV0YWlsIGFuZCBjb21tZXJjaWFsIGJ1eWVycy4gTWFuYWdlZCB3aXRoIGhhbmRzLW9uIGF0dGVudGlvbiBmcm9tIGZpZWxkIHRvIHN0b3JlIHNoZWxmIGFuZCBzdXBwb3J0ZWQgYnkgdGFpbG9yZWQgcGFja2FnaW5nIGluIG11bHRpcGxlIGxhbmd1YWdlcywgPGEgaHJlZj0iI3Byb2R1Y3RzIiBjbGFzcz0icHJvZHVjdC1saW5rIj5MSUdPIHByb2R1Y3RzPC9hPiBhcmUgZGlzdHJpYnV0ZWQgaW4gb3ZlciA0MCBjb3VudHJpZXMgd29ybGR3aWRlLiA8L3A+IDwvZGl2PiA8L2Rpdj4gPHAgY2xhc3M9InNlY3Rpb24tc3VidGl0bGUiPkV4cGxvcmUgb3VyIGNvcmUgaW50ZXJuYXRpb25hbCBjb25zdW1lciBhbmQgaW5kdXN0cmlhbCBvZmZlcmluZ3MuPC9wPiA8ZGl2IGNsYXNzPSJjYXRhbG9nLWxheW91dCIgaWQ9InByb2R1Y3RzIj4gPGFzaWRlIGNsYXNzPSJjYXRhbG9nLWNvbnRyb2xzIj4gPGRpdiBjbGFzcz0iZmlsdGVyLWNoaXBzIiByb2xlPSJ0YWJsaXN0IiBhcmlhLWxhYmVsPSJQcm9kdWN0IGNhdGVnb3JpZXMiPiA8YnV0dG9uIGNsYXNzPSJjaGlwIGFjdGl2ZSIgZGF0YS1maWx0ZXI9ImFsbCIgcm9sZT0idGFiIiBhcmlhLXNlbGVjdGVkPSJ0cnVlIj4gQWxsIFByb2R1Y3RzIDwvYnV0dG9uPiA8YnV0dG9uIGNsYXNzPSJjaGlwIiBkYXRhLWZpbHRlcj0iQ2FubmVkRnJ1aXRzIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gQ2FubmVkIEZydWl0cyA8L2J1dHRvbj4gPGJ1dHRvbiBjbGFzcz0iY2hpcCIgZGF0YS1maWx0ZXI9IjRvelRyYXZlbGluRnJ1aXRDdXBzIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gNCBvei4gVHJhdmVsaW4nIEZydWl0IEN1cHMgPC9idXR0b24+IDxidXR0b24gY2xhc3M9ImNoaXAiIGRhdGEtZmlsdGVyPSJDYW5uZWRWZWdldGFibGVzIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gQ2FubmVkIFZlZ2V0YWJsZXMgPC9idXR0b24+IDxidXR0b24gY2xhc3M9ImNoaXAiIGRhdGEtZmlsdGVyPSJDYW5uZWRGaXNoIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gU2FyZGluZXMgJmFtcDsgQ2FubmVkIEZpc2ggPC9idXR0b24+IDxidXR0b24gY2xhc3M9ImNoaXAiIGRhdGEtZmlsdGVyPSJEcmllZEZydWl0cyIgcm9sZT0idGFiIiBhcmlhLXNlbGVjdGVkPSJmYWxzZSI+IERyaWVkIEZydWl0cyA8L2J1dHRvbj4gPGJ1dHRvbiBjbGFzcz0iY2hpcCIgZGF0YS1maWx0ZXI9IkNhbmlzdGVyIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gQ2FuaXN0ZXIgU25hY2tzIDwvYnV0dG9uPiA8YnV0dG9uIGNsYXNzPSJjaGlwIiBkYXRhLWZpbHRlcj0iSnVpY2VzIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gQm90dGxlZCAmYW1wOyBUZXRyYSBQYWNrIEp1aWNlcyA8L2J1dHRvbj4gPGJ1dHRvbiBjbGFzcz0iY2hpcCIgZGF0YS1maWx0ZXI9IlNvZGFzIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gU29kYSBCZXZlcmFnZXMgPC9idXR0b24+IDxidXR0b24gY2xhc3M9ImNoaXAiIGRhdGEtZmlsdGVyPSJTcGVjaWFsdHkiIHJvbGU9InRhYiIgYXJpYS1zZWxlY3RlZD0iZmFsc2UiPiBDb25kaW1lbnRzICZhbXA7IFNwZWNpYWx0eSBJdGVtIDwvYnV0dG9uPiA8YnV0dG9uIGNsYXNzPSJjaGlwIiBkYXRhLWZpbHRlcj0iRnJvemVuIiByb2xlPSJ0YWIiIGFyaWEtc2VsZWN0ZWQ9ImZhbHNlIj4gRnJvemVuIFByb2R1Y3RzIDwvYnV0dG9uPiA8L2Rpdj4gPC9hc2lkZT4gPG1haW4gY2xhc3M9ImNhdGFsb2ctY29udGVudCI+IDxkaXYgY2xhc3M9InNlYXJjaC1ib3giPiA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InByb2R1Y3RTZWFyY2giIHBsYWNlaG9sZGVyPSJTZWFyY2ggcHJvZHVjdHMgYnkgbmFtZSBvciBTS1UuLi4iIGFyaWEtbGFiZWw9IlNlYXJjaCBwcm9kdWN0cyIgLz4gPGJ1dHRvbiB0eXBlPSJidXR0b24iIGlkPSJjbGVhclNlYXJjaCIgY2xhc3M9InNlYXJjaC1pY29uLWJ0biIgYXJpYS1sYWJlbD0iQ2xlYXIgc2VhcmNoIGFuZCBmaWx0ZXJzIj4gPHNwYW4gaWQ9InNlYXJjaEljb24iPvCflI08L3NwYW4+IDwvYnV0dG9uPiA8L2Rpdj4gPGRpdiBpZD0iY2F0YWxvZ1N0YXR1cyIgY2xhc3M9ImNhdGFsb2ctc3RhdHVzIiBhcmlhLWxpdmU9InBvbGl0ZSI+IExvYWRpbmcgcHJvZHVjdHMgY2F0YWxvZyBmcm9tIHNwZWNpZmljYXRpb25zIGRhdGFzZXQuLi4gPC9kaXY+IDxkaXYgY2xhc3M9InByb2R1Y3QtZ3JpZCIgaWQ9InByb2R1Y3RHcmlkIj4gPGRpdiBjbGFzcz0ibG9hZGluZy1zcGlubmVyLXdyYXBwZXIiPiA8cCBjbGFzcz0ic3RhdHVzLW1lc3NhZ2UiPkxvYWRpbmcgcHJvZHVjdCBjYXRhbG9nLi4uPC9wPiA8L2Rpdj4gPC9kaXY+IDwvbWFpbj4gPC9kaXY+IDwvZGl2Pjwvc2VjdGlvbj48ZGl2IGNsYXNzPSJtb2RhbC1vdmVybGF5IiBpZD0icHJvZHVjdE1vZGFsIiByb2xlPSJkaWFsb2ciIGFyaWEtbW9kYWw9InRydWUiIGFyaWEtaGlkZGVuPSJ0cnVlIj4gPGRpdiBjbGFzcz0ibW9kYWwtY29udGVudCI+IDxidXR0b24gY2xhc3M9Im1vZGFsLWNsb3NlIiBpZD0ibW9kYWxDbG9zZSIgYXJpYS1sYWJlbD0iQ2xvc2UgbW9kYWwiPiZ0aW1lczs8L2J1dHRvbj4gPGRpdiBjbGFzcz0ibW9kYWwtaGVhZGVyIj4gPHNwYW4gY2xhc3M9Im1vZGFsLWJhZGdlIiBpZD0ibW9kYWxCYWRnZSI+U3BlYyBTaGVldCAmYW1wOyBOdXRyaXRpb248L3NwYW4+IDxoMiBpZD0ibW9kYWxUaXRsZSI+UHJvZHVjdCBEZXRhaWxzPC9oMj4gPHAgaWQ9Im1vZGFsU2t1IiBjbGFzcz0ibW9kYWwtc2t1Ij5TS1U6IC08L3A+IDwvZGl2PiA8ZGl2IGNsYXNzPSJtb2RhbC1ib2R5Ij4gPHAgaWQ9Im1vZGFsRGVzY3JpcHRpb24iIGNsYXNzPSJtb2RhbC1kZXNjLXRleHQiPkRldGFpbGVkIHByb2R1Y3Qgc3BlY3MgZ28gaGVyZS4uLjwvcD4gPGg0IGNsYXNzPSJtb2RhbC1zZWN0aW9uLWhlYWRpbmciPkxvZ2lzdGljcyAmYW1wOyBQYWNrYWdpbmcgU3BlY3M8L2g0PiA8dGFibGUgY2xhc3M9Im1vZGFsLXNwZWMtdGFibGUiPiA8dHI+IDx0aD5QYWNrYWdpbmcgRm9ybWF0PC90aD4gPHRkIGlkPSJzcGVjUGFjayI+LTwvdGQ+IDwvdHI+IDx0cj4gPHRoPk5ldCBXZWlnaHQ8L3RoPiA8dGQgaWQ9InNwZWNXZWlnaHQiPi08L3RkPiA8L3RyPiA8dHI+IDx0aD5TaGlwcGluZyBQb3J0PC90aD4gPHRkIGlkPSJzcGVjUG9ydCI+U2FuIEZyYW5jaXNjbyAvIE9ha2xhbmQsIENBPC90ZD4gPC90cj4gPHRyPiA8dGg+Q2FzZSBXZWlnaHQ8L3RoPiA8dGQgaWQ9InNwZWNDYXNlV2VpZ2h0Ij4tPC90ZD4gPC90cj4gPHRyPiA8dGg+Q2FzZSBDdWJlPC90aD4gPHRkIGlkPSJzcGVjQ2FzZUN1YmUiPi08L3RkPiA8L3RyPiA8dHI+IDx0aD5DYXNlIERpbWVuc2lvbnM8L3RoPiA8dGQgaWQ9InNwZWNDYXNlRGltZW5zaW9ucyI+LTwvdGQ+IDwvdHI+IDx0cj4gPHRoPkNhc2VzIFBlciBQYWxsZXQ8L3RoPiA8dGQgaWQ9InNwZWNDYXNlc1BlclBhbGxldCI+LTwvdGQ+IDwvdHI+IDx0cj4gPHRoPlBhbGxldCBQYXR0ZXJuPC90aD4gPHRkIGlkPSJzcGVjUGFsbGV0UGF0dGVybiI+LTwvdGQ+IDwvdHI+IDwvdGFibGU+IDxkaXYgY2xhc3M9Im51dHJpdGlvbi1mYWN0cy1ib3giIGlkPSJudXRyaXRpb25GYWN0c0JveCI+IDxkaXYgY2xhc3M9Im5mLXRpdGxlIj5OdXRyaXRpb24gRmFjdHM8L2Rpdj4gPGRpdiBjbGFzcz0ibmYtc2VydmluZ3MiPiBTZXJ2aW5ncyBQZXIgQ29udGFpbmVyIDxzcGFuIGlkPSJuZlNlcnZpbmdzIj40IHNlcnZpbmdzIHBlciBjb250YWluZXI8L3NwYW4+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1zZXJ2aW5nLXNpemUiPlNlcnZpbmcgc2l6ZSA8c3BhbiBpZD0ibmZTZXJ2aW5nU2l6ZSI+MS8yIGN1cCAoMTQwZyk8L3NwYW4+PC9kaXY+IDxkaXYgY2xhc3M9Im5mLWJhci10aGljayI+PC9kaXY+IDxkaXYgY2xhc3M9Im5mLWFtb3VudC1wZXItc2VydmluZyI+QW1vdW50IHBlciBzZXJ2aW5nPC9kaXY+IDxkaXYgY2xhc3M9Im5mLWNhbG9yaWVzLXJvdyI+IDxzcGFuIGNsYXNzPSJuZi1jYWxvcmllcy1sYWJlbCI+Q2Fsb3JpZXM8L3NwYW4+IDxzcGFuIGNsYXNzPSJuZi1jYWxvcmllcy12YWx1ZSIgaWQ9Im5mQ2Fsb3JpZXMiPjEwMDwvc3Bhbj4gPC9kaXY+IDxkaXYgY2xhc3M9Im5mLWJhci1tZWQiPjwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1kdi1oZWFkZXIiPiUgRGFpbHkgVmFsdWUqPC9kaXY+IDxkaXYgY2xhc3M9Im5mLXJvdyI+IDxzcGFuPjxzdHJvbmc+VG90YWwgRmF0PC9zdHJvbmc+IDxzcGFuIGlkPSJuZlRvdGFsRmF0Ij4wZzwvc3Bhbj48L3NwYW4+IDxzdHJvbmcgaWQ9Im5mVG90YWxGYXREViI+MCU8L3N0cm9uZz4gPC9kaXY+IDxkaXYgY2xhc3M9Im5mLXN1YnJvdyI+IDxzcGFuPlNhdHVyYXRlZCBGYXQgMGc8L3NwYW4+IDxzcGFuPjAlPC9zcGFuPiA8L2Rpdj4gPGRpdiBjbGFzcz0ibmYtc3Vicm93Ij4gPHNwYW4+PGVtPlRyYW5zPC9lbT4gRmF0IDBnPC9zcGFuPiA8c3Bhbj48L3NwYW4+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1yb3ciPiA8c3Bhbj48c3Ryb25nPkNob2xlc3Rlcm9sPC9zdHJvbmc+IDBtZzwvc3Bhbj4gPHNwYW4+PHN0cm9uZz4wJTwvc3Ryb25nPjwvc3Bhbj4gPC9kaXY+IDxkaXYgY2xhc3M9Im5mLXJvdyI+IDxzcGFuPjxzdHJvbmc+U29kaXVtPC9zdHJvbmc+IDxzcGFuIGlkPSJuZlNvZGl1bSI+MTBtZzwvc3Bhbj48L3NwYW4+IDxzdHJvbmcgaWQ9Im5mU29kaXVtRFYiPjAlPC9zdHJvbmc+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1yb3ciPiA8c3Bhbj48c3Ryb25nPlRvdGFsIENhcmJvaHlkcmF0ZTwvc3Ryb25nPiA8c3BhbiBpZD0ibmZDYXJicyI+MjRnPC9zcGFuPjwvc3Bhbj4gPHN0cm9uZyBpZD0ibmZDYXJic0RWIj45JTwvc3Ryb25nPiA8L2Rpdj4gPGRpdiBjbGFzcz0ibmYtc3Vicm93Ij4gPHNwYW4+RGlldGFyeSBGaWJlciA8c3BhbiBpZD0ibmZGaWJlciI+MWc8L3NwYW4+PC9zcGFuPiA8c3Ryb25nIGlkPSJuZkZpYmVyRFYiPjQlPC9zdHJvbmc+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1zdWJyb3ciPiA8c3Bhbj5Ub3RhbCBTdWdhcnMgPHNwYW4gaWQ9Im5mU3VnYXJzIj4yMWc8L3NwYW4+PC9zcGFuPiA8c3Bhbj48L3NwYW4+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1zdWJyb3ctaW5kZW50Ij4gPHNwYW4+SW5jbHVkZXMgPHNwYW4gaWQ9Im5mQWRkZWRTdWdhcnMiPjE0Zzwvc3Bhbj4gQWRkZWQgU3VnYXJzPC9zcGFuPiA8c3Ryb25nIGlkPSJuZkFkZGVkU3VnYXJzRFYiPjI4JTwvc3Ryb25nPiA8L2Rpdj4gPGRpdiBjbGFzcz0ibmYtcm93Ij4gPHNwYW4+PHN0cm9uZz5Qcm90ZWluPC9zdHJvbmc+IDxzcGFuIGlkPSJuZlByb3RlaW4iPjFnPC9zcGFuPjwvc3Bhbj4gPHNwYW4+PC9zcGFuPiA8L2Rpdj4gPGRpdiBjbGFzcz0ibmYtYmFyLXRoaWNrIj48L2Rpdj4gPGRpdiBjbGFzcz0ibmYtbWljcm8tcm93Ij4gPHNwYW4+Vml0YW1pbiBEIDxzcGFuIGlkPSJuZlZpdGFtaW5EIj4wbWNnPC9zcGFuPjwvc3Bhbj4gPHNwYW4gaWQ9Im5mVml0YW1pbkREViI+MCU8L3NwYW4+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1taWNyby1yb3ciPiA8c3Bhbj5DYWxjaXVtIDxzcGFuIGlkPSJuZkNhbGNpdW0iPjEwbWc8L3NwYW4+PC9zcGFuPiA8c3BhbiBpZD0ibmZDYWxjaXVtRFYiPjAlPC9zcGFuPiA8L2Rpdj4gPGRpdiBjbGFzcz0ibmYtbWljcm8tcm93Ij4gPHNwYW4+SXJvbiA8c3BhbiBpZD0ibmZJcm9uIj4wLjRtZzwvc3Bhbj48L3NwYW4+IDxzcGFuIGlkPSJuZklyb25EViI+MiU8L3NwYW4+IDwvZGl2PiA8ZGl2IGNsYXNzPSJuZi1taWNyby1yb3ciPiA8c3Bhbj5Qb3Rhc3NpdW0gPHNwYW4gaWQ9Im5mUG90YXNzaXVtIj4xMTBtZzwvc3Bhbj48L3NwYW4+IDxzcGFuIGlkPSJuZlBvdGFzc2l1bURWIj4yJTwvc3Bhbj4gPC9kaXY+IDxkaXYgY2xhc3M9Im5mLWZvb3Rub3RlIj4gKiBUaGUgJSBEYWlseSBWYWx1ZSAoRFYpIHRlbGxzIHlvdSBob3cgbXVjaCBhIG51dHJpZW50IGluIGEgc2VydmluZyBvZiBmb29kIGNvbnRyaWJ1dGVzIHRvIGEgZGFpbHkgZGlldC4gMiwwMDAgY2Fsb3JpZXMgYSBkYXkgaXMgdXNlZCBmb3IgZ2VuZXJhbCBudXRyaXRpb24gYWR2aWNlLiA8L2Rpdj4gPC9kaXY+IDwvZGl2PiA8ZGl2IGNsYXNzPSJtb2RhbC1mb290ZXIiPiA8ZGl2IGNsYXNzPSJtb2RhbC1hY3Rpb25zIj4gPGEgaHJlZj0iIyIgaWQ9ImJ0bkRvd25sb2FkU3BlYyIgY2xhc3M9ImJ0bi1zZWNvbmRhcnkiIGRvd25sb2FkPiA8c3ZnIGNsYXNzPSJidG4taWNvbiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgYXJpYS1oaWRkZW49InRydWUiPiA8cGF0aCBkPSJNMjEgMTV2NGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMnYtNCI+PC9wYXRoPiA8cG9seWxpbmUgcG9pbnRzPSI3IDEwIDEyIDE1IDE3IDEwIj48L3BvbHlsaW5lPiA8bGluZSB4MT0iMTIiIHkxPSIxNSIgeDI9IjEyIiB5Mj0iMyI+PC9saW5lPiA8L3N2Zz4gRG93bmxvYWQgUERGIFNwZWMgU2hlZXQgPC9hPiA8YSBocmVmPSJtYWlsdG86dGltQGxpYmVydHlnb2xkLmNvbT9zdWJqZWN0PVByb2R1Y3QlMjBTcGVjJTIwSW5xdWlyeSIgY2xhc3M9ImJ0bi1wcmltYXJ5Ij5JbnF1aXJlIEFib3V0IFdob2xlc2FsZSBPcmRlcjwvYT4gPC9kaXY+IDwvZGl2PiA8L2Rpdj48L2Rpdj48Zm9vdGVyIGlkPSJjb250YWN0Ij4gPGRpdiBjbGFzcz0iY29udGFpbmVyIj4gPGRpdiBjbGFzcz0iZm9vdGVyLWdyaWQiPiA8ZGl2IGNsYXNzPSJmb290ZXItbG9nbyI+IDxoMz5MSUJFUlRZIEdPTEQgRlJVSVQgQ09NUEFOWSBMUDwvaDM+IDxwPiBRdWFsaXR5LCByZWxpYWJpbGl0eSwgYW5kIGxvbmdldml0eSDigJMgdGhlIGhhbGxtYXJrcyBvZiBMaWJlcnR5IEdvbGQgRnJ1aXQgQ29tcGFueSBzaW5jZSAxOTMyLiA8L3A+IDwvZGl2PiA8ZGl2IGNsYXNzPSJmb290ZXItY29sIj4gPGg0PlF1aWNrIExpbmtzPC9oND4gPHVsPiA8bGk+PGEgaHJlZj0iI2RpdmlzaW9ucyI+UHJvZHVjdCBEaXZpc2lvbnM8L2E+PC9saT4gPGxpPjxhIGhyZWY9IiNhYm91dCI+QWJvdXQgVXM8L2E+PC9saT4gPGxpPjxhIGhyZWY9IiNzdG9yeSI+T3VyIFN0b3J5PC9hPjwvbGk+IDxsaT48YSBocmVmPSIjYnJhbmQiPkxpZ28gQnJhbmQ8L2E+PC9saT4gPGxpPjxhIGhyZWY9IiNwcm9kdWN0cyI+TGlnbyBQcm9kdWN0czwvYT48L2xpPiA8bGk+PGEgaHJlZj0iI2NvbnRhY3QiPkNvcnBvcmF0ZSBDb250YWN0PC9hPjwvbGk+IDwvdWw+IDwvZGl2PiA8ZGl2IGNsYXNzPSJmb290ZXItY29sIj4gPGg0PkNvcnBvcmF0ZSBIZWFkcXVhcnRlcnM8L2g0PiA8dWw+IDxsaT4gPGEgaHJlZj0iaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vP3E9NTAwK0VjY2xlcytBdmVudWUsK1NvdXRoK1NhbitGcmFuY2lzY28sK0NBKzk0MDgwIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIiBjbGFzcz0iZm9vdGVyLWxpbmsiID4gNTAwIEVjY2xlcyBBdmVudWU8YnIgLz4gU291dGggU2FuIEZyYW5jaXNjbywgQ0EgOTQwODAgVVNBIDwvYT4gPC9saT4gPGxpPiBQaG9uZTogPGEgaHJlZj0idGVsOisxNjUwNTgzNDcwMCIgY2xhc3M9ImZvb3Rlci1saW5rIj4oNjUwKSA1ODMtNDcwMDwvYT4gPC9saT4gPGxpPiBGYXg6ICg2NTApIDU4My00NzcwIDwvbGk+IDxsaT4gRW1haWw6IDxhIGhyZWY9Im1haWx0bzp0aW1AbGliZXJ0eWdvbGQuY29tP3N1YmplY3Q9SW5xdWlyeSUyMGZyb20lMjBXZWJzaXRlJmJvZHk9SGVsbG8lMjBUaW0sJTIwSSUyMHdvdWxkJTIwbGlrZSUyMHRvJTIwbGVhcm4lMjBtb3JlJTIwYWJvdXQuLi4iIGNsYXNzPSJmb290ZXItbGluayI+dGltQGxpYmVydHlnb2xkLmNvbTwvYT4gPC9saT4gPC91bD4gPC9kaXY+IDwvZGl2PiA8ZGl2IGNsYXNzPSJmb290ZXItYm90dG9tIj4gPHA+JmNvcHk7IDIwMjYgTGliZXJ0eSBHb2xkIEZydWl0IENvLiwgSW5jLiBBbGwgUmlnaHRzIFJlc2VydmVkLjwvcD4gPHA+U28uIFNhbiBGcmFuY2lzY28sIENBIDk0MDgwPC9wPiA8L2Rpdj4gPC9kaXY+PC9mb290ZXI+PC9ib2R5PjwvaHRtbD4="))));</script>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liberty Gold Fruit Co. | Premium Food Products Since 1932</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/ligo_favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- External Stylesheet & JavaScript -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <!-- jsPDF library for dynamic PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+<!-- FIXED NAVBAR -->
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="#" class="logo-wrapper">
+            <img src="images/navbar_liberty-gold.png" alt="Liberty Gold Fruit Company Logo" decoding="async" />
+        </a>
+
+        <div class="nav-text">
+            <p class="nav-title">LIBERTY GOLD</p>
+            <p class="nav-subtitle">Growing, harvesting, processing and marketing...</p>
+            <p class="nav-slogan">The Best Foods the World Has to Offer</p>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About Us</a>
+            <a href="#story">Our Story</a>
+            <a href="#divisions">Product Divisions</a>
+            <a href="#brand">Our Brand</a>
+            <a href="#products">Ligo Products</a>
+            <a href="#contact" class="btn-sample">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero" id="about">
+    <div class="container">
+        <div class="hero-location">Established 1932 • San Francisco, CA</div>
+        <h1>A Unique Food Company with A Tradition of Quality</h1>
+        <div class="content-row">
+            <div class="label-text">
+                <img src="images/content_crate_corn_field.jpg" alt="Ligo crate label over cornfield" />
+            </div>
+
+            <div class="about-text">
+                <p>
+                    Since 1932, Liberty Gold Fruit Company LP has earned a worldwide reputation for excellence
+                    in service as well as in our premium quality food products. Still family-owned and operated,
+                    Liberty Gold is one of the few privately-owned companies left in the industry. The company
+                    has <a href="#products" class="product-link">LIGO Brand products</a>
+                    on grocery shelves in 40 countries worldwide, often as one of the leading brands, with
+                    extensive distribution in Asia, Central America, and Europe.
+                </p>
+
+                <h3 class="capabilities-title">Our Key Strengths & Export Capabilities</h3>
+
+                <ul class="capabilities-list">
+                    <li>
+                        <strong>Leading U.S. Branded Vegetable Exporter:</strong> The leading branded exporter
+                        of canned vegetables in the U.S.
+                    </li>
+                    <li>
+                        <strong>California Fruit Export Leader:</strong> One of the top exporters of California
+                        canned and dried fruits in the U.S.
+                    </li>
+                    <li>
+                        <strong>Frozen Commodities:</strong> A major exporter of a complete line of frozen
+                        commodity products, including poultry, vegetables, and potatoes.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hero-ctas">
+            <a
+                    href="mailto:tim@libertygold.com?subject=Inquiry%20from%20Website&body=Hello%20Tim,%20I%20would%20like%20to%20learn%20more%20about..."
+                    class="btn-primary"
+            >Contact Sales and Service</a
+            >
+            <a href="#divisions" class="btn-secondary">View Product Divisions</a>
+        </div>
+    </div>
+</header>
+
+<!-- OUR STORY SECTION -->
+<section class="story" id="story">
+    <div class="container">
+        <div class="story-card">
+            <h2 class="story-heading">Liberty Gold – An American Success Story</h2>
+
+            <div class="story-body">
+                <div class="founder-portrait">
+                    <img
+                            src="images/ezraBattat.jpg"
+                            alt="Ezra Battat - Founder of Liberty Gold Fruit Company"
+                    />
+                </div>
+
+                <div class="story-text">
+                    <p>
+                        <strong>In the early 1930's</strong>, Ezra Battat came to the United States from Europe.
+                        Like so many of his generation, he saw in America the promise of personal liberty and
+                        golden opportunity. With this classic dream in mind, he started Liberty Gold Fruit
+                        Company as a supplier of the highest quality California fruits and vegetables, at fair
+                        prices, to consumers overseas.
+                    </p>
+
+                    <p>
+                        Believing that the real value of goods was in their quality, he would not compromise the
+                        high standards of the foods shipped under his <a href="#brand" class="brand-link"><strong>LIGO</strong>
+                        brand</a> (from <strong>LI</strong>berty and <strong>GO</strong>ld). And as word spread about these
+                        excellent <a href="#products" class="product-link">LIGO products</a>, so did their
+                        markets' geographic boundaries. Today, Liberty Gold is respected worldwide for its line
+                        of sensibly priced products that never sacrifice quality.
+                    </p>
+
+                    <p>
+                        Over the years, the Liberty Gold name and the LIGO brand have earned a worldwide
+                        reputation for excellence. Few international companies have as complete a product line —
+                        the LIGO family of products now includes hundreds of items from beverages to vegetables.
+                    </p>
+
+                    <p>
+                        We have maintained a steady growth by staying on top of changing consumer trends, and
+                        constantly being on the lookout for upscale and innovative new items to add to the
+                        distinguished LIGO and Liberty Gold brand lines.
+                    </p>
+
+                    <p>
+                        Still family-owned and operated and into its fourth generation of the Battat family,
+                        Liberty Gold Fruit Company is one of the few privately owned companies left in the
+                        industry.
+                    </p>
+
+                    <p>
+                        Liberty Gold is continuing the family ideals through day-to-day involvement of
+                        management in all phases of company operations and promoting a company-wide priority to
+                        customer service.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFFICIAL DIVISIONS SECTION -->
+<section id="divisions" class="capabilities">
+    <div class="container">
+        <h2 class="section-title">Our Product Divisions</h2>
+        <p class="section-subtitle">
+            Serving grocery retail, commercial foodservice, and industrial food manufacturing globally.
+        </p>
+
+        <div class="caps-grid">
+            <div class="cap-item">
+                <div class="cap-icon">🏷️</div>
+                <h4>LIGO Brand</h4>
+                <p>
+                    LIGO brand products are found on grocery shelves in over 40 countries worldwide, standing as
+                    a premier recognized brand across Asia, Central America, and Europe.
+                </p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">🍑</div>
+                <h4>Liberty Gold Brand</h4>
+                <p>
+                    Our hallmark line delivering trusted quality canned fruits, packaged food products, and
+                    agricultural commodities internationally.
+                </p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">🏭</div>
+                <h4>Foodservice / Industrial</h4>
+                <p>
+                    Bulk ingredients, aseptic fruit packs, and commercial food formulations customized for
+                    processors, manufacturers, and institutions.
+                </p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">📦</div>
+                <h4>Private Label</h4>
+                <p>
+                    Custom private label solutions providing worldwide sourcing, co-packing, and strict quality
+                    control for regional and major global supermarket chains.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATALOG / PRODUCT SHOWCASE SECTION -->
+<section class="brand-section" id="brand">
+    <div class="container">
+        <div class="brand-header">
+            <img src="images/ligo_brand_normal.jpg" alt="LIGO Logo" class="brand-logo" />
+            <h2 class="section-title">Our Brand</h2>
+        </div>
+
+        <div class="heritage">
+            <p class="heritage-text">
+                <img
+                        src="images/ligo_Content-fullGrocery.jpg"
+                        alt="A passion for perfection since 1932."
+                        class="heritage-img"
+                />
+                <strong>The LIGO Standard</strong><br /><br />
+                Ezra Battat founded Liberty Gold Fruit Company in 1932 with a commitment to <strong>Quality First</strong> - a
+                standard that remains our family tradition today. Three generations of consumers rely on the LIGO name for quality,
+                integrity, and exceptional service across international markets.
+                <br /><br />
+                From California-grown fruits and vegetables to canned seafood, dry groceries, and specialty items,
+                our product line offers complete versatility for retail and commercial buyers.
+                Managed with hands-on attention from field to store shelf and supported by tailored packaging in multiple languages,
+                <a href="#products" class="product-link">LIGO products</a> are distributed in over 40 countries worldwide.
+            </p>
+        </div>
+    </div>
+    <p class="section-subtitle">Explore our core international consumer and industrial offerings.</p>
+
+    <!-- Main Two-Column Layout Wrapper -->
+    <div class="catalog-layout" id="products">
+        <!-- Left Sidebar: Filter Buttons Group -->
+        <aside class="catalog-controls">
+            <div class="filter-chips" role="tablist" aria-label="Product categories">
+                <button class="chip active" data-filter="all" role="tab" aria-selected="true">
+                    All Products
+                </button>
+
+                <!-- Canned & Shelf-Stable Goods -->
+                <button class="chip" data-filter="CannedFruits" role="tab" aria-selected="false">
+                    Canned Fruits
+                </button>
+                <button class="chip" data-filter="4ozTravelinFruitCups" role="tab" aria-selected="false">
+                    4 oz. Travelin' Fruit Cups
+                </button>
+                <button class="chip" data-filter="CannedVegetables" role="tab" aria-selected="false">
+                    Canned Vegetables
+                </button>
+                <button class="chip" data-filter="CannedFish" role="tab" aria-selected="false">
+                    Sardines &amp; Canned Fish
+                </button>
+
+                <!-- Snacks & Produce -->
+                <button class="chip" data-filter="DriedFruits" role="tab" aria-selected="false">
+                    Dried Fruits
+                </button>
+                <button class="chip" data-filter="Canister" role="tab" aria-selected="false">
+                    Canister Snacks
+                </button>
+
+                <!-- Beverages -->
+                <button class="chip" data-filter="Juices" role="tab" aria-selected="false">
+                    Bottled &amp; Tetra Pack Juices
+                </button>
+                <button class="chip" data-filter="Sodas" role="tab" aria-selected="false">
+                    Soda Beverages
+                </button>
+
+                <!-- Specialty & Frozen -->
+                <button class="chip" data-filter="Specialty" role="tab" aria-selected="false">
+                    Condiments &amp; Specialty Item
+                </button>
+                <button class="chip" data-filter="Frozen" role="tab" aria-selected="false">
+                    Frozen Products
+                </button>
+            </div>
+        </aside>
+
+        <!-- Right Content Area: Search Box + Status + Product Grid -->
+        <main class="catalog-content">
+            <!-- Search Box directly on top of the Product Grid -->
+            <div class="search-box">
+                <input
+                        type="text"
+                        id="productSearch"
+                        placeholder="Search products by name or SKU..."
+                        aria-label="Search products"
+                />
+                <button type="button" id="clearSearch" class="search-icon-btn" aria-label="Clear search and filters">
+                    <span id="searchIcon">🔍</span>
+                </button>
+            </div>
+
+            <!-- Live Search & Load Feedback -->
+            <div id="catalogStatus" class="catalog-status" aria-live="polite">
+                Loading products catalog from specifications dataset...
+            </div>
+
+            <!-- Dynamic Product Grid container populated by app.js -->
+            <div class="product-grid" id="productGrid">
+                <div class="loading-spinner-wrapper">
+                    <p class="status-message">Loading product catalog...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- MODAL SPECIFICATION & NUTRITION DIALOG -->
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+
+        <div class="modal-header">
+            <span class="modal-badge" id="modalBadge">Spec Sheet &amp; Nutrition</span>
+            <h2 id="modalTitle">Product Details</h2>
+            <p id="modalSku" class="modal-sku">SKU: -</p>
+        </div>
+
+        <div class="modal-body">
+            <p id="modalDescription" class="modal-desc-text">Detailed product specs go here...</p>
+
+            <!-- Logistics Specifications Table -->
+            <h4 class="modal-section-heading">Logistics &amp; Packaging Specs</h4>
+            <table class="modal-spec-table">
+                <tr>
+                    <th>Packaging Format</th>
+                    <td id="specPack">-</td>
+                </tr>
+                <tr>
+                    <th>Net Weight</th>
+                    <td id="specWeight">-</td>
+                </tr>
+                <tr>
+                    <th>Shipping Port</th>
+                    <td id="specPort">San Francisco / Oakland, CA</td>
+                </tr>
+                <tr>
+                    <th>Case Weight</th>
+                    <td id="specCaseWeight">-</td>
+                </tr>
+                <tr>
+                    <th>Case Cube</th>
+                    <td id="specCaseCube">-</td>
+                </tr>
+                <tr>
+                    <th>Case Dimensions</th>
+                    <td id="specCaseDimensions">-</td>
+                </tr>
+                <tr>
+                    <th>Cases Per Pallet</th>
+                    <td id="specCasesPerPallet">-</td>
+                </tr>
+                <tr>
+                    <th>Pallet Pattern</th>
+                    <td id="specPalletPattern">-</td>
+                </tr>
+            </table>
+
+            <!-- FDA Style Nutrition Facts Box -->
+            <div class="nutrition-facts-box" id="nutritionFactsBox">
+                <div class="nf-title">Nutrition Facts</div>
+                <div class="nf-servings">
+                    Servings Per Container <span id="nfServings">4 servings per container</span>
+                </div>
+                <div class="nf-serving-size">Serving size <span id="nfServingSize">1/2 cup (140g)</span></div>
+                <div class="nf-bar-thick"></div>
+                <div class="nf-amount-per-serving">Amount per serving</div>
+                <div class="nf-calories-row">
+                    <span class="nf-calories-label">Calories</span>
+                    <span class="nf-calories-value" id="nfCalories">100</span>
+                </div>
+                <div class="nf-bar-med"></div>
+                <div class="nf-dv-header">% Daily Value*</div>
+                <div class="nf-row">
+                    <span><strong>Total Fat</strong> <span id="nfTotalFat">0g</span></span>
+                    <strong id="nfTotalFatDV">0%</strong>
+                </div>
+                <div class="nf-subrow">
+                    <span>Saturated Fat 0g</span>
+                    <span>0%</span>
+                </div>
+                <div class="nf-subrow">
+                    <span><em>Trans</em> Fat 0g</span>
+                    <span></span>
+                </div>
+                <div class="nf-row">
+                    <span><strong>Cholesterol</strong> 0mg</span>
+                    <span><strong>0%</strong></span>
+                </div>
+                <div class="nf-row">
+                    <span><strong>Sodium</strong> <span id="nfSodium">10mg</span></span>
+                    <strong id="nfSodiumDV">0%</strong>
+                </div>
+                <div class="nf-row">
+                    <span><strong>Total Carbohydrate</strong> <span id="nfCarbs">24g</span></span>
+                    <strong id="nfCarbsDV">9%</strong>
+                </div>
+                <div class="nf-subrow">
+                    <span>Dietary Fiber <span id="nfFiber">1g</span></span>
+                    <strong id="nfFiberDV">4%</strong>
+                </div>
+                <div class="nf-subrow">
+                    <span>Total Sugars <span id="nfSugars">21g</span></span>
+                    <span></span>
+                </div>
+                <div class="nf-subrow-indent">
+                    <span>Includes <span id="nfAddedSugars">14g</span> Added Sugars</span>
+                    <strong id="nfAddedSugarsDV">28%</strong>
+                </div>
+                <div class="nf-row">
+                    <span><strong>Protein</strong> <span id="nfProtein">1g</span></span>
+                    <span></span>
+                </div>
+                <div class="nf-bar-thick"></div>
+                <div class="nf-micro-row">
+                    <span>Vitamin D <span id="nfVitaminD">0mcg</span></span>
+                    <span id="nfVitaminDDV">0%</span>
+                </div>
+                <div class="nf-micro-row">
+                    <span>Calcium <span id="nfCalcium">10mg</span></span>
+                    <span id="nfCalciumDV">0%</span>
+                </div>
+                <div class="nf-micro-row">
+                    <span>Iron <span id="nfIron">0.4mg</span></span>
+                    <span id="nfIronDV">2%</span>
+                </div>
+                <div class="nf-micro-row">
+                    <span>Potassium <span id="nfPotassium">110mg</span></span>
+                    <span id="nfPotassiumDV">2%</span>
+                </div>
+                <div class="nf-footnote">
+                    - The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="modal-actions">
+                <a href="#" id="btnDownloadSpec" class="btn-secondary" download>
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF Spec Sheet
+                </a>
+                <a href="mailto:tim@libertygold.com?subject=Product%20Spec%20Inquiry" class="btn-primary">Inquire About Wholesale Order</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER & OFFICIAL CONTACT -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h3>LIBERTY GOLD FRUIT COMPANY LP</h3>
+                <p>
+                    Quality, reliability, and longevity – the hallmarks of Liberty Gold Fruit Company since
+                    1932.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#divisions">Product Divisions</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#brand">Ligo Brand</a></li>
+                    <li><a href="#products">Ligo Products</a></li>
+                    <li><a href="#contact">Corporate Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Corporate Headquarters</h4>
+                <ul>
+                    <li>
+                        <a
+                                href="https://maps.google.com/?q=500+Eccles+Avenue,+South+San+Francisco,+CA+94080"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="footer-link"
+                        >
+                            500 Eccles Avenue<br />
+                            South San Francisco, CA 94080 USA
+                        </a>
+                    </li>
+                    <li>
+                        Phone: <a href="tel:+16505834700" class="footer-link">(650) 583-4700</a>
+                    </li>
+                    <li>
+                        Fax: (650) 583-4770
+                    </li>
+                    <li>
+                        Email: <a href="mailto:tim@libertygold.com?subject=Inquiry%20from%20Website&body=Hello%20Tim,%20I%20would%20like%20to%20learn%20more%20about..."
+                                  class="footer-link">tim@libertygold.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Liberty Gold Fruit Co., Inc. All Rights Reserved.</p>
+            <p>So. San Francisco, CA 94080</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
