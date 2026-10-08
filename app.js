@@ -1,1 +1,1046 @@
-const _0x2b5d67=_0x25ea;(function(_0xf7fa72,_0x58399d){const _0x3d2cec=_0x25ea,_0x2e0408=_0xf7fa72();while(!![]){try{const _0x28f874=parseInt(_0x3d2cec(0x1a3))/(0x1*-0x4f2+-0x13b7+0x18aa)+parseInt(_0x3d2cec(0x2a2))/(-0x2079*-0x1+0x20c*-0x11+0x255*0x1)+-parseInt(_0x3d2cec(0x431))/(0xb17*-0x1+0x4f2+0x4*0x18a)*(-parseInt(_0x3d2cec(0x2bd))/(-0x6d7*-0x2+0x11c+0x2*-0x763))+parseInt(_0x3d2cec(0x1e6))/(-0x11*-0xbe+-0x736*0x3+-0x9*-0x101)+parseInt(_0x3d2cec(0x3c4))/(0x1*-0x13bb+0xf0f+0x4b2)+-parseInt(_0x3d2cec(0x308))/(0x334+-0x9*0x41+-0xe4)*(parseInt(_0x3d2cec(0x220))/(-0x6b9+-0xd*-0x3+0x69a))+-parseInt(_0x3d2cec(0x29b))/(0x2247+0x1ab7+-0x3cf5);if(_0x28f874===_0x58399d)break;else _0x2e0408['push'](_0x2e0408['shift']());}catch(_0x2fc069){_0x2e0408['push'](_0x2e0408['shift']());}}}(_0x265c,-0x2f096+-0x6da46+-0x1385d9*-0x1),document[_0x2b5d67(0x241)+_0x2b5d67(0x1e9)](_0x2b5d67(0x216)+_0x2b5d67(0x2e8),()=>{const _0x2460f0=_0x2b5d67,_0x202ee3={'Crksl':function(_0x2ba1d7){return _0x2ba1d7();}};_0x202ee3[_0x2460f0(0x41a)](initMobileMenu),_0x202ee3[_0x2460f0(0x41a)](fetchAndInitCatalog);}));function initMobileMenu(){const _0x273714=_0x2b5d67,_0x2e2a81={'sHFPw':_0x273714(0x460),'BRTOU':_0x273714(0x445),'zinaw':_0x273714(0x2bc),'fNqMf':_0x273714(0x437),'FXcNF':_0x273714(0x18b)+'\x20a'},_0x54c50c=document[_0x273714(0x1b9)+_0x273714(0x470)](_0x2e2a81[_0x273714(0x2ae)]),_0x343d1c=document[_0x273714(0x1b9)+_0x273714(0x470)](_0x2e2a81[_0x273714(0x377)]);_0x54c50c&&_0x343d1c&&(_0x54c50c[_0x273714(0x241)+_0x273714(0x1e9)](_0x2e2a81[_0x273714(0x43a)],()=>{const _0xe23be0=_0x273714;_0x343d1c[_0xe23be0(0x23c)][_0xe23be0(0x1c7)](_0x2e2a81[_0xe23be0(0x379)]);}),document[_0x273714(0x391)+_0x273714(0x37c)](_0x2e2a81[_0x273714(0x1b5)])[_0x273714(0x2aa)](_0x5285e7=>{const _0x558b20=_0x273714;_0x5285e7[_0x558b20(0x241)+_0x558b20(0x1e9)](_0x2e2a81[_0x558b20(0x43a)],()=>_0x343d1c[_0x558b20(0x23c)][_0x558b20(0x25d)](_0x558b20(0x460)));}));}let allProducts=[],activeCategory=_0x2b5d67(0x35a),searchQuery='';function normalizeKey(_0x5cce7d){const _0x2cfc1c=_0x2b5d67,_0x5f4c16={'RAIJf':function(_0x5e3287,_0x2c9d8c){return _0x5e3287(_0x2c9d8c);},'iFxSS':function(_0x31d7ad,_0x3b3aac){return _0x31d7ad||_0x3b3aac;}};return _0x5f4c16[_0x2cfc1c(0x2ca)](String,_0x5f4c16[_0x2cfc1c(0x1e5)](_0x5cce7d,''))[_0x2cfc1c(0x388)+'e']()[_0x2cfc1c(0x2dc)](/[^a-z0-9]/g,'');}function parseNutrientValue(_0x163cdb){const _0x190e87=_0x2b5d67,_0x16bdfa={'NzbHn':function(_0xd23f96,_0x51c56c){return _0xd23f96(_0x51c56c);},'RCKFf':function(_0x19af48,_0x57a814){return _0x19af48(_0x57a814);}};if(!_0x163cdb)return 0x244a+0x683*0x1+0x1*-0x2acd;const _0x29b7f6=_0x16bdfa[_0x190e87(0x472)](String,_0x163cdb)[_0x190e87(0x235)](/[\d.]+/);return _0x29b7f6?_0x16bdfa[_0x190e87(0x444)](parseFloat,_0x29b7f6[0xf3d+-0x1086+-0x2f*-0x7]):0x2316+-0x235a+-0x44*-0x1;}function getDV(_0x433d4e,_0x2ab298){const _0x45cec=_0x2b5d67,_0x4b0343={'VQbZQ':function(_0x12c94a,_0xff95d9){return _0x12c94a(_0xff95d9);},'ajSjG':function(_0x514977,_0x17387c){return _0x514977(_0x17387c);},'TaFUu':function(_0x506775,_0x2098e8){return _0x506775===_0x2098e8;},'DZdnS':function(_0x50944c,_0x24ebd0){return _0x50944c*_0x24ebd0;},'GRUCD':function(_0x4c8d2d,_0x4829a5){return _0x4c8d2d/_0x4829a5;},'wLVpK':function(_0x41b867,_0x40765f){return _0x41b867+_0x40765f;}};if(!_0x2ab298)return'-';const _0x35dc4f=_0x4b0343[_0x45cec(0x3ce)](parseNutrientValue,_0x433d4e);if(_0x4b0343[_0x45cec(0x1b6)](isNaN,_0x35dc4f)||_0x4b0343[_0x45cec(0x428)](_0x35dc4f,0xc02*-0x2+0x178b+0x79))return'0%';const _0x267641=Math[_0x45cec(0x3b3)](_0x4b0343[_0x45cec(0x278)](_0x4b0343[_0x45cec(0x2c6)](_0x35dc4f,_0x2ab298),-0x11c5+-0xeee+0x2117));return _0x4b0343[_0x45cec(0x2db)](_0x267641,'%');}function _0x265c(){const _0x3492d1=['\x22card-img-','oJJvn','MdxHL','all','1/2\x20cup\x20(1','false','SZKlO','bold','libertygol','arch\x20param','getAttribu','\x22><strong>','iMhsJ','CHpmj','jDjFw','ble','setFillCol','NCcqg','PLeWB','immbo','w\x20spec\x20she','UlUZa','ber_g','YzGaj','\x20\x20\x20\x20\x20<span','aKSsU','fyjXy','\x20http.serv','XgaAi','GEsgs','ack:</stro','zqOil','fNqMf','amp;\x20Nutri','sHFPw','N/A','lastAutoTa','torAll','HkKJw','portrait','SA\x20|\x20Phone','pBAxt','zTXpQ','kCoOs','USA','Specificat','ohydrates_','Pattern','PzoLh','toLowerCas','mtQHJ','name','specCasesP','Product\x20De','CA\x2094080\x20U','MVorb','modalTitle','ass=\x22card-','querySelec','giDlo','roundedRec','UHiJx','case_cube','nrKXL','eting...','eKCDA','baaGb','AsqdE','tails','Calories','miEWe','zGWZf','outh\x20San\x20F','ZSkRF','GeUzp','t\x20catalog.','total_fat_','aria-hidde','lass=\x22card','jCdnQ','ent','GHZxU','drawImage','removeEven','glaVt','FMmoW','true','ajaeU','llet','t\x20catalog\x20','\x20processin','e://.</p>','round','LIGO\x20Brand','\x20\x20\x20\x20\x20\x20\x20<sp','getHeight','product(s)','ory\x22>','fvfGY','toDataURL','bjQoQ','vitamin_d','EWFrt','mensions','y-gold.png','pageSize','cLOrs','\x22\x20alt=\x22','calcium','1095780eDnqhh','dKNAz','PNG','nfCalcium','Potassium','setAttribu','HOriH','OvPRg','nfProtein','1/2\x20cup','VQbZQ','ailable\x20in','(Serving\x20S','Net\x20Weight','kWpjR','SauoH','et\x20and\x20nut','og\x20at\x20this','er)\x20rather','\x20\x20\x20\x20\x20\x20\x20\x20\x20<','zrHLl','an\x20class=\x22','DkCbD','nfFiberDV','\x20you\x20how\x20m','Food\x20Produ','Otvpb','uotNL','DsMBZ','GdFvt','potassium_','ibute','setFont','qFESM','oFyqZ','caseDimens','className','LUPOv','HPVvR','oVSIo','WrLDh','title\x22>','ata-sku=\x22','LSvqM','dDLPx','\x20|\x20SKU:\x20','</span>\x0a\x20\x20','Oraxl','general\x20nu','o_Content-','helvetica','ta\x22>\x0a\x20\x20\x20\x20\x20','tListener','\x20</button>','NVvzq','closest','\x20\x20<p\x20class','ch\x20and\x20fil','test','ient\x20in\x20a\x20','dyTVU','UhrgG','ern','jIlcg','Country\x20of','PWxYg','innerHTML','cases_per_','to\x20a\x20daily','>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','zVsPA','\x20product(s','BLbnT','RjMba','key','Pallet\x20Pat','OvayL','arvesting,','ntributes\x20','value','tton\x20class','status-mes','Total\x20Fat','lugWk','e\x20try\x20agai','createDocu','Crksl','uch\x20a\x20nutr','servings_p','pack_size','qmmBI','nsure\x20you\x20','eIBla','okitg','min','XxJJm','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20','aFGrB','abel','</p>\x0a\x20\x20\x20\x20\x20','TaFUu','&gt;','3-4700\x20|\x20E','-action\x22\x20d','iOGDc','Dietary\x20Fi','TkZGL','zvyRt','bwyuv','145857HUBDaU','IJpqX','find','mail:\x20tim@','productMod','wexia','navLinks','xISoR','.pdf','BRTOU','carbs','iHRgf','striped','appendChil','Anonymous','hGlJv','sodium','textConten','hOytE','RCKFf','click','canvas',':\x20(650)\x2058','Showing\x200\x20','g\x20and\x20mark','glESd','LD\x20FRUIT\x20C','pnECb','img','Pallet','wrapper\x22>\x0a','nHtXl','SlBMh','pOWWW','card-categ','rver\x20(e.g.','are\x20runnin','erPallet','Sodium','mcg','finalY','rancisco,\x20','00\x20calorie','Details','setDrawCol','setLineWid','total_suga','active','SokSR','SKU:</stro','fjhxB','badge\x22>','specCaseWe','ions','preventDef','EaEBK','tion\x20libra','orld\x20Has\x20t','ion\x20Featur','\x20\x20\x20\x20\x20\x20\x20\x20<s','vOnar','cat','Calcium','ById','mxSMZ','NzbHn','><strong>P','=\x22btn-card','iron_mg','YQsug','40g)','srbRP','igKME','LQuJR','GIhhv','brand','pQBud','tVeII','qPgVg','qgknv','hYsHi','zSbVf','nbuBu','serving_si','Iron','hspbP','qteCH','fGfSz','article','ber','added_suga','lqDOH','Case\x20Cube','line','.nav-links','origin','sodium_mg','Showing\x20','cZIYm','productSea','load\x20produ','ing.\x20Pleas','specCaseCu','jspdf','ted','arsDV','ecs_and_nu','</h3>\x0a\x20\x20\x20\x20','nfVitaminD','XFKmS','mKBpw','\x20\x20\x20</div>\x0a','eters.</p>','removeAttr','product','HkSqz','pnWwi','The\x20Best\x20F','1068823yFNksT','lYZsx','XtCJL','\x20or\x20Python','height','modalSku','kLqBS','nfFiber','ize:\x20','JgGeM','Approx.\x204','PQJxk','ily\x20Value\x20','product-ca','AuzSg','QItvZ','sage\x20error','total_fat','FXcNF','ajSjG','CspFU','LLHhq','getElement','XygZu','GFePA','setTextCol','wXzBw','ecoqH','mYsCH','g>Origin:<','specCaseDi','btnDownloa','badge','fGiCk','rCVGl','sugars','toggle','modalClose','UwqAr','\x20\x20\x20\x20\x20</div','ack\x20Size','images/nav','\x22\x20loading=','Clear\x20sear','ng>\x20','action','desc','WDkBa','pallet','specPallet','FDA\x20Nutrit','weight','Ekkpr','iption','WBUto','CHQMl','item','.chip','PySRN','RUoLa','_origin','\x20\x20\x20View\x20Sp','UmJJN','uUmza','nfIron','mnfDx','iFxSS','1492750icBHgU','nfCarbsDV','TNmvu','stener','productGri','dNCvo','nDqYq','input','cqNuh','ight','nfIronDV','trition\x20ad','pan><stron','tclzC','\x22lazy\x22\x20dat','status','width','servings','\x20src=\x22','internal','UipQv','\x20than\x20open','cIEkv','mALMX','Vitamin\x20D','n\x20in\x20a\x20mom','&amp;','FDdmX','ydJtM','und\x20matchi','\x20VS\x20Code\x20L','Amount\x20Per','ars','500\x20Eccles','%\x20Daily\x20Va','ecificatio','(DV)\x20tells','MKeVF','Mwwup','Format\x20/\x20P','ohydrates','createElem','.btn-card-','HtoWf','oods\x20the\x20W','a-fallback','&\x20Packagin','GPixc','DOMContent','pCiZP','Category:\x20','ing\x20direct','palletPatt','roducts\x20fo','length','PDF\x20genera','fiber','total_carb','8OBXjOc','\x20diet.\x202,0','ize','images/lig','catalogSta','Rights\x20Res','descriptio','category_l','\x20the\x20catal','rpEZK','Hotlj','LIGO_Spec_','autoTable','net_weight','iron','case_weigh','hwiIQ','protein_g','CbFTQ','nfPotassiu','syhfl','match','data-fallb','JWtsL','image_url','max','ing\x20produc','VoRpF','classList','fQfke','\x20Serving','Added\x20Suga','Growing,\x20h','addEventLi','-message\x22>','dietary_fi','ly\x20via\x20fil','Bfnfs','hoHcX','rs_g','TGudS','iyHuC','calcium_mg','ITbIm','mCeEh','FNNuU','caseCube','\x20<p\x20class=','protein','ault','pgqji','ct\x20catalog','bjqbX','text','rch','*\x20The\x20%\x20Da','roduct','gnfYY','wkwsM','XOIoa','Unable\x20to\x20','remove','save','specPack','booyy','YVJnl','y.jpg','mentFragme','calories','oxVaF','ajdEm','YZXMu','s\x20a\x20day\x20is','tern','HTTP\x20error','cVRqH','-content\x22>','rition\x20for','clearSearc','trition.cs','nfSugars','dBcni','BCxeu','setFontSiz','WgdWM','\x20\x20\x20\x20<div\x20c','lue\x20(%\x20DV)','RUncw','DZdnS','s=\x22card-me','IjGbz','popup=\x22dia','©\x202026\x20Lib','o\x20Offer','nfSodium','VboGP','dLHfJ','PuJAP','\x20<div\x20clas','wpsPG','ulWLl','Logistics\x20','add','onerror',',\x20Servings','otEDv','/strong>\x20','nfSodiumDV','includes','Product\x20Sp','potassium','RBRya','AASAv','!\x20Status:\x20','Zfvso','ryHvv','erty\x20Gold\x20','split','OJNZi','\x20Vitamin','pGURV','jbuaJ','pwkbl','13031631vRhftf','filter','nfCarbs','Case\x20Dimen','NJRls','xxTQk','RZGIz','401860VOGkFH','cts','fTDpt','\x20\x20\x20\x20\x20\x20\x20\x20','country_of','hLtlQ','=\x22card-sku','jsPDF','forEach','&#39;','er_contain','Protein','zinaw','searchIcon','vhSRL','\x20Origin','g\x20via\x20a\x20lo','d.com','&quot;','onload','specWeight','bar_libert','wMvHR','sku','jXtUB','log\x22\x20aria-','menuToggle','40xOprTr','ations','grid','HZgsj','VmpiK','\x20Mineral\x20/','dataURL','Nebgu','tus','GRUCD','case_dimen','casesPerPa','gNAkD','RAIJf','data-filte','Packaging\x20','Untitled\x20P','&lt;','Cases\x20Per\x20','HOMEV','tion\x0a\x20\x20\x20\x20\x20','mDV','zwNBw','contains','gLbAx','addImage','times','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','XMYHm','LIBERTY\x20GO','wLVpK','replace','Tgpeo','GiOic','TyhWA','zPsEc','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20','sions','ec\x20Sheet\x20&','.\x20Please\x20e','SKU:\x20','MrEqo','dSpec','Loaded','\x20Inc.\x20All\x20','erved.','sage\x22>No\x20p','zdLLl','YUXOY','aria-selec','caseWeight','Error\x20load','zcNmv','nfCalories','ion\x20Facts\x20','iIKpV','trim','fullGrocer','category','\x20\x20\x20\x20<h3\x20cl','ive\x20Server','target','ack','tor','sLBYE','g\x20Specific','CpOOd','nfAddedSug','ters','title','pallet_pat','push','zDZGR','call','pack','1060297Tlcsns','nfServings','CSV:','Total\x20Carb','xieJJ','is-active','GgRPx','nfCalciumD','data-sku','IDvVy','<p\x20class=\x22','nfServingS','ription\x22>','kOIrw','DOlrr','OMPANY\x20LP','xskUM','\x20Avenue,\x20S','vkWGv','Fruit\x20Co.,','Escape','crossOrigi','vvxRR','\x20\x20\x20\x20</div>','pHflR','PEGLu','iaEQg','\x20\x20\x20\x20\x20\x20<img','vitamin_d_','normal','ry\x20is\x20load','\x20used\x20for\x20','nCbKN','sxwGe','\x22card-desc','roducts\x20av','vice.','\x22\x20aria-has','\x20\x20\x20\x20\x20\x20\x20<bu','product_sp','FUPaf','label=\x22Vie','onclick','image/png','error','cciod','ipXxn','ng\x20your\x20se','YLeDV','ypVau','</div>\x0a\x20\x20\x20','aGQyl','nfTotalFat','src','keydown','hGClr','KunOX','italic','gCXGm','Nutrient\x20/','MmlrK','serving\x20co','Azjfi','div\x20class=','JyAPS','UJZqX','SGoPu','Case\x20Weigh','ent.','modalDescr','\x20\x20\x20<div\x20cl','gqQHg','TzfxY','\x20time.</p>','LJImU','getContext','cal\x20web\x20se','Total\x20Suga','SKU:\x20-'];_0x265c=function(){return _0x3492d1;};return _0x265c();}function formatNutrient(_0x442d24,_0x26aefe){const _0x1adddf=_0x2b5d67,_0xfcb237={'ecoqH':function(_0x292e5f,_0x5e6800){return _0x292e5f===_0x5e6800;},'giDlo':function(_0x189f86,_0x44f481){return _0x189f86===_0x44f481;},'PLeWB':function(_0xd17251,_0x1dc46c){return _0xd17251(_0x1dc46c);},'nDqYq':function(_0x2b9a46,_0x3f4be7){return _0x2b9a46+_0x3f4be7;},'HtoWf':function(_0x1cf3e8,_0x20e509){return _0x1cf3e8(_0x20e509);},'kCoOs':function(_0x34b1f4,_0x4acb06){return _0x34b1f4+_0x4acb06;}};if(_0xfcb237[_0x1adddf(0x1be)](_0x442d24,undefined)||_0xfcb237[_0x1adddf(0x1be)](_0x442d24,null)||_0xfcb237[_0x1adddf(0x392)](_0xfcb237[_0x1adddf(0x369)](String,_0x442d24)[_0x1adddf(0x2f5)](),''))return _0xfcb237[_0x1adddf(0x1ec)]('0',_0x26aefe);const _0xc4f97f=_0xfcb237[_0x1adddf(0x211)](String,_0x442d24)[_0x1adddf(0x2f5)]();if(/[a-zA-Z]+$/[_0x1adddf(0x3fe)](_0xc4f97f))return _0xc4f97f;return _0xfcb237[_0x1adddf(0x382)](_0xc4f97f,_0x26aefe);}async function fetchAndInitCatalog(){const _0x29c174=_0x2b5d67,_0x1b8e49={'GFePA':_0x29c174(0x1ea)+'d','UlUZa':_0x29c174(0x224)+_0x29c174(0x2c5),'xxTQk':function(_0x17d08a,_0x253013){return _0x17d08a(_0x253013);},'Oraxl':_0x29c174(0x32f)+_0x29c174(0x197)+_0x29c174(0x26f)+'v','hOytE':function(_0x3d8263,_0x2e48a2){return _0x3d8263===_0x2e48a2;},'fTDpt':_0x29c174(0x312)+_0x29c174(0x415)+_0x29c174(0x2eb)+_0x29c174(0x32b)+_0x29c174(0x3cf)+_0x29c174(0x228)+_0x29c174(0x3d5)+_0x29c174(0x351),'AsqdE':_0x29c174(0x448)+_0x29c174(0x3b7),'bwyuv':function(_0x9e4767){return _0x9e4767();},'otEDv':function(_0xcead82){return _0xcead82();},'iIKpV':_0x29c174(0x2f0)+_0x29c174(0x23a)+_0x29c174(0x3b0)+_0x29c174(0x30a),'YLeDV':_0x29c174(0x312)+_0x29c174(0x415)+_0x29c174(0x1b3)+_0x29c174(0x242)+_0x29c174(0x25c)+_0x29c174(0x191)+_0x29c174(0x253)+_0x29c174(0x2e4)+_0x29c174(0x41f)+_0x29c174(0x455)+_0x29c174(0x2b2)+_0x29c174(0x354)+_0x29c174(0x454)+_0x29c174(0x204)+_0x29c174(0x2f9)+_0x29c174(0x1a6)+_0x29c174(0x372)+_0x29c174(0x3d6)+_0x29c174(0x1fb)+_0x29c174(0x219)+_0x29c174(0x244)+_0x29c174(0x3b2),'syhfl':_0x29c174(0x2f0)+_0x29c174(0x23a)+_0x29c174(0x3a2)},_0x25e2f6=document[_0x29c174(0x1b9)+_0x29c174(0x470)](_0x1b8e49[_0x29c174(0x1bb)]),_0x1db35d=document[_0x29c174(0x1b9)+_0x29c174(0x470)](_0x1b8e49[_0x29c174(0x36c)]);if(!_0x25e2f6)return;try{const _0x45c280=await _0x1b8e49[_0x29c174(0x2a0)](fetch,_0x1b8e49[_0x29c174(0x3f3)]);if(!_0x45c280['ok'])throw new Error(_0x29c174(0x26a)+_0x29c174(0x291)+_0x45c280[_0x29c174(0x1f5)]);const _0x565135=await _0x45c280[_0x29c174(0x255)]();allProducts=_0x1b8e49[_0x29c174(0x2a0)](parseCSV,_0x565135);if(!allProducts||_0x1b8e49[_0x29c174(0x443)](allProducts[_0x29c174(0x21c)],-0x29*0x1a+-0x1da+-0x2c*-0x23)){_0x25e2f6[_0x29c174(0x406)]=_0x1b8e49[_0x29c174(0x2a4)];if(_0x1db35d)_0x1db35d[_0x29c174(0x442)+'t']=_0x1b8e49[_0x29c174(0x39a)];return;}_0x1b8e49[_0x29c174(0x430)](initControls),_0x1b8e49[_0x29c174(0x289)](renderProducts);}catch(_0x5065ef){console[_0x29c174(0x334)](_0x1b8e49[_0x29c174(0x2f4)],_0x5065ef);_0x25e2f6&&(_0x25e2f6[_0x29c174(0x406)]=_0x1b8e49[_0x29c174(0x338)]);if(_0x1db35d)_0x1db35d[_0x29c174(0x442)+'t']=_0x1b8e49[_0x29c174(0x234)];}}function parseCSV(_0x135c4a){const _0x2f05ee=_0x2b5d67,_0x425d7d={'SauoH':function(_0x4f52bb,_0x547917){return _0x4f52bb!==_0x547917;},'dDLPx':function(_0x37c066,_0x3e8836){return _0x37c066<_0x3e8836;},'gqQHg':function(_0x2ed91c,_0x26f1c1){return _0x2ed91c(_0x26f1c1);},'PWxYg':function(_0x3551bb,_0x1d4fdb){return _0x3551bb<_0x1d4fdb;},'ipXxn':function(_0x4b2ba2,_0x30840d){return _0x4b2ba2(_0x30840d);}},_0x39b376=_0x135c4a[_0x2f05ee(0x2dc)](/\r/g,'')[_0x2f05ee(0x2f5)]()[_0x2f05ee(0x295)]('\x0a');if(_0x425d7d[_0x2f05ee(0x3f0)](_0x39b376[_0x2f05ee(0x21c)],0x1*0xa0b+-0x1f9*-0x2+-0xdfb))return[];const _0x119c9f=_0x425d7d[_0x2f05ee(0x34f)](parseCSVRow,_0x39b376[0x2350+0x1a*-0x166+0x10c]),_0x4ddd92=[];for(let _0x2a7387=-0x3bd+0x3d7+-0x19;_0x425d7d[_0x2f05ee(0x405)](_0x2a7387,_0x39b376[_0x2f05ee(0x21c)]);_0x2a7387++){const _0x42ffe0=_0x39b376[_0x2a7387][_0x2f05ee(0x2f5)]();if(!_0x42ffe0)continue;const _0x402f6b=_0x425d7d[_0x2f05ee(0x336)](parseCSVRow,_0x42ffe0),_0x4bc9c0={};_0x119c9f[_0x2f05ee(0x2aa)]((_0x334dbe,_0xccf95)=>{const _0x177222=_0x2f05ee,_0x48125a=_0x334dbe[_0x177222(0x2f5)]()[_0x177222(0x388)+'e']()[_0x177222(0x2dc)](/[^a-z0-9_]/g,'_')[_0x177222(0x2dc)](/_+/g,'_')[_0x177222(0x2dc)](/^_|_$/g,'');_0x4bc9c0[_0x48125a]=_0x425d7d[_0x177222(0x3d3)](_0x402f6b[_0xccf95],undefined)?_0x402f6b[_0xccf95][_0x177222(0x2f5)]():'';}),_0x4ddd92[_0x2f05ee(0x304)](_0x4bc9c0);}return _0x4ddd92;}function parseCSVRow(_0x2b35f6){const _0x377c77=_0x2b5d67,_0x252bea={'RBRya':function(_0x24a7f9,_0x215ce6){return _0x24a7f9<_0x215ce6;},'aGQyl':function(_0x16319a,_0x56c32e){return _0x16319a===_0x56c32e;},'hwiIQ':function(_0xb7bd93,_0x18b588){return _0xb7bd93!==_0x18b588;},'NVvzq':function(_0x187493,_0x3ec498){return _0x187493-_0x3ec498;}},_0x29f3a4=[];let _0x547443='',_0x12874b=![];for(let _0x5b2ac6=-0x14d4+0x223*-0x4+0x1d60;_0x252bea[_0x377c77(0x28f)](_0x5b2ac6,_0x2b35f6[_0x377c77(0x21c)]);_0x5b2ac6++){const _0x2826e7=_0x2b35f6[_0x5b2ac6];if(_0x252bea[_0x377c77(0x33b)](_0x2826e7,'\x22')&&(_0x252bea[_0x377c77(0x33b)](_0x5b2ac6,-0x259a+0x2*-0x623+0x31e0)||_0x252bea[_0x377c77(0x230)](_0x2b35f6[_0x252bea[_0x377c77(0x3fa)](_0x5b2ac6,-0x1e84+-0x1f06+0x3d8b)],'\x5c')))_0x12874b=!_0x12874b;else _0x252bea[_0x377c77(0x33b)](_0x2826e7,',')&&!_0x12874b?(_0x29f3a4[_0x377c77(0x304)](_0x547443[_0x377c77(0x2dc)](/^"|"$/g,'')[_0x377c77(0x2f5)]()),_0x547443=''):_0x547443+=_0x2826e7;}return _0x29f3a4[_0x377c77(0x304)](_0x547443[_0x377c77(0x2dc)](/^"|"$/g,'')[_0x377c77(0x2f5)]()),_0x29f3a4;}function initControls(){const _0x46af25=_0x2b5d67,_0x5bb1b4={'LUPOv':function(_0x391bd9,_0x18b423){return _0x391bd9>_0x18b423;},'oJJvn':function(_0x381f94,_0x1051a4){return _0x381f94!==_0x1051a4;},'zcNmv':_0x46af25(0x35a),'vOnar':_0x46af25(0x30d),'zPsEc':_0x46af25(0x302),'rCVGl':_0x46af25(0x1ce)+_0x46af25(0x3fd)+_0x46af25(0x301),'baaGb':function(_0x5a56d2){return _0x5a56d2();},'zGWZf':function(_0x157b76,_0x1a8037){return _0x157b76===_0x1a8037;},'uUmza':_0x46af25(0x2cb)+'r','fQfke':_0x46af25(0x460),'sxwGe':_0x46af25(0x2ee)+_0x46af25(0x195),'qmmBI':_0x46af25(0x3ad),'cIEkv':_0x46af25(0x35c),'XxJJm':function(_0x4d439c){return _0x4d439c();},'YQsug':function(_0x290278){return _0x290278();},'jDjFw':_0x46af25(0x445),'YZXMu':_0x46af25(0x210)+_0x46af25(0x1d0),'zdLLl':_0x46af25(0x310),'zTXpQ':function(_0x38d794,_0xb9107d){return _0x38d794(_0xb9107d);},'GEsgs':_0x46af25(0x190)+_0x46af25(0x256),'dBcni':_0x46af25(0x26e)+'h','NCcqg':_0x46af25(0x2af),'WDkBa':_0x46af25(0x1dc),'miEWe':_0x46af25(0x1ea)+'d','iOGDc':_0x46af25(0x1ed)},_0x3ddc0f=document[_0x46af25(0x1b9)+_0x46af25(0x470)](_0x5bb1b4[_0x46af25(0x374)]),_0x222401=document[_0x46af25(0x1b9)+_0x46af25(0x470)](_0x5bb1b4[_0x46af25(0x271)]),_0x19a129=document[_0x46af25(0x1b9)+_0x46af25(0x470)](_0x5bb1b4[_0x46af25(0x368)]),_0x44059d=document[_0x46af25(0x391)+_0x46af25(0x37c)](_0x5bb1b4[_0x46af25(0x1d2)]),_0xd73c80=document[_0x46af25(0x1b9)+_0x46af25(0x470)](_0x5bb1b4[_0x46af25(0x39d)]);function _0x3fe980(){const _0x56116a=_0x46af25,_0x5bcc4e=_0x3ddc0f&&_0x5bb1b4[_0x56116a(0x3e9)](_0x3ddc0f[_0x56116a(0x413)][_0x56116a(0x2f5)]()[_0x56116a(0x21c)],0x6e1*0x3+0x5c6*-0x4+-0x275*-0x1),_0x3fbcc9=_0x5bb1b4[_0x56116a(0x358)](activeCategory,_0x5bb1b4[_0x56116a(0x2f1)]);if(_0x5bcc4e||_0x3fbcc9){if(_0x19a129)_0x19a129[_0x56116a(0x442)+'t']='✕';_0x222401&&(_0x222401[_0x56116a(0x23c)][_0x56116a(0x286)](_0x5bb1b4[_0x56116a(0x46d)]),_0x222401[_0x56116a(0x3c9)+'te'](_0x5bb1b4[_0x56116a(0x2e0)],_0x5bb1b4[_0x56116a(0x1c5)]));}else{if(_0x19a129)_0x19a129[_0x56116a(0x442)+'t']='🔍';_0x222401&&(_0x222401[_0x56116a(0x23c)][_0x56116a(0x25d)](_0x5bb1b4[_0x56116a(0x46d)]),_0x222401[_0x56116a(0x19e)+_0x56116a(0x3e3)](_0x5bb1b4[_0x56116a(0x2e0)]));}}_0x3ddc0f&&_0x3ddc0f[_0x46af25(0x241)+_0x46af25(0x1e9)](_0x5bb1b4[_0x46af25(0x42c)],_0x2f6851=>{const _0x50d6aa=_0x46af25;searchQuery=_0x2f6851[_0x50d6aa(0x2fa)][_0x50d6aa(0x413)][_0x50d6aa(0x2f5)]()[_0x50d6aa(0x388)+'e'](),_0x5bb1b4[_0x50d6aa(0x399)](_0x3fe980),_0x5bb1b4[_0x50d6aa(0x399)](renderProducts);}),_0x222401&&_0x222401[_0x46af25(0x241)+_0x46af25(0x1e9)](_0x5bb1b4[_0x46af25(0x365)],()=>{const _0x1bf6b0=_0x46af25,_0x27d22f={'FNNuU':function(_0x16a6d5,_0x2659d1){const _0x965f35=_0x25ea;return _0x5bb1b4[_0x965f35(0x39e)](_0x16a6d5,_0x2659d1);},'mALMX':_0x5bb1b4[_0x1bf6b0(0x1e2)],'qPgVg':_0x5bb1b4[_0x1bf6b0(0x2f1)],'XtCJL':_0x5bb1b4[_0x1bf6b0(0x23d)],'immbo':_0x5bb1b4[_0x1bf6b0(0x329)],'wMvHR':_0x5bb1b4[_0x1bf6b0(0x41e)],'mKBpw':_0x5bb1b4[_0x1bf6b0(0x1fc)]};if(!_0x222401[_0x1bf6b0(0x23c)][_0x1bf6b0(0x2d4)](_0x5bb1b4[_0x1bf6b0(0x46d)]))return;if(_0x3ddc0f)_0x3ddc0f[_0x1bf6b0(0x413)]='';searchQuery='',activeCategory=_0x5bb1b4[_0x1bf6b0(0x2f1)],_0x44059d[_0x1bf6b0(0x2aa)](_0x4662e4=>{const _0x5d5a62=_0x1bf6b0,_0x3b9fd7=_0x27d22f[_0x5d5a62(0x24d)](_0x4662e4[_0x5d5a62(0x361)+'te'](_0x27d22f[_0x5d5a62(0x1fd)]),_0x27d22f[_0x5d5a62(0x47f)]);_0x4662e4[_0x5d5a62(0x23c)][_0x5d5a62(0x1c7)](_0x27d22f[_0x5d5a62(0x1a5)],_0x3b9fd7),_0x4662e4[_0x5d5a62(0x3c9)+'te'](_0x27d22f[_0x5d5a62(0x36a)],_0x3b9fd7?_0x27d22f[_0x5d5a62(0x2b8)]:_0x27d22f[_0x5d5a62(0x19b)]);}),_0x5bb1b4[_0x1bf6b0(0x423)](_0x3fe980),_0x5bb1b4[_0x1bf6b0(0x476)](renderProducts);}),_0x44059d[_0x46af25(0x2aa)](_0x3f183d=>{const _0x442a00=_0x46af25;_0x3f183d[_0x442a00(0x241)+_0x442a00(0x1e9)](_0x5bb1b4[_0x442a00(0x365)],()=>{const _0x5940b4=_0x442a00,_0x275d04={'HOMEV':_0x5bb1b4[_0x5940b4(0x23d)],'TzfxY':_0x5bb1b4[_0x5940b4(0x329)],'HkKJw':_0x5bb1b4[_0x5940b4(0x1fc)]};_0x44059d[_0x5940b4(0x2aa)](_0x28441f=>{const _0x2a8434=_0x5940b4;_0x28441f[_0x2a8434(0x23c)][_0x2a8434(0x25d)](_0x275d04[_0x2a8434(0x2d0)]),_0x28441f[_0x2a8434(0x3c9)+'te'](_0x275d04[_0x2a8434(0x350)],_0x275d04[_0x2a8434(0x37d)]);}),_0x3f183d[_0x5940b4(0x23c)][_0x5940b4(0x286)](_0x5bb1b4[_0x5940b4(0x23d)]),_0x3f183d[_0x5940b4(0x3c9)+'te'](_0x5bb1b4[_0x5940b4(0x329)],_0x5bb1b4[_0x5940b4(0x41e)]),activeCategory=_0x3f183d[_0x5940b4(0x361)+'te'](_0x5bb1b4[_0x5940b4(0x1e2)])||_0x5bb1b4[_0x5940b4(0x2f1)],_0x5bb1b4[_0x5940b4(0x423)](_0x3fe980),_0x5bb1b4[_0x5940b4(0x476)](renderProducts);});}),_0xd73c80&&_0xd73c80[_0x46af25(0x241)+_0x46af25(0x1e9)](_0x5bb1b4[_0x46af25(0x365)],_0x43db91=>{const _0x86243d=_0x46af25,_0x21d670=_0x43db91[_0x86243d(0x2fa)][_0x86243d(0x3fb)](_0x5bb1b4[_0x86243d(0x267)]);if(!_0x21d670)return;const _0x5b511b=_0x21d670[_0x86243d(0x361)+'te'](_0x5bb1b4[_0x86243d(0x2ec)]),_0x363564=allProducts[_0x86243d(0x433)](_0x323ec3=>String(_0x323ec3[_0x86243d(0x2b9)]||_0x323ec3['id'])[_0x86243d(0x2f5)]()===_0x5b511b);_0x363564&&_0x5bb1b4[_0x86243d(0x381)](openProductModal,_0x363564);}),_0x5bb1b4[_0x46af25(0x423)](initModalListeners);}function _0x25ea(_0x42f7b7,_0x3f5c4a){_0x42f7b7=_0x42f7b7-(-0x1b86+0x1ceb+0x1*0x19);const _0x137132=_0x265c();let _0x57ace5=_0x137132[_0x42f7b7];return _0x57ace5;}function renderProducts(){const _0x26fa2e=_0x2b5d67,_0x4baa80={'ypVau':function(_0xac548d,_0x11cecf){return _0xac548d===_0x11cecf;},'zrHLl':_0x26fa2e(0x35a),'okitg':function(_0x21b653,_0x2c7b9a){return _0x21b653(_0x2c7b9a);},'gLbAx':_0x26fa2e(0x334),'MKeVF':_0x26fa2e(0x236)+_0x26fa2e(0x2fb),'SokSR':function(_0x3cf980,_0x1e4d17){return _0x3cf980!==_0x1e4d17;},'FDdmX':_0x26fa2e(0x223)+_0x26fa2e(0x3f5)+_0x26fa2e(0x2f6)+_0x26fa2e(0x262),'UHiJx':_0x26fa2e(0x185),'RUncw':_0x26fa2e(0x1b0)+'rd','CpOOd':_0x26fa2e(0x2cd)+_0x26fa2e(0x258),'VboGP':_0x26fa2e(0x3b4),'UwqAr':_0x26fa2e(0x3dd)+_0x26fa2e(0x2a3),'UhrgG':_0x26fa2e(0x383),'VoRpF':function(_0x1e53e5,_0x2a0352){return _0x1e53e5(_0x2a0352);},'nCbKN':function(_0x56fe74,_0xd2c8c5){return _0x56fe74(_0xd2c8c5);},'rpEZK':function(_0x2c2c77,_0x19f4a5){return _0x2c2c77(_0x19f4a5);},'AuzSg':function(_0x22bda7,_0x191f39){return _0x22bda7(_0x191f39);},'xISoR':_0x26fa2e(0x44d),'aFGrB':_0x26fa2e(0x1ea)+'d','Zfvso':_0x26fa2e(0x224)+_0x26fa2e(0x2c5),'cZIYm':_0x26fa2e(0x312)+_0x26fa2e(0x415)+_0x26fa2e(0x2eb)+_0x26fa2e(0x21b)+_0x26fa2e(0x203)+_0x26fa2e(0x337)+_0x26fa2e(0x360)+_0x26fa2e(0x19d),'kWpjR':_0x26fa2e(0x448)+_0x26fa2e(0x3b7)},_0x9985f=document[_0x26fa2e(0x1b9)+_0x26fa2e(0x470)](_0x4baa80[_0x26fa2e(0x425)]),_0x217781=document[_0x26fa2e(0x1b9)+_0x26fa2e(0x470)](_0x4baa80[_0x26fa2e(0x292)]);if(!_0x9985f)return;const _0x5699b4=_0x4baa80[_0x26fa2e(0x1b1)](normalizeKey,activeCategory),_0x33aecf=allProducts[_0x26fa2e(0x29c)](_0x53fc19=>{const _0x39b4ac=_0x26fa2e,_0x16971f=(_0x53fc19[_0x39b4ac(0x302)]||_0x53fc19[_0x39b4ac(0x38a)]||_0x53fc19[_0x39b4ac(0x1db)]||'')[_0x39b4ac(0x388)+'e'](),_0xffd5e4=(_0x53fc19[_0x39b4ac(0x2f7)]||_0x53fc19[_0x39b4ac(0x46e)]||'')[_0x39b4ac(0x388)+'e'](),_0x10dd4b=(_0x53fc19[_0x39b4ac(0x2b9)]||_0x53fc19['id']||'')[_0x39b4ac(0x388)+'e'](),_0x133ed4=_0x4baa80[_0x39b4ac(0x339)](activeCategory,_0x4baa80[_0x39b4ac(0x3d8)])||_0x4baa80[_0x39b4ac(0x421)](normalizeKey,_0xffd5e4)[_0x39b4ac(0x28c)](_0x5699b4),_0x564314=!searchQuery||_0x16971f[_0x39b4ac(0x28c)](searchQuery)||_0x10dd4b[_0x39b4ac(0x28c)](searchQuery)||_0xffd5e4[_0x39b4ac(0x28c)](searchQuery);return _0x133ed4&&_0x564314;});_0x9985f[_0x26fa2e(0x406)]='';if(_0x4baa80[_0x26fa2e(0x339)](_0x33aecf[_0x26fa2e(0x21c)],-0x3*-0x511+-0x1477+0x544)){_0x9985f[_0x26fa2e(0x406)]=_0x4baa80[_0x26fa2e(0x18f)];if(_0x217781)_0x217781[_0x26fa2e(0x442)+'t']=_0x4baa80[_0x26fa2e(0x3d2)];return;}const _0x3ff6c5=document[_0x26fa2e(0x419)+_0x26fa2e(0x263)+'nt']();_0x33aecf[_0x26fa2e(0x2aa)](_0x5355a8=>{const _0x39191b=_0x26fa2e,_0x3de8a0=document[_0x39191b(0x20f)+_0x39191b(0x3a7)](_0x4baa80[_0x39191b(0x394)]);_0x3de8a0[_0x39191b(0x3e8)]=_0x4baa80[_0x39191b(0x277)];const _0x55719c=_0x5355a8[_0x39191b(0x302)]||_0x5355a8[_0x39191b(0x38a)]||_0x5355a8[_0x39191b(0x1db)]||_0x4baa80[_0x39191b(0x2ff)],_0x235857=_0x5355a8[_0x39191b(0x47c)]||_0x5355a8[_0x39191b(0x1c3)]||_0x4baa80[_0x39191b(0x27f)],_0x1db627=_0x5355a8[_0x39191b(0x227)+_0x39191b(0x426)]||_0x5355a8[_0x39191b(0x2f7)]||_0x4baa80[_0x39191b(0x1c9)],_0x42ee86=_0x5355a8[_0x39191b(0x226)+'n']||_0x5355a8[_0x39191b(0x1d1)]||'',_0x44875a=_0x5355a8[_0x39191b(0x307)]||_0x5355a8[_0x39191b(0x41d)]||'-',_0x573a43=_0x5355a8[_0x39191b(0x18c)]||_0x4baa80[_0x39191b(0x401)],_0x19b136=_0x4baa80[_0x39191b(0x421)](String,_0x5355a8[_0x39191b(0x2b9)]||_0x5355a8['id']||'')[_0x39191b(0x2f5)](),_0x2e81b4=_0x5355a8[_0x39191b(0x238)]||_0x4baa80[_0x39191b(0x201)],_0x1a6ecf=_0x4baa80[_0x39191b(0x201)];_0x3de8a0[_0x39191b(0x406)]=_0x39191b(0x424)+_0x39191b(0x34e)+_0x39191b(0x390)+_0x39191b(0x464)+_0x4baa80[_0x39191b(0x421)](escapeHtml,_0x235857)+(_0x39191b(0x33a)+_0x39191b(0x3d7)+_0x39191b(0x347)+_0x39191b(0x357)+_0x39191b(0x44f)+_0x39191b(0x2d8)+_0x39191b(0x323)+_0x39191b(0x1f8))+_0x4baa80[_0x39191b(0x421)](escapeHtml,_0x2e81b4)+_0x39191b(0x3c2)+_0x4baa80[_0x39191b(0x23b)](escapeHtml,_0x55719c)+(_0x39191b(0x1cd)+_0x39191b(0x1f4)+_0x39191b(0x213)+'=\x22')+_0x4baa80[_0x39191b(0x328)](escapeHtml,_0x1a6ecf)+(_0x39191b(0x2e1)+_0x39191b(0x1ca)+_0x39191b(0x409)+_0x39191b(0x275)+_0x39191b(0x3a5)+_0x39191b(0x26c)+_0x39191b(0x424)+_0x39191b(0x3b5)+_0x39191b(0x3d9)+_0x39191b(0x453)+_0x39191b(0x3b8))+_0x4baa80[_0x39191b(0x229)](escapeHtml,_0x1db627)+(_0x39191b(0x3f2)+_0x39191b(0x2d8)+_0x39191b(0x2f8)+_0x39191b(0x390)+_0x39191b(0x3ed))+_0x4baa80[_0x39191b(0x23b)](escapeHtml,_0x55719c)+(_0x39191b(0x198)+_0x39191b(0x2d8)+_0x39191b(0x3fc)+_0x39191b(0x2a8)+_0x39191b(0x362)+_0x39191b(0x462)+_0x39191b(0x1cf))+_0x4baa80[_0x39191b(0x1b1)](escapeHtml,_0x19b136)+(_0x39191b(0x427)+_0x39191b(0x2d8)+_0x39191b(0x24f)+_0x39191b(0x32a)+_0x39191b(0x314))+_0x4baa80[_0x39191b(0x23b)](escapeHtml,_0x42ee86)+(_0x39191b(0x427)+_0x39191b(0x2d8)+_0x39191b(0x282)+_0x39191b(0x279)+_0x39191b(0x3f7)+_0x39191b(0x2d8)+_0x39191b(0x36f)+_0x39191b(0x473)+_0x39191b(0x375)+_0x39191b(0x1cf))+_0x4baa80[_0x39191b(0x328)](escapeHtml,_0x44875a)+(_0x39191b(0x3f2)+_0x39191b(0x2d8)+_0x39191b(0x46c)+_0x39191b(0x1f2)+_0x39191b(0x1c0)+_0x39191b(0x28a))+_0x4baa80[_0x39191b(0x23b)](escapeHtml,_0x573a43)+(_0x39191b(0x3f2)+_0x39191b(0x2d8)+_0x39191b(0x31f)+_0x39191b(0x424)+_0x39191b(0x32e)+_0x39191b(0x414)+_0x39191b(0x474)+_0x39191b(0x42b)+_0x39191b(0x3ee))+_0x4baa80[_0x39191b(0x23b)](escapeHtml,_0x19b136)+(_0x39191b(0x32d)+_0x39191b(0x27b)+_0x39191b(0x2bb)+_0x39191b(0x331)+_0x39191b(0x36b)+_0x39191b(0x3d4)+_0x39191b(0x26d)+'\x20')+_0x4baa80[_0x39191b(0x229)](escapeHtml,_0x55719c)+(_0x39191b(0x2e1)+_0x39191b(0x2d8)+_0x39191b(0x1e0)+_0x39191b(0x2e3)+_0x39191b(0x378)+_0x39191b(0x2d1)+_0x39191b(0x2d8)+_0x39191b(0x3f9)+_0x39191b(0x424)+_0x39191b(0x19c)+_0x39191b(0x2a5));const _0x3c9a6f=_0x3de8a0[_0x39191b(0x391)+_0x39191b(0x2fc)](_0x4baa80[_0x39191b(0x438)]);_0x3c9a6f[_0x39191b(0x241)+_0x39191b(0x1e9)](_0x4baa80[_0x39191b(0x2d5)],function _0x4e3b7b(){const _0x3109a8=_0x39191b;this[_0x3109a8(0x3aa)+_0x3109a8(0x3f8)](_0x4baa80[_0x3109a8(0x2d5)],_0x4e3b7b);const _0x53940c=this[_0x3109a8(0x361)+'te'](_0x4baa80[_0x3109a8(0x20b)]);_0x4baa80[_0x3109a8(0x461)](this[_0x3109a8(0x33d)],_0x53940c)?this[_0x3109a8(0x33d)]=_0x53940c:this[_0x3109a8(0x33d)]=_0x4baa80[_0x3109a8(0x201)];}),_0x3ff6c5[_0x39191b(0x43e)+'d'](_0x3de8a0);}),_0x9985f[_0x26fa2e(0x43e)+'d'](_0x3ff6c5),_0x217781&&(_0x217781[_0x26fa2e(0x442)+'t']=_0x26fa2e(0x18e)+_0x33aecf[_0x26fa2e(0x21c)]+(_0x26fa2e(0x40b)+')'));}function initModalListeners(){const _0x4dcb03=_0x2b5d67,_0x207400={'CHQMl':function(_0x2be2f3,_0x180524){return _0x2be2f3===_0x180524;},'zqOil':function(_0x1ee025){return _0x1ee025();},'tVeII':_0x4dcb03(0x31c),'vkWGv':_0x4dcb03(0x435)+'al','UipQv':_0x4dcb03(0x1c8),'Azjfi':_0x4dcb03(0x445),'xieJJ':_0x4dcb03(0x33e)},_0x1d9140=document[_0x4dcb03(0x1b9)+_0x4dcb03(0x470)](_0x207400[_0x4dcb03(0x31a)]),_0x1745e=document[_0x4dcb03(0x1b9)+_0x4dcb03(0x470)](_0x207400[_0x4dcb03(0x1fa)]);_0x1d9140&&(_0x1745e&&_0x1745e[_0x4dcb03(0x241)+_0x4dcb03(0x1e9)](_0x207400[_0x4dcb03(0x346)],closeModal),_0x1d9140[_0x4dcb03(0x241)+_0x4dcb03(0x1e9)](_0x207400[_0x4dcb03(0x346)],_0x193c7d=>{const _0x467d76=_0x4dcb03;_0x207400[_0x467d76(0x1da)](_0x193c7d[_0x467d76(0x2fa)],_0x1d9140)&&_0x207400[_0x467d76(0x376)](closeModal);}),window[_0x4dcb03(0x241)+_0x4dcb03(0x1e9)](_0x207400[_0x4dcb03(0x30c)],_0x58245a=>{const _0x5a285e=_0x4dcb03;if(_0x207400[_0x5a285e(0x1da)](_0x58245a[_0x5a285e(0x40e)],_0x207400[_0x5a285e(0x47e)]))_0x207400[_0x5a285e(0x376)](closeModal);}));}function openProductModal(_0x120cde){const _0x21276e=_0x2b5d67,_0x5ba003={'Nebgu':function(_0x4d274c,_0x1b5307){return _0x4d274c!==_0x1b5307;},'iMhsJ':function(_0x2bdd07,_0x57089f){return _0x2bdd07!==_0x57089f;},'qFESM':function(_0x4dc7ac,_0x182153){return _0x4dc7ac(_0x182153);},'gCXGm':_0x21276e(0x435)+'al','hGlJv':_0x21276e(0x38f),'mnfDx':_0x21276e(0x1a8),'Tgpeo':_0x21276e(0x34d)+_0x21276e(0x1d8),'gNAkD':_0x21276e(0x25f),'XygZu':_0x21276e(0x2b6),'Otvpb':_0x21276e(0x465)+_0x21276e(0x1ef),'TyhWA':_0x21276e(0x193)+'be','KunOX':_0x21276e(0x1c1)+_0x21276e(0x3be),'HOriH':_0x21276e(0x38b)+_0x21276e(0x456),'JWtsL':_0x21276e(0x1d4)+_0x21276e(0x386),'zSbVf':_0x21276e(0x38c)+_0x21276e(0x39b),'iyHuC':_0x21276e(0x356),'jCdnQ':function(_0x2bd0e3,_0xb193e8,_0x38d809){return _0x2bd0e3(_0xb193e8,_0x38d809);},'MmlrK':function(_0xccac53,_0x537546,_0x4006e1){return _0xccac53(_0x537546,_0x4006e1);},'XMYHm':function(_0x152faa,_0x10564f,_0x6e0da8){return _0x152faa(_0x10564f,_0x6e0da8);},'GeUzp':function(_0x4acd8b,_0x13dfa2,_0xb7f236){return _0x4acd8b(_0x13dfa2,_0xb7f236);},'YVJnl':function(_0x34e31d,_0x4cc779,_0x356561){return _0x34e31d(_0x4cc779,_0x356561);},'pGURV':_0x21276e(0x458),'cqNuh':function(_0x5a85bd,_0x5e2687,_0x4bae91){return _0x5a85bd(_0x5e2687,_0x4bae91);},'nHtXl':function(_0x56d8eb,_0x53690e,_0x130277){return _0x56d8eb(_0x53690e,_0x130277);},'ydJtM':function(_0xcc5aca,_0x556c5d,_0x1d819e){return _0xcc5aca(_0x556c5d,_0x1d819e);},'DsMBZ':_0x21276e(0x309),'JgGeM':_0x21276e(0x1ad),'Ekkpr':function(_0x51d0f9,_0x3a0f5d,_0x445884){return _0x51d0f9(_0x3a0f5d,_0x445884);},'VmpiK':_0x21276e(0x313)+_0x21276e(0x222),'qgknv':_0x21276e(0x35b)+_0x21276e(0x477),'ryHvv':function(_0x1ef55a,_0x3468dd,_0x1f3116){return _0x1ef55a(_0x3468dd,_0x1f3116);},'eIBla':_0x21276e(0x2f2),'fGfSz':_0x21276e(0x33c),'pwkbl':_0x21276e(0x33c)+'DV','OJNZi':function(_0x3e3123,_0x1e6519,_0x15f21b){return _0x3e3123(_0x1e6519,_0x15f21b);},'YzGaj':_0x21276e(0x27e),'jXtUB':_0x21276e(0x28b),'NJRls':function(_0x475f7d,_0x1ae638,_0x3f39d7){return _0x475f7d(_0x1ae638,_0x3f39d7);},'GiOic':_0x21276e(0x29d),'WBUto':_0x21276e(0x1e7),'MdxHL':function(_0x194a82,_0x1f95b0,_0x2b688c){return _0x194a82(_0x1f95b0,_0x2b688c);},'BLbnT':function(_0x3a1804,_0x361088,_0x3d2177){return _0x3a1804(_0x361088,_0x3d2177);},'HZgsj':_0x21276e(0x1aa),'dyTVU':function(_0x2d7f73,_0x51c521,_0xa8f2c2){return _0x2d7f73(_0x51c521,_0xa8f2c2);},'sLBYE':_0x21276e(0x3db),'mtQHJ':_0x21276e(0x270),'QItvZ':_0x21276e(0x300)+_0x21276e(0x206),'hYsHi':function(_0x8fa8db,_0x3d68cf,_0x55e281){return _0x8fa8db(_0x3d68cf,_0x55e281);},'fvfGY':_0x21276e(0x300)+_0x21276e(0x196),'WrLDh':function(_0x3afc28,_0x1d9bbe,_0x39ad7a){return _0x3afc28(_0x1d9bbe,_0x39ad7a);},'TNmvu':_0x21276e(0x3cc),'wexia':_0x21276e(0x199),'ajaeU':_0x21276e(0x199)+'DV','MrEqo':function(_0x52ac9a,_0x48cd47,_0x3712c2){return _0x52ac9a(_0x48cd47,_0x3712c2);},'PzoLh':function(_0x4a3756,_0x19712a,_0x398e5d){return _0x4a3756(_0x19712a,_0x398e5d);},'bjqbX':_0x21276e(0x3c7),'wpsPG':_0x21276e(0x30f)+'V','ajdEm':function(_0x530440,_0x235b5a,_0x13c99e){return _0x530440(_0x235b5a,_0x13c99e);},'bjQoQ':function(_0xfb2cae,_0x5c283b,_0x2efb12){return _0xfb2cae(_0x5c283b,_0x2efb12);},'Bfnfs':_0x21276e(0x1e3),'LJImU':function(_0x1b1e79,_0x55a25c,_0x58d760){return _0x1b1e79(_0x55a25c,_0x58d760);},'UJZqX':_0x21276e(0x1f0),'hoHcX':_0x21276e(0x233)+'m','uotNL':function(_0x424c40,_0x588270,_0x24d278){return _0x424c40(_0x588270,_0x24d278);},'pnECb':_0x21276e(0x233)+_0x21276e(0x2d2),'GgRPx':function(_0x16d15e,_0x5778f1,_0x2d1e82){return _0x16d15e(_0x5778f1,_0x2d1e82);},'OvPRg':_0x21276e(0x1c2)+_0x21276e(0x2e7),'dKNAz':_0x21276e(0x460),'FMmoW':_0x21276e(0x3a4)+'n','zwNBw':_0x21276e(0x35c)},_0x2e661c=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x342)]);if(!_0x2e661c||!_0x120cde)return;const _0x355648=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x440)]),_0x5bbd52=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x1e4)]),_0x1a309c=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x2dd)]),_0x2cce01=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x2c9)]),_0x5634f7=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x1ba)]),_0x137d0e=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x3de)]),_0x1a9641=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x2df)]),_0x3a3f6f=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x340)]),_0x2852fa=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x3ca)]),_0x4815a4=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x237)]);if(_0x355648)_0x355648[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x302)]||_0x120cde[_0x21276e(0x38a)]||_0x5ba003[_0x21276e(0x17e)];if(_0x5bbd52){const _0x123802=_0x120cde[_0x21276e(0x2b9)]||_0x120cde['id'];_0x5bbd52[_0x21276e(0x442)+'t']=_0x123802?_0x21276e(0x2e5)+_0x123802:_0x5ba003[_0x21276e(0x249)];}if(_0x1a309c)_0x1a309c[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x226)+'n']||_0x120cde[_0x21276e(0x1d1)]||'';if(_0x2cce01)_0x2cce01[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x307)]||_0x120cde[_0x21276e(0x41d)]||'-';if(_0x5634f7)_0x5634f7[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x1d6)]||_0x120cde[_0x21276e(0x22d)]||'-';if(_0x137d0e)_0x137d0e[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x22f)+'t']||_0x120cde[_0x21276e(0x2ef)]||'-';if(_0x1a9641)_0x1a9641[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x395)]||_0x120cde[_0x21276e(0x24e)]||'-';if(_0x3a3f6f)_0x3a3f6f[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x2c7)+_0x21276e(0x2e2)]||_0x120cde[_0x21276e(0x3e7)+_0x21276e(0x466)]||'-';if(_0x2852fa)_0x2852fa[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x407)+_0x21276e(0x1d3)]||_0x120cde[_0x21276e(0x2c8)+_0x21276e(0x3af)]||'-';if(_0x4815a4)_0x4815a4[_0x21276e(0x442)+'t']=_0x120cde[_0x21276e(0x303)+_0x21276e(0x269)]||_0x120cde[_0x21276e(0x21a)+_0x21276e(0x402)]||'-';const _0x5e830e=(_0x1ffe1d,_0x351613,_0x5affe9='-')=>{const _0x33362a=_0x21276e,_0x39a994=document[_0x33362a(0x1b9)+_0x33362a(0x470)](_0x1ffe1d);if(_0x39a994)_0x39a994[_0x33362a(0x442)+'t']=_0x5ba003[_0x33362a(0x2c4)](_0x351613,undefined)&&_0x5ba003[_0x33362a(0x363)](_0x351613,'')?_0x351613:_0x5affe9;},_0x574948=_0x120cde[_0x21276e(0x1b4)]||_0x120cde[_0x21276e(0x3a3)+'g']||'',_0x26e46a=_0x120cde[_0x21276e(0x441)]||_0x120cde[_0x21276e(0x18d)]||'',_0x227396=_0x120cde[_0x21276e(0x43b)]||_0x120cde[_0x21276e(0x21f)+_0x21276e(0x385)+'g']||'',_0x523604=_0x120cde[_0x21276e(0x21e)]||_0x120cde[_0x21276e(0x243)+_0x21276e(0x36d)]||'',_0x5eed9e=_0x120cde[_0x21276e(0x1c6)]||_0x120cde[_0x21276e(0x45f)+_0x21276e(0x247)]||'',_0x5a53aa=_0x120cde[_0x21276e(0x187)+'rs']||_0x120cde[_0x21276e(0x187)+_0x21276e(0x247)]||'',_0x3faa23=_0x120cde[_0x21276e(0x250)]||_0x120cde[_0x21276e(0x231)]||'',_0x5b55c1=_0x120cde[_0x21276e(0x3bc)]||_0x120cde[_0x21276e(0x324)+_0x21276e(0x458)]||'',_0x1d594a=_0x120cde[_0x21276e(0x3c3)]||_0x120cde[_0x21276e(0x24a)]||'',_0x2d1076=_0x120cde[_0x21276e(0x22e)]||_0x120cde[_0x21276e(0x475)]||'',_0xa26282=_0x120cde[_0x21276e(0x28e)]||_0x120cde[_0x21276e(0x3e2)+'mg']||'',_0x3596e4=_0x5ba003[_0x21276e(0x3a6)](formatNutrient,_0x574948,'g'),_0x1761c6=_0x5ba003[_0x21276e(0x344)](formatNutrient,_0x26e46a,'mg'),_0x57b06b=_0x5ba003[_0x21276e(0x2d9)](formatNutrient,_0x227396,'g'),_0x65a528=_0x5ba003[_0x21276e(0x344)](formatNutrient,_0x523604,'g'),_0x506818=_0x5ba003[_0x21276e(0x3a1)](formatNutrient,_0x5eed9e,'g'),_0x38da50=_0x5ba003[_0x21276e(0x3a6)](formatNutrient,_0x5a53aa,'g'),_0xcdddc9=_0x5ba003[_0x21276e(0x344)](formatNutrient,_0x3faa23,'g'),_0x5c7b8d=_0x5ba003[_0x21276e(0x261)](formatNutrient,_0x5b55c1,_0x5ba003[_0x21276e(0x298)]),_0x74bc38=_0x5ba003[_0x21276e(0x1ee)](formatNutrient,_0x1d594a,'mg'),_0xa45bc6=_0x5ba003[_0x21276e(0x344)](formatNutrient,_0x2d1076,'mg'),_0x2ab3ca=_0x5ba003[_0x21276e(0x450)](formatNutrient,_0xa26282,'mg');_0x5ba003[_0x21276e(0x202)](_0x5e830e,_0x5ba003[_0x21276e(0x3e0)],_0x120cde[_0x21276e(0x1f7)]||_0x120cde[_0x21276e(0x41c)+_0x21276e(0x2ac)+'er']||_0x5ba003[_0x21276e(0x1ac)]),_0x5ba003[_0x21276e(0x1d7)](_0x5e830e,_0x5ba003[_0x21276e(0x2c1)],_0x120cde[_0x21276e(0x180)+'ze']||_0x5ba003[_0x21276e(0x480)]),_0x5ba003[_0x21276e(0x293)](_0x5e830e,_0x5ba003[_0x21276e(0x420)],_0x120cde[_0x21276e(0x264)]||'0'),_0x5ba003[_0x21276e(0x261)](_0x5e830e,_0x5ba003[_0x21276e(0x184)],_0x3596e4),_0x5ba003[_0x21276e(0x261)](_0x5e830e,_0x5ba003[_0x21276e(0x29a)],_0x5ba003[_0x21276e(0x296)](getDV,_0x3596e4,-0x217a+-0x32*-0x1c+0x714*0x4)),_0x5ba003[_0x21276e(0x450)](_0x5e830e,_0x5ba003[_0x21276e(0x36e)],_0x1761c6),_0x5ba003[_0x21276e(0x450)](_0x5e830e,_0x5ba003[_0x21276e(0x2ba)],_0x5ba003[_0x21276e(0x29f)](getDV,_0x1761c6,-0x22bd+-0x2e*-0xc6+-0x2b7*-0x3)),_0x5ba003[_0x21276e(0x450)](_0x5e830e,_0x5ba003[_0x21276e(0x2de)],_0x57b06b),_0x5ba003[_0x21276e(0x344)](_0x5e830e,_0x5ba003[_0x21276e(0x1d9)],_0x5ba003[_0x21276e(0x359)](getDV,_0x57b06b,0x168e+0x503+-0x2*0xd3f)),_0x5ba003[_0x21276e(0x40c)](_0x5e830e,_0x5ba003[_0x21276e(0x2c0)],_0x65a528),_0x5ba003[_0x21276e(0x400)](_0x5e830e,_0x5ba003[_0x21276e(0x2fd)],_0x5ba003[_0x21276e(0x2d9)](getDV,_0x65a528,-0x1*0x545+-0x1933*0x1+0x1e94)),_0x5ba003[_0x21276e(0x293)](_0x5e830e,_0x5ba003[_0x21276e(0x389)],_0x506818),_0x5ba003[_0x21276e(0x29f)](_0x5e830e,_0x5ba003[_0x21276e(0x1b2)],_0x38da50),_0x5ba003[_0x21276e(0x481)](_0x5e830e,_0x5ba003[_0x21276e(0x3b9)],_0x5ba003[_0x21276e(0x293)](getDV,_0x38da50,0xd55*0x1+0xe00+-0x1b23)),_0x5ba003[_0x21276e(0x3ec)](_0x5e830e,_0x5ba003[_0x21276e(0x1e8)],_0xcdddc9),_0x5ba003[_0x21276e(0x293)](_0x5e830e,_0x5ba003[_0x21276e(0x436)],_0x5c7b8d),_0x5ba003[_0x21276e(0x261)](_0x5e830e,_0x5ba003[_0x21276e(0x3ae)],_0x5ba003[_0x21276e(0x2e6)](getDV,_0x5c7b8d,0x22c0+-0x2a1*-0x3+0x2a8f*-0x1)),_0x5ba003[_0x21276e(0x387)](_0x5e830e,_0x5ba003[_0x21276e(0x254)],_0x74bc38),_0x5ba003[_0x21276e(0x387)](_0x5e830e,_0x5ba003[_0x21276e(0x283)],_0x5ba003[_0x21276e(0x266)](getDV,_0x74bc38,-0x19dc+-0xc0d*0x2+-0x1b85*-0x2)),_0x5ba003[_0x21276e(0x3bb)](_0x5e830e,_0x5ba003[_0x21276e(0x245)],_0xa45bc6),_0x5ba003[_0x21276e(0x352)](_0x5e830e,_0x5ba003[_0x21276e(0x349)],_0x5ba003[_0x21276e(0x387)](getDV,_0xa45bc6,0x1798+0xa38+-0x21be)),_0x5ba003[_0x21276e(0x450)](_0x5e830e,_0x5ba003[_0x21276e(0x246)],_0x2ab3ca),_0x5ba003[_0x21276e(0x3df)](_0x5e830e,_0x5ba003[_0x21276e(0x44c)],_0x5ba003[_0x21276e(0x30e)](getDV,_0x2ab3ca,0x1e8d+-0x51*-0x3+-0xd24));const _0x1ff71f=document[_0x21276e(0x1b9)+_0x21276e(0x470)](_0x5ba003[_0x21276e(0x3cb)]);_0x1ff71f&&(_0x1ff71f[_0x21276e(0x332)]=_0x5cb833=>{const _0xb16cdc=_0x21276e;_0x5cb833[_0xb16cdc(0x467)+_0xb16cdc(0x251)](),_0x5ba003[_0xb16cdc(0x3e5)](generateProductPDF,_0x120cde);}),_0x2e661c[_0x21276e(0x23c)][_0x21276e(0x286)](_0x5ba003[_0x21276e(0x3c5)]),_0x2e661c[_0x21276e(0x3c9)+'te'](_0x5ba003[_0x21276e(0x3ac)],_0x5ba003[_0x21276e(0x2d3)]);}async function generateProductPDF(_0x544c5d){const _0x1f243c=_0x2b5d67,_0x317f6c={'XFKmS':function(_0x5fa095,_0x2a15e4){return _0x5fa095(_0x2a15e4);},'vvxRR':_0x1f243c(0x43f),'HPVvR':_0x1f243c(0x446),'fjhxB':function(_0x1a1408,_0xdfe9d8){return _0x1a1408(_0xdfe9d8);},'GIhhv':_0x1f243c(0x333),'igKME':function(_0x464772,_0x32aa21){return _0x464772(_0x32aa21);},'eKCDA':_0x1f243c(0x21d)+_0x1f243c(0x469)+_0x1f243c(0x326)+_0x1f243c(0x192)+_0x1f243c(0x418)+_0x1f243c(0x1ff)+_0x1f243c(0x34c),'PuJAP':_0x1f243c(0x37e),'PEGLu':function(_0x277c9f,_0x246129){return _0x277c9f(_0x246129);},'pQBud':_0x1f243c(0x1cc)+_0x1f243c(0x2b7)+_0x1f243c(0x3bf),'ulWLl':function(_0x3e93ad,_0x54e3b6){return _0x3e93ad*_0x54e3b6;},'jIlcg':function(_0x36e3fe,_0x4ba6ae){return _0x36e3fe/_0x4ba6ae;},'EWFrt':_0x1f243c(0x3c6),'iHRgf':_0x1f243c(0x2d7),'UmJJN':_0x1f243c(0x35e),'RUoLa':_0x1f243c(0x2da)+'LD','pBAxt':_0x1f243c(0x325),'CspFU':_0x1f243c(0x240)+_0x1f243c(0x411)+_0x1f243c(0x3b1)+_0x1f243c(0x449)+_0x1f243c(0x397),'glaVt':_0x1f243c(0x341),'XgaAi':_0x1f243c(0x1a2)+_0x1f243c(0x212)+_0x1f243c(0x46a)+_0x1f243c(0x27d),'lYZsx':function(_0xf30f7f,_0x92aa25){return _0xf30f7f(_0x92aa25);},'glESd':_0x1f243c(0x3f6),'fyjXy':_0x1f243c(0x28d)+_0x1f243c(0x209)+'n','oVSIo':_0x1f243c(0x37a),'EaEBK':_0x1f243c(0x285)+_0x1f243c(0x214)+_0x1f243c(0x2fe)+_0x1f243c(0x2be),'ZSkRF':_0x1f243c(0x2cc)+_0x1f243c(0x20d)+_0x1f243c(0x1cb),'FUPaf':_0x1f243c(0x3d1),'CHpmj':_0x1f243c(0x404)+_0x1f243c(0x2b1),'PQJxk':_0x1f243c(0x383),'LSvqM':_0x1f243c(0x34b)+'t','zvyRt':_0x1f243c(0x189),'pOWWW':_0x1f243c(0x29e)+_0x1f243c(0x2e2),'PySRN':_0x1f243c(0x2cf)+_0x1f243c(0x44e),'SZKlO':_0x1f243c(0x40f)+_0x1f243c(0x269),'dLHfJ':_0x1f243c(0x384)+_0x1f243c(0x46b)+'e','pnWwi':_0x1f243c(0x45c),'aKSsU':_0x1f243c(0x2bf),'zDZGR':_0x1f243c(0x223)+_0x1f243c(0x3f5)+_0x1f243c(0x2f6)+_0x1f243c(0x262),'YUXOY':function(_0x5b40fd,_0x2cdbac){return _0x5b40fd/_0x2cdbac;},'hGClr':function(_0x31c526,_0x13a0bc){return _0x31c526*_0x13a0bc;},'mYsCH':function(_0x651cb7,_0x15da32){return _0x651cb7*_0x15da32;},'Mwwup':function(_0x1065b8,_0x204589){return _0x1065b8*_0x204589;},'IJpqX':function(_0x5608c2,_0x57ed87){return _0x5608c2+_0x57ed87;},'AASAv':function(_0x3c2e57,_0x60d06a){return _0x3c2e57-_0x60d06a;},'JyAPS':function(_0x102ea7,_0x45bf03){return _0x102ea7/_0x45bf03;},'pgqji':_0x1f243c(0x3cd),'RZGIz':_0x1f243c(0x1ad),'wkwsM':function(_0x5f0a44,_0xc61635,_0x3303e6){return _0x5f0a44(_0xc61635,_0x3303e6);},'ITbIm':function(_0x500452,_0x1911a6,_0x62b08){return _0x500452(_0x1911a6,_0x62b08);},'lugWk':function(_0x38d905,_0x431cb3,_0x935508){return _0x38d905(_0x431cb3,_0x935508);},'GHZxU':function(_0x543a52,_0x8af5e0,_0x4f4764){return _0x543a52(_0x8af5e0,_0x4f4764);},'hspbP':_0x1f243c(0x458),'xskUM':function(_0x5e0731,_0x4b6fe5,_0x1f7540){return _0x5e0731(_0x4b6fe5,_0x1f7540);},'dNCvo':_0x1f243c(0x39c),'SlBMh':function(_0x2163e7,_0x496d91){return _0x2163e7(_0x496d91);},'CbFTQ':_0x1f243c(0x416),'Hotlj':function(_0x2b5588,_0x2a18d7,_0x35fae8){return _0x2b5588(_0x2a18d7,_0x35fae8);},'oxVaF':_0x1f243c(0x457),'iaEQg':_0x1f243c(0x30b)+_0x1f243c(0x20e),'vhSRL':function(_0x424f29,_0x4b66e8,_0x2e03a5){return _0x424f29(_0x4b66e8,_0x2e03a5);},'BCxeu':_0x1f243c(0x42d)+_0x1f243c(0x186),'TGudS':_0x1f243c(0x355)+'rs','booyy':_0x1f243c(0x23f)+'rs','nbuBu':function(_0x41017c,_0x2747be,_0x5f090a){return _0x41017c(_0x2747be,_0x5f090a);},'qteCH':_0x1f243c(0x2ad),'srbRP':_0x1f243c(0x1fe),'SGoPu':function(_0x20118a,_0x28f8f5,_0x51402f){return _0x20118a(_0x28f8f5,_0x51402f);},'RjMba':_0x1f243c(0x46f),'lqDOH':function(_0x19a23e,_0x111215,_0x52ba84){return _0x19a23e(_0x111215,_0x52ba84);},'pHflR':_0x1f243c(0x181),'GdFvt':function(_0x21dd7c,_0x352c40,_0x493f14){return _0x21dd7c(_0x352c40,_0x493f14);},'TkZGL':_0x1f243c(0x3c8),'mxSMZ':function(_0x5c37f0,_0x4d3930){return _0x5c37f0+_0x4d3930;},'OvayL':_0x1f243c(0x343)+_0x1f243c(0x2c2)+_0x1f243c(0x297),'gnfYY':_0x1f243c(0x205)+_0x1f243c(0x23e),'jbuaJ':_0x1f243c(0x208)+_0x1f243c(0x276)+'*','mCeEh':_0x1f243c(0x43d),'tclzC':function(_0x3ef1ed,_0x21922d){return _0x3ef1ed+_0x21922d;},'IjGbz':_0x1f243c(0x257)+_0x1f243c(0x1af)+_0x1f243c(0x20a)+_0x1f243c(0x3dc)+_0x1f243c(0x41b)+_0x1f243c(0x3ff)+_0x1f243c(0x345)+_0x1f243c(0x412)+_0x1f243c(0x408)+_0x1f243c(0x221)+_0x1f243c(0x45b)+_0x1f243c(0x268)+_0x1f243c(0x327)+_0x1f243c(0x3f4)+_0x1f243c(0x1f1)+_0x1f243c(0x32c),'LQuJR':function(_0x16845a,_0x3292d6){return _0x16845a-_0x3292d6;},'cVRqH':_0x1f243c(0x2da)+_0x1f243c(0x44b)+_0x1f243c(0x317),'cciod':function(_0x2d4f2e,_0x51950e){return _0x2d4f2e-_0x51950e;},'WgdWM':_0x1f243c(0x207)+_0x1f243c(0x319)+_0x1f243c(0x39f)+_0x1f243c(0x45a)+_0x1f243c(0x38d)+_0x1f243c(0x37f)+_0x1f243c(0x447)+_0x1f243c(0x42a)+_0x1f243c(0x434)+_0x1f243c(0x35f)+_0x1f243c(0x2b3),'MVorb':function(_0x5041e3,_0x509927){return _0x5041e3-_0x509927;},'hLtlQ':_0x1f243c(0x27c)+_0x1f243c(0x294)+_0x1f243c(0x31b)+_0x1f243c(0x2e9)+_0x1f243c(0x225)+_0x1f243c(0x2ea),'wXzBw':function(_0x254fea,_0x574451){return _0x254fea-_0x574451;},'nrKXL':function(_0x3f2cac,_0x3becba){return _0x3f2cac||_0x3becba;},'XOIoa':_0x1f243c(0x19f)},_0x349489=window[_0x1f243c(0x194)]?window[_0x1f243c(0x194)]:window[_0x1f243c(0x2a9)];if(!_0x349489){_0x317f6c[_0x1f243c(0x479)](alert,_0x317f6c[_0x1f243c(0x398)]);return;}const {jsPDF:_0x1696c3}=_0x349489,_0x4059b1=new _0x1696c3({'orientation':_0x317f6c[_0x1f243c(0x281)],'unit':'mm','format':'a4'}),_0x2dd472=[-0x16d9+-0x168+-0x2b3*-0x9,-0x1*0x1a3f+-0x2400+-0x7cb*-0x8,0x18e9+0x2528+-0x3de2],_0x5b1e41=[-0xa*0xc7+0x1515+-0x1*0xc5b,-0x2268+0x43f+0x319*0xa,0x614*0x1+0x1f87+-0xc69*0x3],_0x214db1=[0x1ca*-0x10+-0x4*-0x93f+0xa*-0xd3,0x5*0x11+0x11*-0x72+0x1*0x75b,-0x18d*0xe+-0x170c+0x20*0x167],_0x18d487=[-0x2582*-0x1+0x1a47+0x1521*-0x3,-0x1679+0x1*0x269e+-0xfbf,0x31*0x52+0x9c5*0x3+0x259*-0x13],_0x599ce3=_0x340f2e=>{const _0x5f3703=_0x1f243c,_0x57e232={'pCiZP':_0x317f6c[_0x5f3703(0x3ea)],'HkSqz':function(_0x6e2bc1,_0xb10abf){const _0x11d72c=_0x5f3703;return _0x317f6c[_0x11d72c(0x463)](_0x6e2bc1,_0xb10abf);},'DOlrr':_0x317f6c[_0x5f3703(0x47b)]};return new Promise(_0x40c526=>{const _0x2078dd=_0x5f3703;if(!_0x340f2e)return _0x317f6c[_0x2078dd(0x19a)](_0x40c526,null);const _0x57c4c2=new Image();_0x57c4c2[_0x2078dd(0x31d)+'n']=_0x317f6c[_0x2078dd(0x31e)],_0x57c4c2[_0x2078dd(0x2b5)]=()=>{const _0xe9e76=_0x2078dd,_0x1aadad=document[_0xe9e76(0x20f)+_0xe9e76(0x3a7)](_0x57e232[_0xe9e76(0x217)]);_0x1aadad[_0xe9e76(0x1f6)]=_0x57c4c2[_0xe9e76(0x1f6)],_0x1aadad[_0xe9e76(0x1a7)]=_0x57c4c2[_0xe9e76(0x1a7)];const _0xabccb0=_0x1aadad[_0xe9e76(0x353)]('2d');_0xabccb0[_0xe9e76(0x3a9)](_0x57c4c2,-0x2020+-0x269d+0x46bd*0x1,-0x2*-0x2ef+0x1b3c+-0x211a),_0x57e232[_0xe9e76(0x1a0)](_0x40c526,{'dataURL':_0x1aadad[_0xe9e76(0x3ba)](_0x57e232[_0xe9e76(0x316)]),'width':_0x57c4c2[_0xe9e76(0x1f6)],'height':_0x57c4c2[_0xe9e76(0x1a7)]});},_0x57c4c2[_0x2078dd(0x287)]=()=>_0x40c526(null),_0x57c4c2[_0x2078dd(0x33d)]=_0x340f2e;});},_0x584f9c=await _0x317f6c[_0x1f243c(0x321)](_0x599ce3,_0x317f6c[_0x1f243c(0x47d)]);if(_0x584f9c){const _0x1d7fe2=-0xe25+0x22f9+-0x5*0x424,_0x540762=_0x317f6c[_0x1f243c(0x284)](_0x317f6c[_0x1f243c(0x403)](_0x584f9c[_0x1f243c(0x1a7)],_0x584f9c[_0x1f243c(0x1f6)]),_0x1d7fe2);_0x4059b1[_0x1f243c(0x2d6)](_0x584f9c[_0x1f243c(0x2c3)],_0x317f6c[_0x1f243c(0x3bd)],0x17*0x63+-0x7*-0x11+-0x94e,0x1735*0x1+-0x6*-0x27b+-0x260d,_0x1d7fe2,_0x540762);}const _0x114af8=0xf45*-0x2+0x2*0x1161+-0x406;_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x43c)],_0x317f6c[_0x1f243c(0x1e1)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0x1*0xe68+-0x1667+0x24e1*0x1),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x2dd472),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x1de)],_0x114af8,0x1bc6+0x82d+-0x23e3),_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x43c)],_0x317f6c[_0x1f243c(0x380)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0xf*-0x22e+0x1*-0x7af+0x116*-0x17+0.5),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x18d487),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x1b7)],_0x114af8,-0x1*-0x7c+-0xea4+0xe3d+0.5),_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x43c)],_0x317f6c[_0x1f243c(0x3ab)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0x1194+0x259*-0xd+0x3024),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x2dd472),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x373)],_0x114af8,-0x83*0x3e+0x1b96+0x43f+0.5),_0x4059b1[_0x1f243c(0x45d)+'or'](..._0x5b1e41),_0x4059b1[_0x1f243c(0x45e)+'th'](0xc2*0x23+0x23+-0x1aa9+0.85),_0x4059b1[_0x1f243c(0x18a)](0x17*0x9c+-0x1b48+-0x5*-0x2aa,0x4f*0x24+-0x67*0x36+0xabd,-0xd1*0x2c+-0x4*-0x6+-0x493*-0x8,-0x132a+0x1bb*-0x7+0x1f66*0x1);const _0x93e5a4=_0x317f6c[_0x1f243c(0x1a4)](String,_0x544c5d[_0x1f243c(0x2b9)]||_0x544c5d['id']||'')[_0x1f243c(0x2f5)]();_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x1e1)]),_0x4059b1[_0x1f243c(0x273)+'e'](0x2336*0x1+0x1*0x1adb+-0x3e02),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x214db1),_0x4059b1[_0x1f243c(0x255)](_0x544c5d[_0x1f243c(0x302)]||_0x544c5d[_0x1f243c(0x38a)]||_0x317f6c[_0x1f243c(0x371)],0xcd8+-0x541*0x1+-0x1*0x789,0x39*-0x7e+-0x129d+-0x95e*-0x5),_0x4059b1[_0x1f243c(0x273)+'e'](-0x1*-0x7df+0x8d*-0x25+0xa9*0x13),_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x380)]),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x18d487),_0x4059b1[_0x1f243c(0x255)](_0x1f243c(0x218)+(_0x544c5d[_0x1f243c(0x227)+_0x1f243c(0x426)]||_0x544c5d[_0x1f243c(0x2f7)]||_0x317f6c[_0x1f243c(0x3eb)])+_0x1f243c(0x3f1)+_0x93e5a4,-0x1e*-0xc3+-0x967+0xd65*-0x1,-0x10df+0x1*0x1e25+0x1*-0xd15),_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x1e1)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0x1902+-0x198d*0x1+0x329a),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x2dd472),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x468)],0x5*0x25f+-0x164c+0xa7f,-0x1*0xa91+0x17*-0x11+0xc52);const _0x16fc6e=[[_0x317f6c[_0x1f243c(0x3a0)],_0x544c5d[_0x1f243c(0x307)]||_0x544c5d[_0x1f243c(0x41d)]||_0x317f6c[_0x1f243c(0x3eb)]],[_0x317f6c[_0x1f243c(0x330)],_0x544c5d[_0x1f243c(0x1d6)]||_0x544c5d[_0x1f243c(0x22d)]||_0x317f6c[_0x1f243c(0x3eb)]],[_0x317f6c[_0x1f243c(0x364)],_0x544c5d[_0x1f243c(0x18c)]||_0x544c5d[_0x1f243c(0x2a6)+_0x1f243c(0x1df)]||_0x317f6c[_0x1f243c(0x1ae)]],[_0x317f6c[_0x1f243c(0x3ef)],_0x544c5d[_0x1f243c(0x22f)+'t']||_0x544c5d[_0x1f243c(0x2ef)]||_0x317f6c[_0x1f243c(0x3eb)]],[_0x317f6c[_0x1f243c(0x42f)],_0x544c5d[_0x1f243c(0x395)]||_0x544c5d[_0x1f243c(0x24e)]||_0x317f6c[_0x1f243c(0x3eb)]],[_0x317f6c[_0x1f243c(0x452)],_0x544c5d[_0x1f243c(0x2c7)+_0x1f243c(0x2e2)]||_0x544c5d[_0x1f243c(0x3e7)+_0x1f243c(0x466)]||_0x317f6c[_0x1f243c(0x3eb)]],[_0x317f6c[_0x1f243c(0x1dd)],_0x544c5d[_0x1f243c(0x407)+_0x1f243c(0x1d3)]||_0x544c5d[_0x1f243c(0x2c8)+_0x1f243c(0x3af)]||_0x317f6c[_0x1f243c(0x3eb)]],[_0x317f6c[_0x1f243c(0x35d)],_0x544c5d[_0x1f243c(0x303)+_0x1f243c(0x269)]||_0x544c5d[_0x1f243c(0x21a)+_0x1f243c(0x402)]||_0x317f6c[_0x1f243c(0x3eb)]]],_0x1371cb=_0x4059b1[_0x1f243c(0x22c)]||window[_0x1f243c(0x194)]&&window[_0x1f243c(0x194)][_0x1f243c(0x22c)];_0x1371cb[_0x1f243c(0x306)](_0x4059b1,{'startY':0x3d,'margin':{'left':0xe,'right':0x41},'head':[[_0x317f6c[_0x1f243c(0x280)],_0x317f6c[_0x1f243c(0x1a1)]]],'body':_0x16fc6e,'theme':_0x317f6c[_0x1f243c(0x370)],'headStyles':{'fillColor':_0x2dd472,'textColor':[-0x1d1c+0x105*0x6+0x17fd,0x3*0x5+0x19d4+0x84c*-0x3,-0x2258+-0x21c0+-0x17*-0x301]},'styles':{'fontSize':7.5,'cellPadding':1.5}});const _0x2c702a=_0x317f6c[_0x1f243c(0x305)],_0x1245d5=_0x544c5d[_0x1f243c(0x238)]||_0x2c702a;let _0x5b4493=await _0x317f6c[_0x1f243c(0x463)](_0x599ce3,_0x1245d5);!_0x5b4493&&(_0x5b4493=await _0x317f6c[_0x1f243c(0x1a4)](_0x599ce3,_0x2c702a));if(_0x5b4493){const _0x28e67d=-0xe4*-0x1d+0x739*-0x3+0x131*-0x3,_0x463e82=0x32*0x41+0x1*-0x64d+-0xc5*0x8,_0x3ffc50=-0x1dc*0x15+-0x1384+0x3aba,_0x2a7783=0x3*0xda+0x67*0x9+-0x600;_0x4059b1[_0x1f243c(0x45d)+'or'](-0x3*-0x359+0x33c+-0x1*0xc7f,-0x13*0x10f+-0x23e*0x4+-0x37*-0x8b,-0x30a*-0x5+-0xd4a+-0x120),_0x4059b1[_0x1f243c(0x367)+'or'](-0x167b+-0x8ed+-0x4*-0x819,0xe75+-0x1d32+0x19*0xa1,-0x3cc+0x44c+-0x2*-0x3e),_0x4059b1[_0x1f243c(0x393)+'t'](_0x28e67d,_0x463e82,_0x3ffc50,_0x2a7783,0x129d+0x2392+-0x362d,-0x1*-0x22c6+0x208d*0x1+-0x4351,'FD');const _0x1dca60=Math[_0x1f243c(0x422)](_0x317f6c[_0x1f243c(0x2ed)](_0x3ffc50,_0x5b4493[_0x1f243c(0x1f6)]),_0x317f6c[_0x1f243c(0x403)](_0x2a7783,_0x5b4493[_0x1f243c(0x1a7)])),_0x1f5a6c=_0x317f6c[_0x1f243c(0x33f)](_0x317f6c[_0x1f243c(0x284)](_0x5b4493[_0x1f243c(0x1f6)],_0x1dca60),-0x1563+-0x152f*0x1+-0x1549*-0x2+0.9),_0x252a70=_0x317f6c[_0x1f243c(0x1bf)](_0x317f6c[_0x1f243c(0x20c)](_0x5b4493[_0x1f243c(0x1a7)],_0x1dca60),-0x3b3+-0x1*0x228+0x5db*0x1+0.9),_0x450808=_0x317f6c[_0x1f243c(0x432)](_0x28e67d,_0x317f6c[_0x1f243c(0x403)](_0x317f6c[_0x1f243c(0x290)](_0x3ffc50,_0x1f5a6c),-0x654+0x197d+-0x1327)),_0x21254d=_0x317f6c[_0x1f243c(0x432)](_0x463e82,_0x317f6c[_0x1f243c(0x348)](_0x317f6c[_0x1f243c(0x290)](_0x2a7783,_0x252a70),-0x12d1*-0x2+0x1fdc+0x2*-0x22be));_0x4059b1[_0x1f243c(0x2d6)](_0x5b4493[_0x1f243c(0x2c3)],_0x317f6c[_0x1f243c(0x3bd)],_0x450808,_0x21254d,_0x1f5a6c,_0x252a70);}let _0x519227=_0x317f6c[_0x1f243c(0x432)](Math[_0x1f243c(0x239)](_0x4059b1[_0x1f243c(0x37b)+_0x1f243c(0x366)][_0x1f243c(0x459)],-0xcb*0x9+-0xee2+0x7*0x335),0x1ce0+-0x742*-0x4+-0x39de);_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x1e1)]),_0x4059b1[_0x1f243c(0x273)+'e'](0xb2c+0x26f*0x9+-0x2108),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x2dd472),_0x4059b1[_0x1f243c(0x255)](_0x1f243c(0x1d5)+_0x1f243c(0x2f3)+_0x1f243c(0x3d0)+_0x1f243c(0x1ab)+(_0x544c5d[_0x1f243c(0x180)+'ze']||_0x317f6c[_0x1f243c(0x252)])+(_0x1f243c(0x288)+':\x20')+(_0x544c5d[_0x1f243c(0x1f7)]||_0x544c5d[_0x1f243c(0x41c)+_0x1f243c(0x2ac)+'er']||_0x317f6c[_0x1f243c(0x2a1)])+')',0x2263+0x2003+-0x4258,_0x519227);const _0x54d7b5=_0x317f6c[_0x1f243c(0x25a)](formatNutrient,_0x544c5d[_0x1f243c(0x1b4)]||_0x544c5d[_0x1f243c(0x3a3)+'g']||'','g'),_0xda2a7d=_0x317f6c[_0x1f243c(0x25a)](formatNutrient,_0x544c5d[_0x1f243c(0x441)]||_0x544c5d[_0x1f243c(0x18d)]||'','mg'),_0x244572=_0x317f6c[_0x1f243c(0x24b)](formatNutrient,_0x544c5d[_0x1f243c(0x43b)]||_0x544c5d[_0x1f243c(0x21f)+_0x1f243c(0x385)+'g']||'','g'),_0x3e7cc5=_0x317f6c[_0x1f243c(0x25a)](formatNutrient,_0x544c5d[_0x1f243c(0x21e)]||_0x544c5d[_0x1f243c(0x243)+_0x1f243c(0x36d)]||'','g'),_0x98ddcc=_0x317f6c[_0x1f243c(0x417)](formatNutrient,_0x544c5d[_0x1f243c(0x1c6)]||_0x544c5d[_0x1f243c(0x45f)+_0x1f243c(0x247)]||'','g'),_0x16de01=_0x317f6c[_0x1f243c(0x417)](formatNutrient,_0x544c5d[_0x1f243c(0x187)+'rs']||_0x544c5d[_0x1f243c(0x187)+_0x1f243c(0x247)]||'','g'),_0x2afa7c=_0x317f6c[_0x1f243c(0x25a)](formatNutrient,_0x544c5d[_0x1f243c(0x250)]||_0x544c5d[_0x1f243c(0x231)]||'','g'),_0x28a266=_0x317f6c[_0x1f243c(0x3a8)](formatNutrient,_0x544c5d[_0x1f243c(0x3bc)]||_0x544c5d[_0x1f243c(0x324)+_0x1f243c(0x458)]||'',_0x317f6c[_0x1f243c(0x182)]),_0x47cb08=_0x317f6c[_0x1f243c(0x318)](formatNutrient,_0x544c5d[_0x1f243c(0x3c3)]||_0x544c5d[_0x1f243c(0x24a)]||'','mg'),_0x564042=_0x317f6c[_0x1f243c(0x3a8)](formatNutrient,_0x544c5d[_0x1f243c(0x22e)]||_0x544c5d[_0x1f243c(0x475)]||'','mg'),_0xddebcc=_0x317f6c[_0x1f243c(0x3a8)](formatNutrient,_0x544c5d[_0x1f243c(0x28e)]||_0x544c5d[_0x1f243c(0x3e2)+'mg']||'','mg'),_0x3d6216=[[_0x317f6c[_0x1f243c(0x1eb)],_0x317f6c[_0x1f243c(0x451)](String,_0x544c5d[_0x1f243c(0x264)]||'0'),'-'],[_0x317f6c[_0x1f243c(0x232)],_0x54d7b5,_0x317f6c[_0x1f243c(0x22a)](getDV,_0x54d7b5,-0x6a*0x1f+-0x3e8*-0x8+-0x121c*0x1)],[_0x317f6c[_0x1f243c(0x265)],_0xda2a7d,_0x317f6c[_0x1f243c(0x417)](getDV,_0xda2a7d,0x421*0x4+-0x2*-0x1a3+-0xace)],[_0x317f6c[_0x1f243c(0x322)],_0x244572,_0x317f6c[_0x1f243c(0x2b0)](getDV,_0x244572,0x400+-0xf88+0x1cd*0x7)],[_0x317f6c[_0x1f243c(0x272)],_0x3e7cc5,_0x317f6c[_0x1f243c(0x417)](getDV,_0x3e7cc5,0x3*-0x1ba+-0x1*0x3b3+0xb1*0xd)],[_0x317f6c[_0x1f243c(0x248)],_0x98ddcc,'-'],[_0x317f6c[_0x1f243c(0x260)],_0x16de01,_0x317f6c[_0x1f243c(0x17f)](getDV,_0x16de01,0x124*-0x1+-0x22d*-0x4+-0x75e)],[_0x317f6c[_0x1f243c(0x183)],_0x2afa7c,'-'],[_0x317f6c[_0x1f243c(0x478)],_0x28a266,_0x317f6c[_0x1f243c(0x34a)](getDV,_0x28a266,-0xdb0+-0x1b57+0x291b)],[_0x317f6c[_0x1f243c(0x40d)],_0x47cb08,_0x317f6c[_0x1f243c(0x188)](getDV,_0x47cb08,0x7de+0x3*-0x493+0xaef)],[_0x317f6c[_0x1f243c(0x320)],_0x564042,_0x317f6c[_0x1f243c(0x3e1)](getDV,_0x564042,0x26df+0x8d*-0x10+0x9*-0x355)],[_0x317f6c[_0x1f243c(0x42e)],_0xddebcc,_0x317f6c[_0x1f243c(0x2b0)](getDV,_0xddebcc,0xf82+0x82*-0x37+-0x18a*-0x14)]];_0x1371cb[_0x1f243c(0x306)](_0x4059b1,{'startY':_0x317f6c[_0x1f243c(0x471)](_0x519227,-0x59*0x2+-0x19d3+0x1a88),'margin':{'left':0xe,'right':0xe},'head':[[_0x317f6c[_0x1f243c(0x410)],_0x317f6c[_0x1f243c(0x259)],_0x317f6c[_0x1f243c(0x299)]]],'body':_0x3d6216,'theme':_0x317f6c[_0x1f243c(0x24c)],'headStyles':{'fillColor':[-0xbd5*-0x1+-0x35f+-0x830,0x1e97+-0xa22*-0x1+-0x5f*0x6d,-0x56+-0x82d+0x1*0x8c9]},'styles':{'fontSize':0x8,'cellPadding':1.5}});let _0xcb3d01=_0x317f6c[_0x1f243c(0x1f3)](_0x4059b1[_0x1f243c(0x37b)+_0x1f243c(0x366)][_0x1f243c(0x459)],-0x2*0x82b+0x3bc+0xc9f);_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x3ab)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0x89*0x11+-0x2*0xee4+0x26e8),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x18d487),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x27a)],-0x71e*-0x4+0x6b*-0xc+-0x2*0xbb3,_0xcb3d01,{'maxWidth':0xb6});const _0x2eba61=_0x4059b1[_0x1f243c(0x1f9)][_0x1f243c(0x3c0)][_0x1f243c(0x3b6)]();_0x4059b1[_0x1f243c(0x45d)+'or'](..._0x5b1e41),_0x4059b1[_0x1f243c(0x45e)+'th'](-0x1*-0x7c+0x1*-0x24b6+-0x1*-0x243a+0.5),_0x4059b1[_0x1f243c(0x18a)](-0x8f3*0x3+-0x9b3+0x249a,_0x317f6c[_0x1f243c(0x290)](_0x2eba61,0x16c1+0x196f*0x1+-0x3020),-0x18d6+-0x144+0x1*0x1ade,_0x317f6c[_0x1f243c(0x47a)](_0x2eba61,-0x2f0+0xffb*0x2+0x2*-0xe7b)),_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x1e1)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0x1*-0x137b+0xe14+-0x2187),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x2dd472),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x26b)],0x2*0x10d3+0x1*-0x5de+-0x1bba,_0x317f6c[_0x1f243c(0x335)](_0x2eba61,-0x5*-0x581+-0x211b+-0x7*-0xce)),_0x4059b1[_0x1f243c(0x3e4)](_0x317f6c[_0x1f243c(0x44a)],_0x317f6c[_0x1f243c(0x380)]),_0x4059b1[_0x1f243c(0x273)+'e'](-0x5*0x551+0x2625+0xb89*-0x1+0.5),_0x4059b1[_0x1f243c(0x1bc)+'or'](..._0x18d487),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x274)],-0x11cf+0x62d*0x4+-0x67*0x11,_0x317f6c[_0x1f243c(0x38e)](_0x2eba61,0x687+-0x9bb*-0x3+-0x8*0x476)),_0x4059b1[_0x1f243c(0x255)](_0x317f6c[_0x1f243c(0x2a7)],0x1*-0x23db+-0x2cb+0x26b4,_0x317f6c[_0x1f243c(0x1bd)](_0x2eba61,0x31d*-0x7+-0x1fcf+-0x359e*-0x1)),_0x4059b1[_0x1f243c(0x25e)](_0x1f243c(0x22b)+_0x317f6c[_0x1f243c(0x396)](_0x93e5a4,_0x317f6c[_0x1f243c(0x25b)])+_0x1f243c(0x439));}function closeModal(){const _0x38973a=_0x2b5d67,_0x570172={'fGiCk':_0x38973a(0x435)+'al','GPixc':_0x38973a(0x460),'zVsPA':_0x38973a(0x3a4)+'n','cLOrs':_0x38973a(0x3ad)},_0x25b74f=document[_0x38973a(0x1b9)+_0x38973a(0x470)](_0x570172[_0x38973a(0x1c4)]);_0x25b74f&&(_0x25b74f[_0x38973a(0x23c)][_0x38973a(0x25d)](_0x570172[_0x38973a(0x215)]),_0x25b74f[_0x38973a(0x3c9)+'te'](_0x570172[_0x38973a(0x40a)],_0x570172[_0x38973a(0x3c1)]));}function escapeHtml(_0x1a129a){const _0x3685d0=_0x2b5d67,_0x4fe7a0={'DkCbD':_0x3685d0(0x200),'IDvVy':_0x3685d0(0x2ce),'kOIrw':_0x3685d0(0x429),'oFyqZ':_0x3685d0(0x2b4),'LLHhq':_0x3685d0(0x2ab),'kLqBS':function(_0x2e3fdf,_0x3c87f8){return _0x2e3fdf(_0x3c87f8);}};return _0x4fe7a0[_0x3685d0(0x1a9)](String,_0x1a129a)[_0x3685d0(0x2dc)](/[&<>"']/g,_0x2f6860=>{const _0x2bc311=_0x3685d0,_0x224e7d={'&':_0x4fe7a0[_0x2bc311(0x3da)],'<':_0x4fe7a0[_0x2bc311(0x311)],'>':_0x4fe7a0[_0x2bc311(0x315)],'\x22':_0x4fe7a0[_0x2bc311(0x3e6)],'\x27':_0x4fe7a0[_0x2bc311(0x1b8)]};return _0x224e7d[_0x2f6860];});}
+/**
+ * Application Entry Point
+ * Listens for the DOM to be fully loaded before initializing core interactive features and loading catalog data.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu();
+  fetchAndInitCatalog();
+});
+
+/**
+ * Initializes mobile navigation menu toggling and auto-closes the menu when links are clicked.
+ */
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (menuToggle && navLinks) {
+    // Toggle 'active' class on menu button click
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile drawer upon selecting any navigation link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+  }
+}
+
+// Global State Management
+let allProducts = [];      // Stores parsed product data loaded from CSV
+let activeCategory = 'all'; // Currently selected category filter
+let searchQuery = '';      // Active user search keyword
+
+/**
+ * Normalizes input strings by converting to lowercase and stripping non-alphanumeric characters.
+ * @param {string} str Raw input string
+ * @returns {string} Sanitized string
+ */
+function normalizeKey(str) {
+  return String(str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/**
+ * Extracts floating point values from string input (e.g., "140g" -> 140).
+ * @param {string} str Input value containing potential numeric characters
+ * @returns {number} Extracted number or 0
+ */
+function parseNutrientValue(str) {
+  if (!str) return 0;
+  const match = String(str).match(/[\d.]+/);
+  return match ? parseFloat(match[0]) : 0;
+}
+
+/**
+ * Calculates percentage Daily Value (% DV) based on standard FDA recommendation values.
+ * Returns '0%' if there is no value or if the value is zero.
+ * @param {string} valStr Nutrient raw quantity string (e.g., "10mg")
+ * @param {number} standardDV Daily recommended reference standard
+ * @returns {string} Percentage representation (e.g., "5%", "0%")
+ */
+function getDV(valStr, standardDV) {
+  if (!standardDV) return '-';
+  const num = parseNutrientValue(valStr);
+  if (isNaN(num) || num === 0) return '0%';
+  const pct = Math.round((num / standardDV) * 100);
+  return pct + '%';
+}
+
+/**
+ * Formats nutrient text to ensure standard unit postfix appending (e.g., "10" -> "10mg").
+ * Returns '0' + defaultUnit if value is empty or missing.
+ * @param {string|number} val Raw nutrient magnitude
+ * @param {string} defaultUnit Measurement unit suffix (e.g., 'g', 'mg', 'mcg')
+ * @returns {string} Formatted text display
+ */
+function formatNutrient(val, defaultUnit) {
+  if (val === undefined || val === null || String(val).trim() === '') {
+    return '0' + defaultUnit;
+  }
+  const str = String(val).trim();
+  if (/[a-zA-Z]+$/.test(str)) {
+    return str;
+  }
+  return str + defaultUnit;
+}
+
+/**
+ * Fetches the CSV file from the server, parses product details, and renders the initial catalog.
+ */
+async function fetchAndInitCatalog() {
+  const productGrid = document.getElementById('productGrid');
+  const catalogStatus = document.getElementById('catalogStatus');
+  if (!productGrid) return;
+
+  try {
+    const response = await fetch('product_specs_and_nutrition.csv');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+    allProducts = parseCSV(csvText);
+
+    if (!allProducts || allProducts.length === 0) {
+      productGrid.innerHTML = '<p class="status-message">No products available in the catalog at this time.</p>';
+      if (catalogStatus) catalogStatus.textContent = 'Showing 0 product(s)';
+      return;
+    }
+
+    initControls();
+    renderProducts();
+  } catch (error) {
+    console.error('Error loading product catalog CSV:', error);
+    if (productGrid) {
+      productGrid.innerHTML = '<p class="status-message error-message">Unable to load product catalog. Please ensure you are running via a local web server (e.g. VS Code Live Server or Python http.server) rather than opening directly via file://.</p>';
+    }
+    if (catalogStatus) catalogStatus.textContent = 'Error loading product catalog.';
+  }
+}
+
+/**
+ * Converts raw CSV string content into an array of product objects using standard headers as keys.
+ * @param {string} text Raw CSV text block
+ * @returns {Array<Object>} Array of product key-value records
+ */
+function parseCSV(text) {
+  const lines = text.replace(/\r/g, '').trim().split('\n');
+  if (lines.length < 2) return [];
+
+  const headers = parseCSVRow(lines[0]);
+  const items = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    const values = parseCSVRow(line);
+    const item = {};
+
+    headers.forEach((header, index) => {
+      // Convert headers to standardized snake_case keys
+      const key = header.trim().toLowerCase().replace(/[^a-z0-9_]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+      item[key] = values[index] !== undefined ? values[index].trim() : '';
+    });
+
+    items.push(item);
+  }
+  return items;
+}
+
+/**
+ * Parses a single line/row of CSV content, supporting double-quoted fields.
+ * @param {string} rowText Single line string from CSV file
+ * @returns {Array<string>} Parsed field values
+ */
+function parseCSVRow(rowText) {
+  const values = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < rowText.length; i++) {
+    const char = rowText[i];
+    if (char === '"' && (i === 0 || rowText[i - 1] !== '\\')) {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      values.push(current.replace(/^"|"$/g, '').trim());
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  values.push(current.replace(/^"|"$/g, '').trim());
+  return values;
+}
+
+/**
+ * Initializes interactive controls including live search input, filter chips, clear button, and card event delegation.
+ */
+function initControls() {
+  const searchInput = document.getElementById('productSearch');
+  const clearBtn = document.getElementById('clearSearch');
+  const searchIcon = document.getElementById('searchIcon');
+  const filterChips = document.querySelectorAll('.chip');
+  const productGrid = document.getElementById('productGrid');
+
+  // Updates search bar iconography and toggle states based on activity
+  function updateSearchIcon() {
+    const hasSearchText = searchInput && searchInput.value.trim().length > 0;
+    const isCategoryFiltered = activeCategory !== 'all';
+
+    if (hasSearchText || isCategoryFiltered) {
+      if (searchIcon) searchIcon.textContent = '✕';
+      if (clearBtn) {
+        clearBtn.classList.add('is-active');
+        clearBtn.setAttribute('title', 'Clear search and filters');
+      }
+    } else {
+      if (searchIcon) searchIcon.textContent = '🔍';
+      if (clearBtn) {
+        clearBtn.classList.remove('is-active');
+        clearBtn.removeAttribute('title');
+      }
+    }
+  }
+
+  // Attach event listener for real-time text input filter
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      updateSearchIcon();
+      renderProducts();
+    });
+  }
+
+  // Reset search queries and reset category selections on clear button trigger
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (!clearBtn.classList.contains('is-active')) return;
+
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+      activeCategory = 'all';
+
+      filterChips.forEach(c => {
+        const isAll = c.getAttribute('data-filter') === 'all';
+        c.classList.toggle('active', isAll);
+        c.setAttribute('aria-selected', isAll ? 'true' : 'false');
+      });
+
+      updateSearchIcon();
+      renderProducts();
+    });
+  }
+
+  // Category filter click events
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
+      activeCategory = chip.getAttribute('data-filter') || 'all';
+
+      updateSearchIcon();
+      renderProducts();
+    });
+  });
+
+  // Delegated click listener on the grid for modal opening action buttons
+  if (productGrid) {
+    productGrid.addEventListener('click', (e) => {
+      const button = e.target.closest('.btn-card-action');
+      if (!button) return;
+
+      const sku = button.getAttribute('data-sku');
+      const product = allProducts.find(p => String(p.sku || p.id).trim() === sku);
+      if (product) {
+        openProductModal(product);
+      }
+    });
+  }
+
+  initModalListeners();
+}
+
+/**
+ * Filters all products against selected category and query text, building and rendering dynamic HTML product cards.
+ */
+function renderProducts() {
+  const productGrid = document.getElementById('productGrid');
+  const catalogStatus = document.getElementById('catalogStatus');
+  if (!productGrid) return;
+
+  const normalizedFilter = normalizeKey(activeCategory);
+
+  // Apply filtering matching category and query input
+  const filtered = allProducts.filter(product => {
+    const title = (product.title || product.name || product.item || '').toLowerCase();
+    const category = (product.category || product.cat || '').toLowerCase();
+    const sku = (product.sku || product.id || '').toLowerCase();
+
+    const matchesCategory = activeCategory === 'all' || normalizeKey(category).includes(normalizedFilter);
+    const matchesSearch = !searchQuery || title.includes(searchQuery) || sku.includes(searchQuery) || category.includes(searchQuery);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  productGrid.innerHTML = '';
+
+  if (filtered.length === 0) {
+    productGrid.innerHTML = '<p class="status-message">No products found matching your search parameters.</p>';
+    if (catalogStatus) catalogStatus.textContent = 'Showing 0 product(s)';
+    return;
+  }
+
+  // Utilize DocumentFragment to perform high-efficiency DOM batch rendering
+  const fragment = document.createDocumentFragment();
+
+  filtered.forEach(product => {
+    const card = document.createElement('article');
+    card.className = 'product-card';
+
+    const title = product.title || product.name || product.item || 'Untitled Product';
+    const brand = product.brand || product.badge || 'LIGO Brand';
+    const categoryName = product.category_label || product.category || 'Food Products';
+    const description = product.description || product.desc || '';
+    const pack = product.pack || product.pack_size || '-';
+    const origin = product.origin || 'USA';
+    const sku = String(product.sku || product.id || '').trim();
+    const primaryImageSrc = product.image_url || 'images/ligo_Content-fullGrocery.jpg';
+    const fallbackImageSrc = 'images/ligo_Content-fullGrocery.jpg';
+
+    card.innerHTML = `
+            <div class="card-badge">${escapeHtml(brand)}</div>
+            <div class="card-img-wrapper">
+                <img src="${escapeHtml(primaryImageSrc)}" alt="${escapeHtml(title)}" loading="lazy" data-fallback="${escapeHtml(fallbackImageSrc)}">
+            </div>
+            <div class="card-content">
+                <span class="card-category">${escapeHtml(categoryName)}</span>
+                <h3 class="card-title">${escapeHtml(title)}</h3>
+                <p class="card-sku"><strong>SKU:</strong> ${escapeHtml(sku)}</p>
+                <p class="card-description">${escapeHtml(description)}</p>
+                <div class="card-meta">
+                    <span><strong>Pack:</strong> ${escapeHtml(pack)}</span>
+                    <span><strong>Origin:</strong> ${escapeHtml(origin)}</span>
+                </div>
+                <button class="btn-card-action" data-sku="${escapeHtml(sku)}" aria-haspopup="dialog" aria-label="View spec sheet and nutrition for ${escapeHtml(title)}">
+                    View Spec Sheet &amp; Nutrition
+                </button>
+            </div>
+        `;
+
+    // Handle missing or broken image URLs with fallback images
+    const img = card.querySelector('img');
+    img.addEventListener('error', function handleImgError() {
+      this.removeEventListener('error', handleImgError);
+      const fallback = this.getAttribute('data-fallback');
+      if (this.src !== fallback) {
+        this.src = fallback;
+      } else {
+        this.src = 'images/ligo_Content-fullGrocery.jpg';
+      }
+    });
+
+    fragment.appendChild(card);
+  });
+
+  productGrid.appendChild(fragment);
+
+  if (catalogStatus) {
+    catalogStatus.textContent = `Showing ${filtered.length} product(s)`;
+  }
+}
+
+/**
+ * Initializes global event handlers for modal actions (closing via backdrop click, button, or Escape key).
+ */
+function initModalListeners() {
+  const productModal = document.getElementById('productModal');
+  const modalClose = document.getElementById('modalClose');
+
+  if (productModal) {
+    if (modalClose) {
+      modalClose.addEventListener('click', closeModal);
+    }
+
+    // Close on clicking modal backdrop area outside modal body
+    productModal.addEventListener('click', (e) => {
+      if (e.target === productModal) {
+        closeModal();
+      }
+    });
+
+    // Close when pressing the Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+}
+
+/**
+ * Opens product dialog modal and populates specification details and FDA nutrition values.
+ * @param {Object} product Product detail payload object
+ */
+function openProductModal(product) {
+  const productModal = document.getElementById('productModal');
+  if (!productModal || !product) return;
+
+  // Element selection
+  const modalTitle = document.getElementById('modalTitle');
+  const modalSku = document.getElementById('modalSku');
+  const modalDescription = document.getElementById('modalDescription');
+  const specPack = document.getElementById('specPack');
+  const specWeight = document.getElementById('specWeight');
+  const specCaseWeight = document.getElementById('specCaseWeight');
+  const specCaseCube = document.getElementById('specCaseCube');
+  const specCaseDimensions = document.getElementById('specCaseDimensions');
+  const specCasesPerPallet = document.getElementById('specCasesPerPallet');
+  const specPalletPattern = document.getElementById('specPalletPattern');
+
+  // Populate logistics and specification content
+  if (modalTitle) modalTitle.textContent = product.title || product.name || 'Product Details';
+  if (modalSku) {
+    const skuVal = product.sku || product.id;
+    modalSku.textContent = skuVal ? `SKU: ${skuVal}` : 'SKU: -';
+  }
+  if (modalDescription) modalDescription.textContent = product.description || product.desc || '';
+  if (specPack) specPack.textContent = product.pack || product.pack_size || '-';
+  if (specWeight) specWeight.textContent = product.weight || product.net_weight || '-';
+  if (specCaseWeight) specCaseWeight.textContent = product.case_weight || product.caseWeight || '-';
+  if (specCaseCube) specCaseCube.textContent = product.case_cube || product.caseCube || '-';
+  if (specCaseDimensions) specCaseDimensions.textContent = product.case_dimensions || product.caseDimensions || '-';
+  if (specCasesPerPallet) specCasesPerPallet.textContent = product.cases_per_pallet || product.casesPerPallet || '-';
+  if (specPalletPattern) specPalletPattern.textContent = product.pallet_pattern || product.palletPattern || '-';
+
+  // Text assignment helper
+  const setElemText = (id, val, fallback = '-') => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val !== undefined && val !== '' ? val : fallback;
+  };
+
+  // Extract raw nutrition data
+  const rawFat = product.total_fat || product.total_fat_g || '';
+  const rawSodium = product.sodium || product.sodium_mg || '';
+  const rawCarbs = product.carbs || product.total_carbohydrates_g || '';
+  const rawFiber = product.fiber || product.dietary_fiber_g || '';
+  const rawSugars = product.sugars || product.total_sugars_g || '';
+  const rawAddedSugars = product.added_sugars || product.added_sugars_g || '';
+  const rawProtein = product.protein || product.protein_g || '';
+  const rawVitD = product.vitamin_d || product.vitamin_d_mcg || '';
+  const rawCalcium = product.calcium || product.calcium_mg || '';
+  const rawIron = product.iron || product.iron_mg || '';
+  const rawPotassium = product.potassium || product.potassium_mg || '';
+
+  // Format unit metrics
+  const totalFatStr = formatNutrient(rawFat, 'g');
+  const sodiumStr = formatNutrient(rawSodium, 'mg');
+  const carbsStr = formatNutrient(rawCarbs, 'g');
+  const fiberStr = formatNutrient(rawFiber, 'g');
+  const sugarsStr = formatNutrient(rawSugars, 'g');
+  const addedSugarsStr = formatNutrient(rawAddedSugars, 'g');
+  const proteinStr = formatNutrient(rawProtein, 'g');
+  const vitDStr = formatNutrient(rawVitD, 'mcg');
+  const calciumStr = formatNutrient(rawCalcium, 'mg');
+  const ironStr = formatNutrient(rawIron, 'mg');
+  const potassiumStr = formatNutrient(rawPotassium, 'mg');
+
+  // Populate nutrition facts grid elements and Daily Values
+  setElemText('nfServings', product.servings || product.servings_per_container || 'Approx. 4');
+  setElemText('nfServingSize', product.serving_size || '1/2 cup (140g)');
+  setElemText('nfCalories', product.calories || '0');
+  setElemText('nfTotalFat', totalFatStr);
+  setElemText('nfTotalFatDV', getDV(totalFatStr, 78));
+  setElemText('nfSodium', sodiumStr);
+  setElemText('nfSodiumDV', getDV(sodiumStr, 2300));
+  setElemText('nfCarbs', carbsStr);
+  setElemText('nfCarbsDV', getDV(carbsStr, 275));
+  setElemText('nfFiber', fiberStr);
+  setElemText('nfFiberDV', getDV(fiberStr, 28));
+  setElemText('nfSugars', sugarsStr);
+  setElemText('nfAddedSugars', addedSugarsStr);
+  setElemText('nfAddedSugarsDV', getDV(addedSugarsStr, 50));
+  setElemText('nfProtein', proteinStr);
+  setElemText('nfVitaminD', vitDStr);
+  setElemText('nfVitaminDDV', getDV(vitDStr, 20));
+  setElemText('nfCalcium', calciumStr);
+  setElemText('nfCalciumDV', getDV(calciumStr, 1300));
+  setElemText('nfIron', ironStr);
+  setElemText('nfIronDV', getDV(ironStr, 18));
+  setElemText('nfPotassium', potassiumStr);
+  setElemText('nfPotassiumDV', getDV(potassiumStr, 4700));
+
+  // Bind spec sheet PDF export handler button
+  const downloadBtn = document.getElementById('btnDownloadSpec');
+  if (downloadBtn) {
+    downloadBtn.onclick = (e) => {
+      e.preventDefault();
+      generateProductPDF(product);
+    };
+  }
+
+  // Display modal
+  productModal.classList.add('active');
+  productModal.setAttribute('aria-hidden', 'false');
+}
+
+/**
+ * Generates and downloads a spec sheet PDF document for a given product using jsPDF & autoTable.
+ * @param {Object} product Target product data record
+ * */
+async function generateProductPDF(product) {
+  const jspdfLib = window.jspdf ? window.jspdf : window.jsPDF;
+  if (!jspdfLib) {
+    alert('PDF generation library is loading. Please try again in a moment.');
+    return;
+  }
+
+  const { jsPDF } = jspdfLib;
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  // Theme branding color palette definitions
+  const navyBlue = [10, 25, 47];
+  const goldenSun = [244, 209, 96];
+  const darkText = [30, 30, 30];
+  const mutedText = [102, 102, 102];
+
+  /**
+   * Helper to load images via HTML Canvas converting to Base64 Data URL for jsPDF embedding
+   */
+  const loadImageAsBase64 = (url) => {
+    return new Promise((resolve) => {
+      if (!url) return resolve(null);
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        resolve({
+          dataURL: canvas.toDataURL('image/png'),
+          width: img.width,
+          height: img.height
+        });
+      };
+      img.onerror = () => resolve(null);
+      img.src = url;
+    });
+  };
+
+  // Helper to safely extract present value across multiple possible property key aliases
+  const getValue = (keys) => {
+    for (const k of keys) {
+      const val = product[k];
+      if (val !== undefined && val !== null && String(val).trim() !== '' && String(val).trim() !== 'NaN') {
+        return String(val).trim();
+      }
+    }
+    return null;
+  };
+
+  // Helper to format values with standard unit suffix
+  const formatNutrientVal = (val, defaultUnit) => {
+    if (!val) return null;
+    if (val === '-' || /[a-zA-Z%]/.test(val)) return val;
+    return `${val}${defaultUnit}`;
+  };
+
+  // Helper to compute % Daily Value (% DV)
+  const calculateDV = (val, refDailyVal) => {
+    if (!val || !refDailyVal) return '-';
+    const num = parseFloat(val);
+    if (isNaN(num)) return '-';
+    return `${Math.round((num / refDailyVal) * 100)}%`;
+  };
+
+  // Render header branding logo
+  const logoData = await loadImageAsBase64('images/navbar_liberty-gold.png');
+  if (logoData) {
+    const logoW = 32;
+    const logoH = (logoData.height / logoData.width) * logoW;
+    doc.addImage(logoData.dataURL, 'PNG', 14, 10, logoW, logoH);
+  }
+
+  // PDF Header Typography & Company Details
+  const textStartX = 50;
+  doc.setFont('times', 'bold');
+  doc.setFontSize(18);
+  doc.setTextColor(...navyBlue);
+  doc.text('LIBERTY GOLD', textStartX, 16);
+
+  doc.setFont('times', 'normal');
+  doc.setFontSize(9.5);
+  doc.setTextColor(...mutedText);
+  doc.text('Growing, harvesting, processing and marketing...', textStartX, 21.5);
+
+  doc.setFont('times', 'italic');
+  doc.setFontSize(11);
+  doc.setTextColor(...navyBlue);
+  doc.text('The Best Foods the World Has to Offer', textStartX, 27.5);
+
+  // Golden accent divider line
+  doc.setDrawColor(...goldenSun);
+  doc.setLineWidth(0.85);
+  doc.line(14, 31, 196, 31);
+
+  // Product Title & Metadata
+  const sku = String(product.sku || product.id || '').trim();
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(15);
+  doc.setTextColor(...darkText);
+  doc.text(product.title || product.name || 'Product Specification', 14, 43);
+
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(...mutedText);
+  doc.text(`Category: ${product.category_label || product.category || 'N/A'} | SKU: ${sku}`, 14, 49);
+
+  // Logistics & Packaging Table Section
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...navyBlue);
+  doc.text('Logistics & Packaging Specifications', 14, 58);
+
+  const specsData = [
+    ['Packaging Format / Pack Size', product.pack || product.pack_size || product['Pack Size'] || 'N/A'],
+    ['Net Weight', product.weight || product.net_weight || product['Net Weight'] || 'N/A'],
+    ['Country of Origin', product.origin || product.country_of_origin || product['Country of Origin'] || 'USA'],
+    ['Case Weight', product.case_weight || product.caseWeight || product['Case Weight'] || 'N/A'],
+    ['Case Cube', product.case_cube || product.caseCube || product['Case Cube'] || 'N/A'],
+    ['Case Dimensions', product.case_dimensions || product.caseDimensions || product['Case Dimensions'] || 'N/A'],
+    ['Cases Per Pallet', product.cases_per_pallet || product.casesPerPallet || product['Cases Per Pallet'] || 'N/A'],
+    ['Pallet Pattern', product.pallet_pattern || product.palletPattern || product['Pallet Pattern'] || 'N/A']
+  ];
+
+  const autoTableFn = doc.autoTable || (window.jspdf && window.jspdf.autoTable);
+  autoTableFn.call(doc, {
+    startY: 61,
+    margin: { left: 14, right: 65 },
+    head: [['Specification Feature', 'Details']],
+    body: specsData,
+    theme: 'grid',
+    headStyles: { fillColor: navyBlue, textColor: [255, 255, 255] },
+    styles: { fontSize: 7.5, cellPadding: 1.5 }
+  });
+
+  // Render Product Image inside framed box
+  const defaultImage = 'images/ligo_Content-fullGrocery.jpg';
+  const candidateImageUrl = product.image_url || defaultImage;
+  let productImgData = await loadImageAsBase64(candidateImageUrl);
+  if (!productImgData) {
+    productImgData = await loadImageAsBase64(defaultImage);
+  }
+
+  if (productImgData) {
+    const imgBoxX = 150;
+    const imgBoxY = 61;
+    const imgBoxW = 42;
+    const imgBoxH = 45;
+
+    // Draw image placeholder border
+    doc.setDrawColor(200, 200, 200);
+    doc.setFillColor(252, 252, 252);
+    doc.roundedRect(imgBoxX, imgBoxY, imgBoxW, imgBoxH, 2, 2, 'FD');
+
+    // Scale image while preserving aspect ratio
+    const ratio = Math.min(imgBoxW / productImgData.width, imgBoxH / productImgData.height);
+    const renderW = productImgData.width * ratio * 0.9;
+    const renderH = productImgData.height * ratio * 0.9;
+    const renderX = imgBoxX + (imgBoxW - renderW) / 2;
+    const renderY = imgBoxY + (imgBoxH - renderH) / 2;
+
+    doc.addImage(productImgData.dataURL, 'PNG', renderX, renderY, renderW, renderH);
+  }
+
+  // --- MANDATORY FDA NUTRITION FACTS TABLE ---
+  let currentY = Math.max(doc.lastAutoTable.finalY, 110) + 10;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...navyBlue);
+
+  const servingSize = getValue(['serving_size', 'Serving Size']) || '1/2 cup';
+  const servings = getValue(['servings', 'servings_per_container', 'Servings Per Container']) || 'Approx. 4';
+  doc.text(`FDA Nutrition Facts (Serving Size: ${servingSize}, Servings: ${servings})`, 14, currentY);
+
+  // Configuration ONLY for mandatory FDA nutrients above the disclaimer
+  const mandatoryNutrientConfig = [
+    { label: 'Calories', keys: ['calories', 'Calories'], unit: '', dvRef: null },
+    { label: 'Total Fat', keys: ['total_fat', 'total_fat_g', 'Total Fat (g)'], unit: 'g', dvRef: 78 },
+    { label: 'Saturated Fat', keys: ['saturated_fat', 'saturated_fat_g', 'Saturated Fat (g)'], unit: 'g', dvRef: 20 },
+    { label: 'Trans Fat', keys: ['trans_fat', 'trans_fat_g', 'Trans Fat (g)'], unit: 'g', dvRef: null },
+    { label: 'Cholesterol', keys: ['cholesterol', 'cholesterol_mg', 'Cholesterol (mg)'], unit: 'mg', dvRef: 300 },
+    { label: 'Sodium', keys: ['sodium', 'sodium_mg', 'Sodium (mg)'], unit: 'mg', dvRef: 2300 },
+    { label: 'Total Carbohydrates', keys: ['carbs', 'total_carbohydrates_g', 'total_carbohydrates', 'Total Carbohydrates (g)'], unit: 'g', dvRef: 275 },
+    { label: 'Dietary Fiber', keys: ['fiber', 'dietary_fiber_g', 'Dietary Fiber (g)'], unit: 'g', dvRef: 28 },
+    { label: 'Total Sugars', keys: ['sugars', 'total_sugars_g', 'Total Sugars (g)'], unit: 'g', dvRef: null },
+    { label: 'Added Sugars', keys: ['added_sugars', 'added_sugars_g', 'Added Sugars (g)'], unit: 'g', dvRef: 50 },
+    { label: 'Protein', keys: ['protein', 'protein_g', 'Protein (g)'], unit: 'g', dvRef: null },
+    { label: 'Vitamin D', keys: ['vitamin_d', 'vitamin_d_mcg', 'Vitamin D (mcg)'], unit: 'mcg', dvRef: 20 },
+    { label: 'Calcium', keys: ['calcium', 'calcium_mg', 'Calcium (mg)'], unit: 'mg', dvRef: 1300 },
+    { label: 'Iron', keys: ['iron', 'iron_mg', 'Iron (mg)'], unit: 'mg', dvRef: 18 },
+    { label: 'Potassium', keys: ['potassium', 'potassium_mg', 'Potassium (mg)'], unit: 'mg', dvRef: 4700 }
+  ];
+
+  // Build mandatory table body
+  const nutritionData = [];
+  mandatoryNutrientConfig.forEach(cfg => {
+    const rawVal = getValue(cfg.keys);
+    if (rawVal !== null) {
+      const formattedVal = formatNutrientVal(rawVal, cfg.unit);
+      const dvVal = cfg.dvRef ? calculateDV(rawVal, cfg.dvRef) : '-';
+      nutritionData.push([cfg.label, formattedVal, dvVal]);
+    }
+  });
+
+  autoTableFn.call(doc, {
+    startY: currentY + 3,
+    margin: { left: 14, right: 14 },
+    head: [['Nutrient / Mineral / Vitamin', 'Amount Per Serving', '% Daily Value (% DV)*']],
+    body: nutritionData,
+    theme: 'striped',
+    headStyles: { fillColor: [70, 70, 70] },
+    styles: { fontSize: 8, cellPadding: 1.5 }
+  });
+
+  // --- MANDATORY FDA DISCLAIMER FOOTNOTE ---
+  let footerY = doc.lastAutoTable.finalY + 5;
+  doc.setFont('helvetica', 'italic');
+  doc.setFontSize(7);
+  doc.setTextColor(...mutedText);
+  doc.text('* The % Daily Value (DV) tells you how much a nutrient in a serving contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.', 14, footerY, { maxWidth: 182 });
+
+  // Advance vertical tracking position past the mandatory disclaimer
+  currentY = footerY + 6;
+
+  // --- EXTRA INFORMATION SECTION (AFTER DISCLAIMER) ---
+
+  // 1. Ingredients
+  const ingredientsVal = getValue(['ingredients', 'Ingredients']);
+  if (ingredientsVal) {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...navyBlue);
+    doc.text('INGREDIENTS:', 14, currentY);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7.5);
+    doc.setTextColor(50, 50, 50);
+    const splitIng = doc.splitTextToSize(ingredientsVal, 145);
+    doc.text(splitIng, 38, currentY);
+    currentY += Math.max(splitIng.length * 3.5, 6);
+  }
+
+  // 2. Allergens
+  const allergensVal = getValue(['allergens', 'Allergens']);
+  if (allergensVal) {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(180, 0, 0);
+    doc.text('ALLERGENS:', 14, currentY);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7.5);
+    doc.setTextColor(50, 50, 50);
+    const splitAllergens = doc.splitTextToSize(allergensVal, 145);
+    doc.text(splitAllergens, 38, currentY);
+    currentY += Math.max(splitAllergens.length * 3.5, 6);
+  }
+
+  // 3. Optional / Voluntary Vitamins or Additional Nutrients
+  const extraNutrientsConfig = [
+    { label: 'Vitamin A', keys: ['vitamin_a', 'vitamin_a_pct', 'Vitamin A (%)'], unit: '%' },
+    { label: 'Vitamin C', keys: ['vitamin_c', 'vitamin_c_pct', 'vitamin_c_mcg', 'Vitamin C (%)', 'Vitamin C (mcg)'], unit: '%' }
+  ];
+
+  const extraNutrientsList = [];
+  extraNutrientsConfig.forEach(cfg => {
+    const rawVal = getValue(cfg.keys);
+    if (rawVal !== null) {
+      extraNutrientsList.push(`${cfg.label}: ${formatNutrientVal(rawVal, cfg.unit)}`);
+    }
+  });
+
+  if (extraNutrientsList.length > 0) {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...navyBlue);
+    doc.text('ADDITIONAL NUTRIENTS:', 14, currentY);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7.5);
+    doc.setTextColor(50, 50, 50);
+    doc.text(extraNutrientsList.join(' | '), 52, currentY);
+  }
+
+  // --- PAGE FOOTER DETAILS ---
+  const pageHeight = doc.internal.pageSize.getHeight();
+  doc.setDrawColor(...goldenSun);
+  doc.setLineWidth(0.5);
+  doc.line(14, pageHeight - 16, 196, pageHeight - 16);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...navyBlue);
+  doc.text('LIBERTY GOLD FRUIT COMPANY LP', 14, pageHeight - 12);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(7.5);
+  doc.setTextColor(...mutedText);
+  doc.text('500 Eccles Avenue, South San Francisco, CA 94080 USA | Phone: (650) 583-4700 | Email: tim@libertygold.com', 14, pageHeight - 8);
+  doc.text('© 2026 Liberty Gold Fruit Co., Inc. All Rights Reserved.', 14, pageHeight - 4);
+
+  // Save and download generated PDF document
+  doc.save(`LIGO_Spec_${sku || 'product'}.pdf`);
+}
+// async function generateProductPDF(product) {
+//   const jspdfLib = window.jspdf ? window.jspdf : window.jsPDF;
+//   if (!jspdfLib) {
+//     alert('PDF generation library is loading. Please try again in a moment.');
+//     return;
+//   }
+//
+//   const { jsPDF } = jspdfLib;
+//   const doc = new jsPDF({
+//     orientation: 'portrait',
+//     unit: 'mm',
+//     format: 'a4'
+//   });
+//
+//   // Theme branding color palette definitions
+//   const navyBlue = [10, 25, 47];
+//   const goldenSun = [244, 209, 96];
+//   const darkText = [30, 30, 30];
+//   const mutedText = [102, 102, 102];
+//
+//   /**
+//    * Helper to load images via HTML Canvas converting to Base64 Data URL for jsPDF embedding
+//    */
+//   const loadImageAsBase64 = (url) => {
+//     return new Promise((resolve) => {
+//       if (!url) return resolve(null);
+//       const img = new Image();
+//       img.crossOrigin = 'Anonymous';
+//       img.onload = () => {
+//         const canvas = document.createElement('canvas');
+//         canvas.width = img.width;
+//         canvas.height = img.height;
+//         const ctx = canvas.getContext('2d');
+//         ctx.drawImage(img, 0, 0);
+//         resolve({
+//           dataURL: canvas.toDataURL('image/png'),
+//           width: img.width,
+//           height: img.height
+//         });
+//       };
+//       img.onerror = () => resolve(null);
+//       img.src = url;
+//     });
+//   };
+//
+//   // Render header branding logo
+//   const logoData = await loadImageAsBase64('images/navbar_liberty-gold.png');
+//   if (logoData) {
+//     const logoW = 32;
+//     const logoH = (logoData.height / logoData.width) * logoW;
+//     doc.addImage(logoData.dataURL, 'PNG', 14, 10, logoW, logoH);
+//   }
+//
+//   // PDF Header Typography & Company Details
+//   const textStartX = 50;
+//   doc.setFont('times', 'bold');
+//   doc.setFontSize(18);
+//   doc.setTextColor(...navyBlue);
+//   doc.text('LIBERTY GOLD', textStartX, 16);
+//
+//   doc.setFont('times', 'normal');
+//   doc.setFontSize(9.5);
+//   doc.setTextColor(...mutedText);
+//   doc.text('Growing, harvesting, processing and marketing...', textStartX, 21.5);
+//
+//   doc.setFont('times', 'italic');
+//   doc.setFontSize(11);
+//   doc.setTextColor(...navyBlue);
+//   doc.text('The Best Foods the World Has to Offer', textStartX, 27.5);
+//
+//   // Golden accent divider line
+//   doc.setDrawColor(...goldenSun);
+//   doc.setLineWidth(0.85);
+//   doc.line(14, 31, 196, 31);
+//
+//   // Product Title & Metadata
+//   const sku = String(product.sku || product.id || '').trim();
+//   doc.setFont('helvetica', 'bold');
+//   doc.setFontSize(15);
+//   doc.setTextColor(...darkText);
+//   doc.text(product.title || product.name || 'Product Specification', 14, 43);
+//
+//   doc.setFontSize(9);
+//   doc.setFont('helvetica', 'normal');
+//   doc.setTextColor(...mutedText);
+//   doc.text(`Category: ${product.category_label || product.category || 'N/A'} | SKU: ${sku}`, 14, 49);
+//
+//   // Logistics & Packaging Table Section
+//   doc.setFont('helvetica', 'bold');
+//   doc.setFontSize(11);
+//   doc.setTextColor(...navyBlue);
+//   doc.text('Logistics & Packaging Specifications', 14, 58);
+//
+//   const specsData = [
+//     ['Packaging Format / Pack Size', product.pack || product.pack_size || 'N/A'],
+//     ['Net Weight', product.weight || product.net_weight || 'N/A'],
+//     ['Country of Origin', product.origin || product.country_of_origin || 'USA'],
+//     ['Case Weight', product.case_weight || product.caseWeight || 'N/A'],
+//     ['Case Cube', product.case_cube || product.caseCube || 'N/A'],
+//     ['Case Dimensions', product.case_dimensions || product.caseDimensions || 'N/A'],
+//     ['Cases Per Pallet', product.cases_per_pallet || product.casesPerPallet || 'N/A'],
+//     ['Pallet Pattern', product.pallet_pattern || product.palletPattern || 'N/A']
+//   ];
+//
+//   const autoTableFn = doc.autoTable || (window.jspdf && window.jspdf.autoTable);
+//   autoTableFn.call(doc, {
+//     startY: 61,
+//     margin: { left: 14, right: 65 },
+//     head: [['Specification Feature', 'Details']],
+//     body: specsData,
+//     theme: 'grid',
+//     headStyles: { fillColor: navyBlue, textColor: [255, 255, 255] },
+//     styles: { fontSize: 7.5, cellPadding: 1.5 }
+//   });
+//
+//   // Render Product Image inside framed box
+//   const defaultImage = 'images/ligo_Content-fullGrocery.jpg';
+//   const candidateImageUrl = product.image_url || defaultImage;
+//   let productImgData = await loadImageAsBase64(candidateImageUrl);
+//   if (!productImgData) {
+//     productImgData = await loadImageAsBase64(defaultImage);
+//   }
+//
+//   if (productImgData) {
+//     const imgBoxX = 150;
+//     const imgBoxY = 61;
+//     const imgBoxW = 42;
+//     const imgBoxH = 45;
+//
+//     // Draw image placeholder border
+//     doc.setDrawColor(200, 200, 200);
+//     doc.setFillColor(252, 252, 252);
+//     doc.roundedRect(imgBoxX, imgBoxY, imgBoxW, imgBoxH, 2, 2, 'FD');
+//
+//     // Scale image while preserving aspect ratio
+//     const ratio = Math.min(imgBoxW / productImgData.width, imgBoxH / productImgData.height);
+//     const renderW = productImgData.width * ratio * 0.9;
+//     const renderH = productImgData.height * ratio * 0.9;
+//     const renderX = imgBoxX + (imgBoxW - renderW) / 2;
+//     const renderY = imgBoxY + (imgBoxH - renderH) / 2;
+//
+//     doc.addImage(productImgData.dataURL, 'PNG', renderX, renderY, renderW, renderH);
+//   }
+//
+//   // Nutrition Facts Section
+//   let currentY = Math.max(doc.lastAutoTable.finalY, 110) + 10;
+//   doc.setFont('helvetica', 'bold');
+//   doc.setFontSize(11);
+//   doc.setTextColor(...navyBlue);
+//   doc.text(`FDA Nutrition Facts (Serving Size: ${product.serving_size || '1/2 cup'}, Servings: ${product.servings || product.servings_per_container || 'Approx. 4'})`, 14, currentY);
+//
+//   const totalFatVal = formatNutrient(product.total_fat || product.total_fat_g || '', 'g');
+//   const sodiumVal = formatNutrient(product.sodium || product.sodium_mg || '', 'mg');
+//   const carbsVal = formatNutrient(product.carbs || product.total_carbohydrates_g || '', 'g');
+//   const fiberVal = formatNutrient(product.fiber || product.dietary_fiber_g || '', 'g');
+//   const sugarsVal = formatNutrient(product.sugars || product.total_sugars_g || '', 'g');
+//   const addedSugarsVal = formatNutrient(product.added_sugars || product.added_sugars_g || '', 'g');
+//   const proteinVal = formatNutrient(product.protein || product.protein_g || '', 'g');
+//   const vitDVal = formatNutrient(product.vitamin_d || product.vitamin_d_mcg || '', 'mcg');
+//   const calciumVal = formatNutrient(product.calcium || product.calcium_mg || '', 'mg');
+//   const ironVal = formatNutrient(product.iron || product.iron_mg || '', 'mg');
+//   const potassiumVal = formatNutrient(product.potassium || product.potassium_mg || '', 'mg');
+//
+//   const nutritionData = [
+//     ['Calories', String(product.calories || '0'), '-'],
+//     ['Total Fat', totalFatVal, getDV(totalFatVal, 78)],
+//     ['Sodium', sodiumVal, getDV(sodiumVal, 2300)],
+//     ['Total Carbohydrates', carbsVal, getDV(carbsVal, 275)],
+//     ['Dietary Fiber', fiberVal, getDV(fiberVal, 28)],
+//     ['Total Sugars', sugarsVal, '-'],
+//     ['Added Sugars', addedSugarsVal, getDV(addedSugarsVal, 50)],
+//     ['Protein', proteinVal, '-'],
+//     ['Vitamin D', vitDVal, getDV(vitDVal, 20)],
+//     ['Calcium', calciumVal, getDV(calciumVal, 1300)],
+//     ['Iron', ironVal, getDV(ironVal, 18)],
+//     ['Potassium', potassiumVal, getDV(potassiumVal, 4700)]
+//   ];
+//
+//   autoTableFn.call(doc, {
+//     startY: currentY + 3,
+//     margin: { left: 14, right: 14 },
+//     head: [['Nutrient / Mineral / Vitamin', 'Amount Per Serving', '% Daily Value (% DV)*']],
+//     body: nutritionData,
+//     theme: 'striped',
+//     headStyles: { fillColor: [70, 70, 70] },
+//     styles: { fontSize: 8, cellPadding: 1.5 }
+//   });
+//
+//   // FDA Disclaimer & Footer Details
+//   let footerY = doc.lastAutoTable.finalY + 5;
+//   doc.setFont('helvetica', 'italic');
+//   doc.setFontSize(7);
+//   doc.setTextColor(...mutedText);
+//   doc.text('* The % Daily Value (DV) tells you how much a nutrient in a serving contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.', 14, footerY, { maxWidth: 182 });
+//
+//   const pageHeight = doc.internal.pageSize.getHeight();
+//   doc.setDrawColor(...goldenSun);
+//   doc.setLineWidth(0.5);
+//   doc.line(14, pageHeight - 16, 196, pageHeight - 16);
+//
+//   doc.setFont('helvetica', 'bold');
+//   doc.setFontSize(8);
+//   doc.setTextColor(...navyBlue);
+//   doc.text('LIBERTY GOLD FRUIT COMPANY LP', 14, pageHeight - 12);
+//
+//   doc.setFont('helvetica', 'normal');
+//   doc.setFontSize(7.5);
+//   doc.setTextColor(...mutedText);
+//   doc.text('500 Eccles Avenue, South San Francisco, CA 94080 USA | Phone: (650) 583-4700 | Email: tim@libertygold.com', 14, pageHeight - 8);
+//   doc.text('© 2026 Liberty Gold Fruit Co., Inc. All Rights Reserved.', 14, pageHeight - 4);
+//
+//   // Save and download generated PDF document
+//   doc.save(`LIGO_Spec_${sku || 'product'}.pdf`);
+// }
+
+/**
+ * Hides and deactivates the modal view.
+ */
+function closeModal() {
+  const productModal = document.getElementById('productModal');
+  if (productModal) {
+    productModal.classList.remove('active');
+    productModal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+/**
+ * Escapes unsafe special characters to prevent HTML XSS cross-site scripting vulnerabilities.
+ * @param {string} str Raw string
+ * @returns {string} Safe HTML escaped string
+ */
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (match) => {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return map[match];
+  });
+}
